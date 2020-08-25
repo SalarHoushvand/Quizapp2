@@ -1,0 +1,69 @@
+{% extends "prelogin-layout.html" %}
+
+{% block title %}Quiz{% endblock %}
+
+{% block content %}
+
+<!-- // navbar -->
+<nav class="navbar navbar-expand-md navbar-dark sticky-top">
+    <div class="container-fluid">
+        <!-- // welcome message -->
+        <p class="navbar-welcome">Welcome <span style="color:#a00000; font-family: " Gill Sans", "Gill Sans MT" , "Lato"
+                , Calibri, sans-serif;">{{ user_id }}</span></p>
+
+        <!-- // collapse toggle button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- // navbar items -->
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active"><a class="nav-link active" href="{{ url_for('pre_quiz')}}">Dashboard</a>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="{{ url_for('logout')}}">Log out</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- 
+// container -->
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <!-- // pre-quiz form -->
+            <form action="/pre_quiz" method="POST" enctype="multipart/form-data" class="pre-quiz-form">
+                <!-- // topic selector -->
+                <label for="topic">Select a topic for quiz :</label><br>
+                <select id="topic" name="topic" class="form-control pre-quiz-input">
+                    {% for i in topics %}
+                    <option name="{{ i }}" value="{{ i }}">{{ i }}</option>
+                    {% endfor %}
+                </select>
+
+                <br>
+                <!-- // choose number of questions -->
+                <label for="questionNumber">Number of Questions:</label><br>
+                <input type="text" id="questionNumber" name="questionNumber" class="form-control pre-quiz-input"><br>
+                <!-- // submit button -->
+                <button type="submit" class="register-btn">Start Quiz</button>
+            </form>
+
+            <br>
+            <br>
+            <br>
+            <p>If you want to see your previous scores and your progress chart click here:</p>
+            <button class="register-btn"><a href="{{ url_for('progress')}}">Your Progress </a><svg width="1em"
+                    height="1em" viewBox="0 0 16 16" class="bi bi-arrow-right-short" fill="currentColor"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd"
+                        d="M8.146 4.646a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.793 8 8.146 5.354a.5.5 0 0 1 0-.708z" />
+                    <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5H11a.5.5 0 0 1 0 1H4.5A.5.5 0 0 1 4 8z" />
+                </svg></button>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

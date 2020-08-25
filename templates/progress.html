@@ -1,0 +1,115 @@
+{% extends "prelogin-layout.html" %}
+
+{% block title %}Progress{% endblock %}
+
+{% block content %}
+
+<!-- // navbar -->
+<nav class="navbar navbar-expand-md navbar-dark sticky-top">
+    <div class="container-fluid">
+        <!-- // navbar arrow -->
+        <p class="navbar-welcome"><a class="arrow" style="color:white" href="{{ url_for('pre_quiz')}}"><svg width=" 2em"
+                    height="2em" viewBox="0 0 16 16" class="bi bi-arrow-left-short" fill="currentColor"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd"
+                        d="M7.854 4.646a.5.5 0 0 1 0 .708L5.207 8l2.647 2.646a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 0 1 .708 0z" />
+                    <path fill-rule="evenodd" d="M4.5 8a.5.5 0 0 1 .5-.5h6.5a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5z" />
+                </svg></a></p>
+
+        <!-- // collapse toggle button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- //navbar items -->
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="{{ url_for('pre_quiz')}}">Dashboard</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ url_for('logout')}}">Log out</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<!-- // quiz container -->
+<div class="container">
+    <div class="row">
+        <div class="col quiz-col">
+            <h3>Your Progress</h3>
+            <div id="curve_chart" style="width: 900px; height: 500px"></div>
+
+            <p class="progress-table-title">Submit Date &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                &nbsp; &nbsp; &nbsp; &nbsp;
+                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Score</p>
+
+            {% for i in table_data %}
+
+            <p>{{ i[1] }} &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {{ i[0] }}</p>
+
+            {% endfor %}
+            <p></p>
+        </div>
+    </div>
+</div>
+
+
+
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+    google.charts.load('current', { 'packages': ['corechart'] });
+    google.charts.setOnLoadCallback(drawChart);
+
+    var tableData = [];
+
+
+
+    scoresFromPython = "{{ score_str }}".split(',')
+    datesFromPython = "{{ date_str }}".split(',');
+
+
+    scores_arr = ['Score'];
+    dates_arr = ['Date'];
+
+    for (i = 0; i < scoresFromPython.length; i++) {
+        scores_arr.push(parseInt(scoresFromPython[i]));
+        dates_arr.push(datesFromPython[i]);
+    }
+    console.log(scores_arr);
+    console.log(dates_arr);
+
+    for (i = 0; i <= scores_arr.length; i++) {
+        var arr = [];
+        arr.push(dates_arr[i]);
+        arr.push(scores_arr[i]);
+
+        tableData.push(arr);
+    }
+
+    console.log(tableData);
+
+    function drawChart() {
+        var data = google.visualization.arrayToDataTable(
+            tableData
+        );
+
+        var options = {
+            title: null,
+            curveType: 'function',
+            legend: { position: 'none' },
+            colors: ['#FE7676'],
+            lineWidth: 3,
+            backgroundColor: 'transparent',
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+
+        chart.draw(data, options);
+    }
+
+</script>
+
+
+{% endblock %}

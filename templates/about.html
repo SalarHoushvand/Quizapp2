@@ -1,0 +1,58 @@
+{% extends "prelogin-layout.html" %}
+
+{% block title %}About{% endblock %}
+
+{% block content %}
+
+<!-- // navbar -->
+<nav class="navbar navbar-expand-md navbar-dark sticky-top">
+    <div class="container-fluid">
+        <!-- // navbar arrow -->
+        <p class="navbar-welcome"><a class="arrow" style="color:white" href="{{ url_for('pre_quiz')}}"><svg width=" 2em"
+                    height="2em" viewBox="0 0 16 16" class="bi bi-arrow-left-short" fill="currentColor"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd"
+                        d="M7.854 4.646a.5.5 0 0 1 0 .708L5.207 8l2.647 2.646a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 0 1 .708 0z" />
+                    <path fill-rule="evenodd" d="M4.5 8a.5.5 0 0 1 .5-.5h6.5a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5z" />
+                </svg></a></p>
+
+        <!-- // collapse toggle button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- //navbar items -->
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="{{ url_for('pre_quiz')}}">Dashboard</a></li>
+                <li class="nav-item"><a class="nav-link " href="{{ url_for('progress')}}">Progress</a></li>
+                <li class="nav-item"><a class="nav-link active" href="{{ url_for('about')}}">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ url_for('logout')}}">Log out</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<!-- // quiz container -->
+<div class="container">
+    <div class="row">
+        <div class="col quiz-col">
+            <h1>About this project</h1>
+            <p>This project is using a discrete math API to get the question data</p>
+            <p>Link to API : <a href="https://mathgen-api.herokuapp.com/" style="color:#FE7676">Click Here</a></p>
+            <p>2020&#169;</p>
+            <br>
+            <h3>Credits</h3>
+            <div>Icons made by <a style="color:#FE7676" href="https://www.flaticon.com/authors/freepik"
+                    title="Freepik">Freepik</a> from <a style="color:#FE7676" href="https://www.flaticon.com/"
+                    title="Flaticon">www.flaticon.com</a></div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+{% endblock %}

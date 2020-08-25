@@ -1,0 +1,90 @@
+{% extends "prelogin-layout.html" %}
+
+{% block title %}Quiz{% endblock %}
+
+{% block content %}
+
+<!-- // navbar -->
+<nav class="navbar navbar-expand-md navbar-dark sticky-top">
+    <div class="container-fluid">
+
+        <!-- //navbar arrow -->
+        <p class="navbar-welcome"><a class="arrow" href="{{ url_for('pre_quiz')}}"><svg width=" 2em" height="2em"
+                    viewBox="0 0 16 16" class="bi bi-arrow-left-short" fill="currentColor"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd"
+                        d="M7.854 4.646a.5.5 0 0 1 0 .708L5.207 8l2.647 2.646a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 0 1 .708 0z" />
+                    <path fill-rule="evenodd" d="M4.5 8a.5.5 0 0 1 .5-.5h6.5a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5z" />
+                </svg></a></p>
+
+        <!-- // navbar collapse toggle button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- //navbar items -->
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="{{ url_for('pre_quiz')}}">Dashboard</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ url_for('logout')}}">Log out</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- // post quiz container -->
+<div class="container">
+    <div class="row">
+        <div class="col quiz-col">
+
+            <h1>Quiz Submitted</h1>
+            <!-- <h1>quiz id : {{ quiz_id }}</h1> -->
+            <h3 style="color: #03a000;">Result : {{ score }}%</h3>
+            <!-- <h3>{{ user_email }}</h3> -->
+            <h4>Submit Date : {{ submit_date }}</h4>
+
+            <br>
+            <br>
+            <br>
+
+
+            {% for i in questions %}
+
+            <!-- // question -->
+            <p name="question" class="question-p" value="{{ i['question'] }}">{{ i["question"] }}</p>
+
+            <!-- // options -->
+            <input type="radio" id="option1" name="{{ i['questionID'] }}" value="1">
+            <label class="quiz-radio" for="option1" {% if i["correctAnswer"] == 1 %} style="background-color: #C7FFC6;"
+                {% elif user_selections[questions.index(i)] == 1 and i["correctAnswer"] != 1 %}
+                style="background-color: #FEC7C7;" {% endif %}>{{ i["answers"][0] }}</label><br>
+
+            <input type="radio" id="option2" name="{{ i['questionID'] }}" value="2">
+            <label class="quiz-radio" for="option2" {% if i["correctAnswer"] == 2 %} style="background-color: #C7FFC6;"
+                {% elif user_selections[questions.index(i)] == 2 and i["correctAnswer"] != 2 %}
+                style="background-color: #FEC7C7;" {% endif %}>{{ i["answers"][1] }}</label><br>
+
+            <input type="radio" id="option3" name="{{ i['questionID'] }}" value="3">
+            <label class="quiz-radio" class="quiz-radio" for="option3" {% if  i["correctAnswer"] == 3 %}
+                style="background-color: #C7FFC6;"
+                {% elif user_selections[questions.index(i)] == 3 and i["correctAnswer"] != 3 %}
+                style="background-color: #FEC7C7;" {% endif %}>{{ i["answers"][2] }}</label><br>
+
+            <input type="radio" id="option4" name="{{ i['questionID'] }}" value="4">
+            <label class="quiz-radio" for="option4" {% if  i["correctAnswer"] == 4 %} style="background-color: #C7FFC6;"
+                {% elif user_selections[questions.index(i)] == 4 and i["correctAnswer"] != 4 %}
+                style="background-color: #FEC7C7;" {% endif %}>{{ i["answers"][3] }}</label><br>
+
+            <br>
+            <br>
+            <!-- {{ i["correctAnswer"] | string()}}
+{{ user_selections[questions.index(i)] }} -->
+
+            {% endfor %}
+
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

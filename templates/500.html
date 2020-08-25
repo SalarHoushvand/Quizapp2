@@ -1,0 +1,69 @@
+{% extends "prelogin-layout.html" %}
+
+{% block title %}500{% endblock %}
+
+{% block content %}
+
+<!-- // navbar -->
+<nav class="navbar navbar-expand-md navbar-dark sticky-top">
+    <div class="container-fluid">
+
+
+
+        <!-- // navbar collapse toggle button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- //navbar items -->
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+
+        </div>
+    </div>
+</nav>
+
+<!-- // post quiz container -->
+<div class="container">
+    <div class="row">
+        <div class="col quiz-col">
+            <svg width="4em" height="4em" viewBox="0 0 16 16" class="bi bi-emoji-frown" fill="currentColor"
+                xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                <path fill-rule="evenodd"
+                    d="M4.285 12.433a.5.5 0 0 0 .683-.183A3.498 3.498 0 0 1 8 10.5c1.295 0 2.426.703 3.032 1.75a.5.5 0 0 0 .866-.5A4.498 4.498 0 0 0 8 9.5a4.5 4.5 0 0 0-3.898 2.25.5.5 0 0 0 .183.683z" />
+                <path
+                    d="M7 6.5C7 7.328 6.552 8 6 8s-1-.672-1-1.5S5.448 5 6 5s1 .672 1 1.5zm4 0c0 .828-.448 1.5-1 1.5s-1-.672-1-1.5S9.448 5 10 5s1 .672 1 1.5z" />
+            </svg>
+
+            <h1>An Error Occured</h1>
+
+            <p>If you are not logged in please login first.</p>
+            <button class="register-btn" style="width: 300px;"><a href="{{ url_for('login')}}"><svg width=" 2em"
+                        height="2em" viewBox="0 0 16 16" class="bi bi-arrow-left-short" fill="currentColor"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd"
+                            d="M7.854 4.646a.5.5 0 0 1 0 .708L5.207 8l2.647 2.646a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 0 1 .708 0z" />
+                        <path fill-rule="evenodd" d="M4.5 8a.5.5 0 0 1 .5-.5h6.5a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5z" />
+                    </svg> Login</a></button>
+
+            <br>
+            <br>
+            <br>
+            <br>
+
+            <p>If you were taking a quiz go back and make sure that you answered all the questions</p>
+            <button class="register-btn" style="width: 300px;"><a href="javascript:javascript:history.go(-1)"><svg
+                        width=" 2em" height="2em" viewBox="0 0 16 16" class="bi bi-arrow-left-short" fill="currentColor"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd"
+                            d="M7.854 4.646a.5.5 0 0 1 0 .708L5.207 8l2.647 2.646a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 0 1 .708 0z" />
+                        <path fill-rule="evenodd" d="M4.5 8a.5.5 0 0 1 .5-.5h6.5a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5z" />
+                    </svg> Go Back</a></button>
+
+
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
