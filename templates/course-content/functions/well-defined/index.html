@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+  
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Well-defined Functions</title>
+  <meta name="description" content="Content relevant for computer science and mathematics majors.">
+
+  <!-- Google Fonts loaded here depending on setting in _data/options.yml true loads font, blank does not--><link href='//fonts.googleapis.com/css?family=Lato:400,400italic' rel='stylesheet' type='text/css'><!-- Load up MathJax script if needed ... specify in /_data/options.yml file--><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS_CHTML"></script><!-- <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-75587219-1', 'auto');
+  ga('send', 'pageview');
+  </script> -->
+
+  <link rel="canonical" href="http://localhost:4000/seng5005/course-content/functions/well-defined/">
+  <link rel="alternate" type="application/rss+xml" title="Discrete structures" href="http://localhost:4000/seng5005/feed.xml" />
+
+  <!-- bootstrap cdn -->
+  
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+  <!-- jquery for accordion -->
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    $( "#accordion" ).accordion();
+  } );
+  </script>
+
+  <link rel="stylesheet" href="../../../css/tufte.css" />
+  <link rel="stylesheet" href="../../../css/style.css" />
+
+  <!-- custom javascript-->
+  <script src="../../../assets/js/question.js"></script>
+
+</head>
+
+  <body>
+    <!--- Header and nav template site-wide -->
+
+
+<header>
+    <nav class="group">
+    <a href="../../../">Home</a>
+    <a href="http://ispel.cs.ecu.edu/" target="_blank">ISPeL</a>
+    <a href="../../../syllabus/" target="_blank">Fall 2020</a>
+    <a href="https://github.com/vngudivada/ISPeL-content-discrete-structures.git" target="_blank">GitHub</a>
+    </nav>
+</header>
+
+
+
+    <article class="group">
+      <!-- <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: {
+      Macros: {
+        e: "\\epsilon",
+        xti: "x^{(i)}",
+        yti: "y^{(i)}",
+        bfy: "{\\bf y}",
+        bfx: "{\\bf x}",
+        bfg: "{\\bf g}",
+        bfbeta: "{\\bf \\beta}",
+        tp: "\\tilde p",
+        pt: "p_\\theta",
+        E: "{\\mathbb{E}}",
+        Ind: "{\\mathbb{I}}",
+        KL: "{\\mathbb{KL}}",
+        Re: "{\\mathbb{R}}",
+        Dc: "{\\mathcal{D}}",
+        Tc: "{\\mathcal{T}}",
+        Xc: "{\\mathcal{X}}",
+        note: ["\\textcolor{blue}{[NOTE: #1]}",1]
+      }
+    }
+  });
+</script> -->
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h1>Well-defined functions</h1>
+      <p class="subtitle"></p>
+    </div>
+    <div class="col">
+      <button type="button" class="btn-questions" onclick="connectToQuiz()">Pratice Question</button>
+      <button type="button" class="btn-questions" onclick="getQuestions()">Post-Test</button>
+      <button type="button" class="btn-questions" onclick="getQuestions()">Pre-Test</button>
+    </div>
+  </div>
+  <div class="row">
+    
+<p>Given a rule \(r\) mapping elements \(x\) in a collection \(D,\) the Domain set of \(r,\) to elements \(y\) in a collection \(R,\) the Range set of \(R,\) the rule defines a relationship between the elements with \(r(x) = y\) referred to as the image of \(x\) under \(r.\)  A rule \(r\) along with the Domain set and Range set form one structure, a tuple \((r, D, R)\), but for convienence only the rule is referenced when the Domain and Range sets are understood.  It is also important to note that rules must assign to every element in the Domain set to at least one element in the Range set.</p>
+
+<p>If for each element \(x\) in the Domain set \(D,\) there is only one value \(r(x)\) assigned to \(x,\) then the rule is a <strong>well-defined function</strong>.</p>
+
+<p>The following examples are provided to illustrate the concept of well-defined.</p>
+
+<p><strong>Example 1</strong>
+For the rule \(r_1\) with Domain set \(D = \{ -2, -1, 0, 1, 2, \}\) and the Range set \(R = \{ -1, 1\},\) define \(r_{1}(x)\) with the statement “if \(x\) is in \(Z\) then \(r_{1} (x) = 1\) for \(x &gt; 0\) and \(r_{1}(x) = -1\) for \(x \leq 0.\)  For each integer \(x\) there is a unique image \(r_1(x)\) in \(R.\) While the previous statement seems obviously true, proofs (mathematical arguments) are expected for completness. To prove that the rule \(r)1\) is well-defined, suppose that the rule is not.  When this suppostition leads us to a false statement, we will be left with the only logical answer that the our supposition is false and support is given for the rule to be well-defined.  Under the definition, if \(r_1\) is not well-defined, then there is an \(x\) in the Domain set with \(r_1(x) = y_1 \neq y_2 = r_1(x).\)  Our Range set has cardinality (size) 2, so this means that the two distinct Range elements are \(-1\) and \(1\) with \(r_1(x) = -1\) and \(r_1(x) = 1.\) Under the rule, \(x\) is in the set of all pre-images of \(-1,\) \(\{-2,-1,0\}\) and in the set of all pre-images of \(1,\) \(\{1, 2\}.\)  The elements \(x\) is in two sets, which means that \(x\) is in the intersection of these two sets. Thus, \(x \in \{-2, -1, 0\} \cap \{1, 2\} = \emptyset = \{ \}.\)  The statements within the argument are all true either by definition or implication from previous true statements.  The final statement given is false, but would follow from the truth of the prior argument. The result is that the original assumption can not be a true statement, and hence proves that \(r_{1}\) is well-defined.</p>
+
+<p><strong>Example 2</strong>
+Define the rule \(r_{2}\) from the discrete set \(D = \{-2, -1, 0, 1, 2\}\) to Range set \(\{-1, 1\}\) with the following:
+\(r_{2}(x) = \begin{cases} 
+      -1 &amp; x \text{ in D and } \geq  0 \\
+      1 &amp; x \text{ in D and } \leq 0 \\
+   \end{cases}\)</p>
+
+<p>The rule \(r_{2}\) is not well-defined.  To prove that \(r_2\) is not well-defined, we can demonstrate that the definition is not true for every element in \(D\) by providing a counter-example.  There is only one \(x\) for which the definition fails: \(x = 0.\) There are two distinct elements in \(R\) that are the images of \(x = 0\) under \(r_{2},\) \(r_2(0) = -1 \neq 1 = r_2(0).\)</p>
+
+<p>When first studying concepts of functions in an Algebra course, students are taught to graph rules given and use the vertical line test to determine if the graph does not represents a function (is not a well- defined function).  To apply the vertical line test a visually inspection of the points \((x,r(x))\) is made to determine if there exists a graph of a vertical line that would intersect (share points with) the  representation of the rule more than once.  If such a vertical line exists, then using two of these intersection points \((x, r(x) = y_1)\), \((x, r(x) = y_2)\) provides a counter-example showing that the definition of well-defined is not true for the rule \(r_1.\)  The graph of the relationship Example 1 illustrates that, when it is possbible to visualize the graph of a rule, a test for a rule to be well-defined is canonical vertical line test.</p>
+
+<p><strong>Example 3</strong>
+Consider the rule \(r_{3}\) from \(D= Z\) to \(R = \{ -1, 1\}\) where \(r_{3}(x) = 1\) for all \(x\) in \(D.\)  This is a well-defined function.  To prove this, assume \(r_3\) is not well-defined we will again use the “proof by contradiction” technique.  First, assume that \(r_3\) is not well-defined. It follows from the definition of a well-defined function that we can choose two elements \(y_1,\) \(y_2\) in \(R\) 
+with \(y_1 \neq y_2,\)  \(r_{3}(x) = y_1\) and \(r_{3}(x) = y_2.\)  The important piece to notice about the previous statement is that this statement is comprised of three seperate statements.  If one of these statements is false, the collection of statements is false.  As the rule \(r_3\) is defined so that \(r_{3}(x) = 1\) for all \(x\) in the Domain set, the existence of two distinct elements with \(y_1 \neq y_2\) that are both the image of \(x\) under the rule is false. This provided the contradiction to our assumption: the truth of a statement “r_3 is not well-defined.” As a consequence, our argument provides a that \(r_{3}\) is well-defined.</p>
+
+<p><br />
+<a href="../../../">Back to course home</a></p>
+
+  </div>
+</div>
+<meta id="js-data" data-title="Well-defined Functions" data-base="/seng5005/assets/json/corrispondingQuestionTopic.json">
+
+    </article>
+    <footer>
+<hr class="slender">
+<div class="credits">
+This work is supported by the <a href="https://www.nsf.gov/" target="_blank">NSF</a> IUSE/PFE:RED award No. <a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=1730568" target="_blank">1730568</a>. Site created with <a href="//jekyllrb.com" target="_blank">Jekyll</a> using the <a href="//github.com/clayh53/tufte-jekyll" target="_blank">Tufte theme</a>. &copy; 2020 by ECU.
+</div>
+</footer>
+
+
+
+  </body>
+</html>

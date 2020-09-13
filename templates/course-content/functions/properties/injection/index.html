@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+  
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Function properties (injection)</title>
+  <meta name="description" content="Content relevant for computer science and mathematics majors.">
+
+  <!-- Google Fonts loaded here depending on setting in _data/options.yml true loads font, blank does not--><link href='//fonts.googleapis.com/css?family=Lato:400,400italic' rel='stylesheet' type='text/css'><!-- Load up MathJax script if needed ... specify in /_data/options.yml file--><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS_CHTML"></script><!-- <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-75587219-1', 'auto');
+  ga('send', 'pageview');
+  </script> -->
+
+  <link rel="canonical" href="http://localhost:4000/seng5005/course-content/functions/properties/injection/">
+  <link rel="alternate" type="application/rss+xml" title="Discrete structures" href="http://localhost:4000/seng5005/feed.xml" />
+
+  <!-- bootstrap cdn -->
+  
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+  <!-- jquery for accordion -->
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    $( "#accordion" ).accordion();
+  } );
+  </script>
+
+  <link rel="stylesheet" href="../../../../css/tufte.css" />
+  <link rel="stylesheet" href="../../../../css/style.css" />
+
+  <!-- custom javascript-->
+  <script src="../../../../assets/js/question.js"></script>
+
+</head>
+
+  <body>
+    <!--- Header and nav template site-wide -->
+
+
+<header>
+    <nav class="group">
+    <a href="../../../../">Home</a>
+    <a href="http://ispel.cs.ecu.edu/" target="_blank">ISPeL</a>
+    <a href="../../../../syllabus/" target="_blank">Fall 2020</a>
+    <a href="https://github.com/vngudivada/ISPeL-content-discrete-structures.git" target="_blank">GitHub</a>
+    </nav>
+</header>
+
+
+
+    <article class="group">
+      <!-- <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: {
+      Macros: {
+        e: "\\epsilon",
+        xti: "x^{(i)}",
+        yti: "y^{(i)}",
+        bfy: "{\\bf y}",
+        bfx: "{\\bf x}",
+        bfg: "{\\bf g}",
+        bfbeta: "{\\bf \\beta}",
+        tp: "\\tilde p",
+        pt: "p_\\theta",
+        E: "{\\mathbb{E}}",
+        Ind: "{\\mathbb{I}}",
+        KL: "{\\mathbb{KL}}",
+        Re: "{\\mathbb{R}}",
+        Dc: "{\\mathcal{D}}",
+        Tc: "{\\mathcal{T}}",
+        Xc: "{\\mathcal{X}}",
+        note: ["\\textcolor{blue}{[NOTE: #1]}",1]
+      }
+    }
+  });
+</script> -->
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h1>Function properties (injection)</h1>
+      <p class="subtitle"></p>
+    </div>
+    <div class="col">
+      <button type="button" class="btn-questions" onclick="connectToQuiz()">Pratice Question</button>
+      <button type="button" class="btn-questions" onclick="getQuestions()">Post-Test</button>
+      <button type="button" class="btn-questions" onclick="getQuestions()">Pre-Test</button>
+    </div>
+  </div>
+  <div class="row">
+    
+<p>Let \((r, D, R)\) be a tuple representing a rule \(r\) with Domain set \(D\) and Range set \(R.\)  Then, if to each element \(x\) in \(D\) their is a unique image in the Range set \(R,\) the rule is considered well-defined.  This does not restrict the case where an element in the Range set has more than one “pre-image” in the Domain set.  For example, the tuple \((r_1, \{-2, -1, 0, 1, 2\}, \{-1, 1\})\) where \(r_1(x)  = 1\) for all \(x\) is a well-defined function since for every \(x\) in the Domain set there is only one image in the Range set.  However, the set of all pre-images of the element \(1\) in the Range set is all of the Domain set. In other words, \(1\) has 5 pre-images.
+In this module, we identify rules that behave following a “1-1” principle.</p>
+
+<p>A rule is an <strong>injection</strong> if the size of the pre-image set for every element in the Range is at most 1.  An equivalent definition for an injection follows.  A rule \((r, D, R)\) is an <strong>injenction</strong> if for every element \(y\) in the Range set \(R\), there is at most one element in the Domain set \(D\) that maps onto \(y\) under the rule.</p>
+
+<p>From the definition of an injection, for those elements in the Range set \(R\) that have a pre-image, this pre-image is unique.   The element \(x\) in the Domain set with \(r(x)= y\) is called the inverse of y under \(r\) and written \(r^{-1}(x) = y\)</p>
+
+<p><strong>Example 1</strong>
+The rule \(r_1\) with Domain set \(D = \{ -2, -1, 0, 1, 2 \}\) and the Range set \(R = \{ -1, 1\},\) define \(r_{1}(x)\) with the statement “if \(x\) is in \(Z\) then \(r_{1} (x) = 1\) for \(x &gt; 0\) and \(r_{1}(x) = -1\) for \(x \leq 0\) is not an injection.</p>
+
+<p><strong>Example 2</strong>
+Define the rule \(r_{2}\) from the discrete set of all positive integers \(Z^+ = \{ 1, 2, 3, \ldots \}\) to the discrete set of all rational numbers \(\mathbb{Q} = \{q \vert q = \frac{x}{y} \text{ with } x,y \in \mathbb{Z} \text{ and } y \neq 0\}\), with the following:
+\(r_{2}(x) = \frac{1}{x}.\)  This rule is an injection.</p>
+
+<p><br />
+<a href="../../../../">Back to course home</a></p>
+
+  </div>
+</div>
+<meta id="js-data" data-title="Function properties (injection)" data-base="/seng5005/assets/json/corrispondingQuestionTopic.json">
+
+    </article>
+    <footer>
+<hr class="slender">
+<div class="credits">
+This work is supported by the <a href="https://www.nsf.gov/" target="_blank">NSF</a> IUSE/PFE:RED award No. <a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=1730568" target="_blank">1730568</a>. Site created with <a href="//jekyllrb.com" target="_blank">Jekyll</a> using the <a href="//github.com/clayh53/tufte-jekyll" target="_blank">Tufte theme</a>. &copy; 2020 by ECU.
+</div>
+</footer>
+
+
+
+  </body>
+</html>

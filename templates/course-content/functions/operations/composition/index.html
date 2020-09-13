@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+  
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Function composition</title>
+  <meta name="description" content="Content relevant for computer science and mathematics majors.">
+
+  <!-- Google Fonts loaded here depending on setting in _data/options.yml true loads font, blank does not--><link href='//fonts.googleapis.com/css?family=Lato:400,400italic' rel='stylesheet' type='text/css'><!-- Load up MathJax script if needed ... specify in /_data/options.yml file--><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS_CHTML"></script><!-- <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-75587219-1', 'auto');
+  ga('send', 'pageview');
+  </script> -->
+
+  <link rel="canonical" href="http://localhost:4000/seng5005/course-content/functions/operations/composition/">
+  <link rel="alternate" type="application/rss+xml" title="Discrete structures" href="http://localhost:4000/seng5005/feed.xml" />
+
+  <!-- bootstrap cdn -->
+  
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+  <!-- jquery for accordion -->
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    $( "#accordion" ).accordion();
+  } );
+  </script>
+
+  <link rel="stylesheet" href="../../../../css/tufte.css" />
+  <link rel="stylesheet" href="../../../../css/style.css" />
+
+  <!-- custom javascript-->
+  <script src="../../../../assets/js/question.js"></script>
+
+</head>
+
+  <body>
+    <!--- Header and nav template site-wide -->
+
+
+<header>
+    <nav class="group">
+    <a href="../../../../">Home</a>
+    <a href="http://ispel.cs.ecu.edu/" target="_blank">ISPeL</a>
+    <a href="../../../../syllabus/" target="_blank">Fall 2020</a>
+    <a href="https://github.com/vngudivada/ISPeL-content-discrete-structures.git" target="_blank">GitHub</a>
+    </nav>
+</header>
+
+
+
+    <article class="group">
+      <!-- <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: {
+      Macros: {
+        e: "\\epsilon",
+        xti: "x^{(i)}",
+        yti: "y^{(i)}",
+        bfy: "{\\bf y}",
+        bfx: "{\\bf x}",
+        bfg: "{\\bf g}",
+        bfbeta: "{\\bf \\beta}",
+        tp: "\\tilde p",
+        pt: "p_\\theta",
+        E: "{\\mathbb{E}}",
+        Ind: "{\\mathbb{I}}",
+        KL: "{\\mathbb{KL}}",
+        Re: "{\\mathbb{R}}",
+        Dc: "{\\mathcal{D}}",
+        Tc: "{\\mathcal{T}}",
+        Xc: "{\\mathcal{X}}",
+        note: ["\\textcolor{blue}{[NOTE: #1]}",1]
+      }
+    }
+  });
+</script> -->
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h1>Function composition</h1>
+      <p class="subtitle"></p>
+    </div>
+    <div class="col">
+      <button type="button" class="btn-questions" onclick="connectToQuiz()">Pratice Question</button>
+      <button type="button" class="btn-questions" onclick="getQuestions()">Post-Test</button>
+      <button type="button" class="btn-questions" onclick="getQuestions()">Pre-Test</button>
+    </div>
+  </div>
+  <div class="row">
+    
+<p>For two functions, \((D_f, R_f, f)\) and \((D_g, R_g, g),\) or simply \(f\) and \(g,\) we can define a new function as the composition of \(f\) and \(g,\) denoted \((D_g, R_f, f \circ g ),\) if \(R_g\) is a collection of elements that are also in the collection of elements \(D_f.\)  The rule \(f \circ g\) assigns to each \(x\) in \(D_g\) the element \(f(g(x))\) in \(R_f.\)</p>
+
+<p><strong>Example 1:</strong> Take the two functions \((\mathbb{Z}, \mathbb{Z}, f)\) and \((\mathbb{Z}, \mathbb{Z}, g)\) with the rules \(f(x) = x^2\) and \(g(x) = 2.\)  The Range set of \(g\) is equal to the Domain set of \(f,\) and so the composition of these two functions exists and is \((\mathbb{Z}, \mathbb{Z}, f \circ g)\) where \(f\circ g (x) = 4.\)</p>
+
+<p>The function \(f\) in the previous example is considered the “outer” function or a wrapper.  The “inner” function is \(g.\)  The inner function begins with an element \(x\) in \(D_g\) and assigns it to an element \(g(x)\) in \(R_g \subseteq D_f.\) Then the rule \(f\) maps the element \(g(x)\) to an element  \(f(g(x))\) in the set \(R_f.\)  The Image set, \(f \circ g,\) will not necessarily be equal to \(Im_f.\) However \(Im_{f \circ g} \subseteq Im_{f}.\)</p>
+
+<p><strong>Example 2</strong><br />
+Let \(\mathbb{Z}_{2x2}-\{\begin{bmatrix} a &amp; b \\c &amp; d\end{bmatrix} \vert ad-bc \neq 0\}\) be the set of all matrices with 2 rows and 2 columns and integer entries where the difference of the product of the terms in the main diagonal and the anti-diagonal is 0.  Then the function \(n,\) which normalizes the entries of a matrix \(M \in D_n\), is defined as follows:</p>
+
+\[n(M) = n(\begin{bmatrix} a &amp; b \\ c &amp; d\end{bmatrix}) = \frac{1}{ad - bc} \begin{bmatrix} a &amp; b \\ c &amp; d \end{bmatrix} = \begin{bmatrix} \frac{a}{ad-bc} &amp; \frac{b}{ad-bc} \\ \frac{c}{ad-bc} &amp; \frac{d}{ad-bc} \end{bmatrix}.\]
+
+<p>This function \(n\) will serve as the inner function in our composition since we desire to apply this function to the set of all 2-by-2 matrices.  The outer function will be \(d\) and have its Domain set \(D_d = \mathbb{Z}_{2x2}\) and Range set \(R_d = \mathbb{Z}.\)  All that is required for the function \(d\circ n\) to exist is \(R_n \subseteq D_d.\) The rule \(d\) maps a matrix \(N \in \mathbb{Z}_{2x2}\) to the determinant \(d(N)\):</p>
+
+<p>\(d(N) = d(\begin{bmatrix} a &amp; b \\ c &amp; d\end{bmatrix}) = ad - bc.\) 
+Then \(d \circ n (M) = 1\) for all \(M \in D_n\) so that the Range set for \(d \circ n\) is \(R_{d \circ n} = \{1\}.\)</p>
+
+<p><strong>Example 3</strong>
+Consider the set \(A = \{c, d\}\) and the functions \((A, A, f)\) and \((A, A, g)\) where the rules \(f\) and \(g\) are defined using the first “look-up” table below. Each row of the table indicates the element \(x\) in \(A,\) the image of \(x\) under \(f\) and the image of \(x\) under \(g.\)</p>
+<table class="tg">
+  <tr>
+    <th class="tg-baqh" colspan="2"> </th>
+  </tr>
+  <tr>
+    <td class="tg-baqh">$$x \in A$$</td>
+    <td class="tg-baqh">$$f(x)$$ </td>
+    <td class="tg-baqh">$$g(x)$$ </td>
+  </tr>
+  <tr>
+    <td class="tg-baqh">c</td>
+    <td class="tg-baqh">d</td>
+    <td class="tg-baqh">c</td>
+  </tr>
+  <tr>
+    <td class="tg-baqh">d</td>
+    <td class="tg-baqh">c</td>
+    <td class="tg-baqh">d</td>
+  </tr>
+ 
+</table>
+<p>The functions \(f \circ g\) and \(g \circ g\) both exist since \(R_g = D_f\) and \(R_f = D_g.\)  The rule \(f \circ g\) is as follows:</p>
+<table class="tg">
+  <tr>
+    <th class="tg-baqh" colspan="2"> </th>
+  </tr>
+  <tr>
+    <td class="tg-baqh">$$x \in A$$</td>
+    <td class="tg-baqh">$$f\circ g(x)$$ </td>
+  </tr>
+  <tr>
+    <td class="tg-baqh">c</td>
+    <td class="tg-baqh">d</td>
+  </tr>
+  <tr>
+    <td class="tg-baqh">d</td>
+    <td class="tg-baqh">c</td>
+  </tr>
+  
+</table>
+<p><br />
+<a href="../../../../">Back to course home</a></p>
+
+  </div>
+</div>
+<meta id="js-data" data-title="Function composition" data-base="/seng5005/assets/json/corrispondingQuestionTopic.json">
+
+    </article>
+    <footer>
+<hr class="slender">
+<div class="credits">
+This work is supported by the <a href="https://www.nsf.gov/" target="_blank">NSF</a> IUSE/PFE:RED award No. <a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=1730568" target="_blank">1730568</a>. Site created with <a href="//jekyllrb.com" target="_blank">Jekyll</a> using the <a href="//github.com/clayh53/tufte-jekyll" target="_blank">Tufte theme</a>. &copy; 2020 by ECU.
+</div>
+</footer>
+
+
+
+  </body>
+</html>

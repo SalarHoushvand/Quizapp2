@@ -11,7 +11,7 @@ import uuid
 from datetime import date
 
 # APP
-app = Flask(__name__)
+app = Flask(__name__,static_url_path='/static')
 #app.secret_key = os.environ.get('SECRET')
 app.secret_key = 'SECRET_KEY'
 #os.environ.get('SECRET')
@@ -106,42 +106,63 @@ def pre_quiz():
     # save topics in a var
     topic_json = topics.json()
 
+    topic_urls = {
+        'Universal Set': 'course-content/set-theory/universal-set/index.html',
+        'Sub Sets': 'course-content/set-theory/subsets/index.html',
+        'Cardinality': 'course-content/set-theory/properties/cardinality/index.html',
+        'Complement': 'course-content/set-theory/properties/complement/index.html',
+        'Countable Uncountable': 'course-content/set-theory/properties/countable-uncountable/index.html',
+        'Set Equality': 'course-content/set-theory/properties/set-equality/index.html',
+    }
+
+    content_topics = []
+    for i in topic_urls:
+        content_topics.append(i)
+
     if request.method == 'POST':
+        if request.form['btn'] == 'quiz':
 
-        # get number of requested questions from form
-        question_num = request.form.get('questionNumber')
-        selected_topic = request.form.get('topic')
-        print(selected_topic)
-        # make an API call based on users choices
-        if selected_topic == 'union of sets' or selected_topic == 'symmetric difference' or selected_topic == 'partition' or selected_topic == 'difference of sets' or selected_topic == 'complement' or selected_topic == 'cartesian product':
-            resp = requests.get(
-                'https://mathgen-api.herokuapp.com' + topic_json['topics'][selected_topic] + question_num + '/11')
-        else:
-            resp = requests.get(
-                'https://mathgen-api.herokuapp.com' + topic_json['topics'][selected_topic] + question_num)
+            # get number of requested questions from form
+            question_num = request.form.get('questionNumber')
+            selected_topic = request.form.get('topic')
+            print(selected_topic)
+            # make an API call based on users choices
+            if selected_topic == 'union of sets' or selected_topic == 'symmetric difference' or selected_topic == 'partition' or selected_topic == 'difference of sets' or selected_topic == 'complement' or selected_topic == 'cartesian product':
+                resp = requests.get(
+                    'https://mathgen-api.herokuapp.com' + topic_json['topics'][selected_topic] + question_num + '/11')
+            else:
+                resp = requests.get(
+                    'https://mathgen-api.herokuapp.com' + topic_json['topics'][selected_topic] + question_num)
 
-        # check if the API call was successful
-        if resp.status_code != 200:
-            # This means something went wrong.
-            raise ApiError('GET /tasks/ {}'.format(resp.status_code))
+            # check if the API call was successful
+            if resp.status_code != 200:
+                # This means something went wrong.
+                raise ApiError('GET /tasks/ {}'.format(resp.status_code))
 
-        # save response from API
-        response = resp.json()
+            # save response from API
+            response = resp.json()
 
-        # change quiz from json to string
-        quiz_json = str(response)
+            # change quiz from json to string
+            quiz_json = str(response)
 
-        # generates a unique id for quiz
-        quiz_id = uuid.uuid1().hex
+            # generates a unique id for quiz
+            quiz_id = uuid.uuid1().hex
 
-        # add quiz_id and quiz_json to database
-        quiz_query = mds.QuizJson(quiz_id=quiz_id, quiz_json=quiz_json)
-        db.session.add(quiz_query)
-        db.session.commit()
-        db.session.close()
+            # add quiz_id and quiz_json to database
+            quiz_query = mds.QuizJson(quiz_id=quiz_id, quiz_json=quiz_json)
+            db.session.add(quiz_query)
+            db.session.commit()
+            db.session.close()
 
-        # redirect to quiz page
-        return redirect(url_for("quiz", quiz_id=quiz_id))
+            # redirect to quiz page
+            return redirect(url_for("quiz", quiz_id=quiz_id))
+
+        elif request.form['btn'] == 'content':
+
+            content_topic = request.form.get('contentTopic')
+
+
+            return render_template(topic_urls[content_topic])
 
     else:
 
@@ -149,7 +170,7 @@ def pre_quiz():
         topics_list = list(topic_json['topics'].keys())
 
         # render pre-quiz.html
-        return render_template("pre_quiz.html", topics=topics_list, user_id=user_id)
+        return render_template("pre_quiz.html", topics=topics_list, user_id=user_id, content_topics = content_topics)
 
 
 @app.route("/quiz", methods=['GET', 'POST'])

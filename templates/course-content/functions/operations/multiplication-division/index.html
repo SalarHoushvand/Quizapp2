@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+  
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Multiplication and division of Functions</title>
+  <meta name="description" content="Content relevant for computer science and mathematics majors.">
+
+  <!-- Google Fonts loaded here depending on setting in _data/options.yml true loads font, blank does not--><link href='//fonts.googleapis.com/css?family=Lato:400,400italic' rel='stylesheet' type='text/css'><!-- Load up MathJax script if needed ... specify in /_data/options.yml file--><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS_CHTML"></script><!-- <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-75587219-1', 'auto');
+  ga('send', 'pageview');
+  </script> -->
+
+  <link rel="canonical" href="http://localhost:4000/seng5005/course-content/functions/operations/multiplication-division/">
+  <link rel="alternate" type="application/rss+xml" title="Discrete structures" href="http://localhost:4000/seng5005/feed.xml" />
+
+  <!-- bootstrap cdn -->
+  
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+  <!-- jquery for accordion -->
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    $( "#accordion" ).accordion();
+  } );
+  </script>
+
+  <link rel="stylesheet" href="../../../../css/tufte.css" />
+  <link rel="stylesheet" href="../../../../css/style.css" />
+
+  <!-- custom javascript-->
+  <script src="../../../../assets/js/question.js"></script>
+
+</head>
+
+  <body>
+    <!--- Header and nav template site-wide -->
+
+
+<header>
+    <nav class="group">
+    <a href="../../../../">Home</a>
+    <a href="http://ispel.cs.ecu.edu/" target="_blank">ISPeL</a>
+    <a href="../../../../syllabus/" target="_blank">Fall 2020</a>
+    <a href="https://github.com/vngudivada/ISPeL-content-discrete-structures.git" target="_blank">GitHub</a>
+    </nav>
+</header>
+
+
+
+    <article class="group">
+      <!-- <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: {
+      Macros: {
+        e: "\\epsilon",
+        xti: "x^{(i)}",
+        yti: "y^{(i)}",
+        bfy: "{\\bf y}",
+        bfx: "{\\bf x}",
+        bfg: "{\\bf g}",
+        bfbeta: "{\\bf \\beta}",
+        tp: "\\tilde p",
+        pt: "p_\\theta",
+        E: "{\\mathbb{E}}",
+        Ind: "{\\mathbb{I}}",
+        KL: "{\\mathbb{KL}}",
+        Re: "{\\mathbb{R}}",
+        Dc: "{\\mathcal{D}}",
+        Tc: "{\\mathcal{T}}",
+        Xc: "{\\mathcal{X}}",
+        note: ["\\textcolor{blue}{[NOTE: #1]}",1]
+      }
+    }
+  });
+</script> -->
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h1>Multiplication and division of functions</h1>
+      <p class="subtitle"></p>
+    </div>
+    <div class="col">
+      <button type="button" class="btn-questions" onclick="connectToQuiz()">Pratice Question</button>
+      <button type="button" class="btn-questions" onclick="getQuestions()">Post-Test</button>
+      <button type="button" class="btn-questions" onclick="getQuestions()">Pre-Test</button>
+    </div>
+  </div>
+  <div class="row">
+    
+<p>For two functions, \((D_f, R, f)\) and \((D_g, R, g),\) or simply \(f\) and \(g,\) we can define the multiplication of \(f\) and \(g\) if \(R\) is a
+a set with a given multiplication defined on the elements.  The product of \(f\) and \(g\) will have a new Domain set \(D\) as the collection of all elements
+\(x\) so that \(x\) is in both \(D_f\) and \(D_g.\) Using our set notation, the Domain of \(f*g\) is \(D = D_f \cap D_g = \{x \vert x \in D_f \text{ and } x \in D_g\}\)</p>
+
+<p><strong>Example 1</strong>
+Take as the Domain set \(D = \{0, 1, 2, 3, 4, 5 \}\) and the Range set \(R = \{0, 1, 2, 3, 4, 5\}.\)  One constant function \(c_0\)
+defined from \(D\) to \(R\)  is the rule \(c_0(x) = 0\) for all \(x\) in \(D.\)  There are six such constant functions \(c_i\) in the set of
+all possible functions from \(D\) to \(R,\) \(N.\)  Thus the size of the set \(N\) is at least \(\vert N \vert \geq 6.\)</p>
+
+<p><strong>Example 2</strong>
+Notice that the Domain set \(D\) is equal to the Range set \(R.\)  When this is the case and the size of this set is small, there are a couple of choices for notation depending
+on which method is most convenient.  Let us consider the function \(r_{1}\)
+\(r_{1}(x) = \begin{cases} 
+      x + 1 &amp; 0 \leq x \leq  4 \\
+      0 &amp; x = 5 \\
+   \end{cases}\)
+Another way to write this same rule is to use cycle notation.  This notation uses a space delimited list of the elements starting with an element in the list preceded by it’s image under the map and the image of the final element in the list
+is the first element in the list.  The function \(r_1\) is then written in line as \((0\ 1\ 2\ 3\ 4\ 5)\) since \(r_1(0) = 1,\) \(r_1(1) = 2,\) \(\ldots,\) and \(r_1(5) = 0.\)</p>
+
+<p>We have seen a few of the possible functions that exist with the same Domain and Range sets.  If the Range set \(R\) has an addition operation defined, then an addition can be defined on the set \(N\) of all functions from \(D\) to \(R.\)</p>
+
+<p>Before we proceed, let us look at the Range set in the previous examples. The Range set is a subset of the positive integers \(\{0, 1, 2, 3, 4, 5\},\) and one can almost use regular addition on the reals \(R\) for this set except that if we add \(1 + 5\) there is no \(6\) in the set.  Addition mod 6 is a solution.  For two elements in \(\{0, 1, 2, 3, 4, 5\}\), \(x\) and \(y\), we say that \(x + y\) is the remainder
+in \(R\) when \(x + y\) using real addition is divided by \(6.\) In this way \(1 + 5\) is 0 since \(1 + 5 = 6\) in the set of real numbers and the remainder when 6 is divided by 6 is 0.  What about \(2 + 5?\)  In the reals, \(2 = 5 = 7\) and \(7 = 1*6 + 1.\)  When 7 is divided by 6 in the Reals, the integer remainder is 1.   Thus the operation we are giving to the Range
+set \(\{0, 1, 2, 3, 4, 5\}\) defines \(2 + 5 = 1.\)</p>
+
+<p>For \(f\) and \(g\) two functions with Domain set \(D\) and Range set \(R,\) where \(R\) has an addition operation \(+_{R}\), then the <strong>sum</strong> of \(f\) and \(g\) is also an element of all possible functions from \(D\) to \(R,\) \((D, R, f+g)\) or simply \(f+ g,\) defined by the rule 
+\((f + g)(x) = f(x) +_{R} g(x)\) uses the addition operaton of the Range set \(R.\)</p>
+
+<p><strong>Example 3</strong><br />
+Consider the functions \(f\) and \(g\) on the set \(D = \{0, 1, 2\}\) with range set \(\{0, 1, 2\}\) where addition on \(R\) is addition mod 3.<br />
+\(f(x) = \begin{cases}
+		0 &amp; x = 0  \text{ or } x = 1\\
+		2 &amp; x = 2\\
+	\end{cases}\)
+and 
+\(g(x) = \begin{cases}
+		1 &amp; x = 0 \text{ or } x = 1\\
+		0 &amp; x = 2\\
+	\end{cases}\)</p>
+
+<p>Then \((D, R, f+g)\) is in the set \(N\) of all functions from \(\{0, 1, 2\}\) to itself and 
+\((f + g)(x) = f(x) +_{R} g(x) = \begin{cases}
+		1 &amp; x = 0 \text{ or } x = 1\\
+		2 &amp; x = 2\\
+	\end{cases}\)</p>
+
+<p>Since addition of two functions works, is there subtraction between two functions?  With certain assumptions to simplify the definition, we can define the <strong>difference</strong> of two functions \((D, R, f)\) and \((D, R, g).\)  It is required that the 
+Range set have an addition operation defined on it as well as the truth of the following two statements:</p>
+
+<ol>
+  <li>
+    <p>There is an element \(z\) that acts as the additive identity in the Range set \(R\) so that for \(x\) in \(R,\) \(x + z = x.\)</p>
+  </li>
+  <li>
+    <p>For every \(x\) in \(R,\) there is a negative of \(-x\) so that \(x\) plus the negative of \(x\) is the additive identity, \(x + (-x) = z.\)</p>
+  </li>
+</ol>
+
+<p><strong>Example 4</strong>
+Consider the set \(A = \{c, d\}\) with addition \(+_A\) defined on it. The following is a “look-up” table describing the results of the sum between 
+every pair of elements in the set \(A.\)</p>
+<table class="tg">
+  <tr>
+    <th class="tg-baqh" colspan="2">Addition on A </th>
+  </tr>
+  <tr>
+    <td class="tg-baqh"> </td>
+    <td class="tg-baqh">c </td>
+    <td class="tg-baqh">d </td>
+  </tr>
+  <tr>
+    <td class="tg-baqh">c</td>
+    <td class="tg-baqh">d</td>
+    <td class="tg-baqh">c</td>
+  </tr>
+  <tr>
+    <td class="tg-baqh">d</td>
+    <td class="tg-baqh">c</td>
+    <td class="tg-baqh">d</td>
+  </tr>
+  
+</table>
+
+<p>In this case, the additive identity element for \(A\) is the element \(d\) because the element satisfies statement 1. above.  Statement 2. requiring the existence of negatives, is satisfied since  \(c + d = c\) and \(d + d = d.\) This implies
+that \(-c = d\) and \(-d = d.\)</p>
+
+<p><strong>Example 5</strong>
+Consider the set \(A = \{c, d\}\) with addition \(+_A\) defined by:</p>
+<table class="tg">
+  <tr>
+    <th class="tg-baqh" colspan="2">Addition on A </th>
+  </tr>
+  <tr>
+    <td class="tg-baqh"> </td>
+    <td class="tg-baqh">c </td>
+    <td class="tg-baqh">d </td>
+  </tr>
+  <tr>
+    <td class="tg-baqh">c</td>
+    <td class="tg-baqh">d</td>
+    <td class="tg-baqh">c</td>
+  </tr>
+  <tr>
+    <td class="tg-baqh">d</td>
+    <td class="tg-baqh">d</td>
+    <td class="tg-baqh">c</td>
+  </tr>
+  
+</table>
+
+<p>The set \(A\) under this new addition has no additive identity, thus no negatives.  Note that this addition is also not commutative, that is \(c + d \neq d + c.\)</p>
+
+<p>In terms of the set \(N = \{(D, R, f)\},\) we will use \(+_{N}\) to represent the addition between two functions in \(N.\)  Given the function \((D, R, f),\) the element negative \(f,\) \(-f,\) is the function \((D, R, -f)\) where the rule \(-f\) is defined \(-f(x) = -(f(x)).\)</p>
+
+<p><strong>Example 6</strong> 
+Take \(R\) to be the set \(\{0, 1, 2\}\) with addition mod 3.</p>
+
+\[0 +_R 0 = 0\]
+
+\[0 +_R 1 = 1 = 1 +_R 0\]
+
+\[0 +_R 2 = 2 = 2 +_R 0\]
+
+\[1 +_R 1 = 2\]
+
+\[2 +_R 1 = 0 = 1 +_R 2\]
+
+<p>So \(-0 = 0 \text{ and } -1 = 2  \text{ and } -2 = 1\)</p>
+
+<p>For the constant function \(r_1\) with Domain set = Range set \((R, R, r_1)\) defined by \(r_1(x) = 1\) for all \(x,\) \(-r_1\) is also defined from \(R\) to \(R\) with \(-r_1(x) = 2\) for all \(x.\)</p>
+
+<p>The <strong>difference</strong> of functions \((D, R, f)\) and \((D, R, g)\), is denoted \((D, R, f-g)\) or just \(f - g,\) with Domain set \(D\) and Range set \(R\) with rule
+given by \((f - g)(x) = f(x) +_{R} -g(x).\)</p>
+
+<p><strong>Example 6</strong>
+Define the function \((D, R, f)\) where the Domain set \(D = \{a, b\},\) the Range set \(R = \{c, d\}\) and the rule \(f\) maps \(D\) onto \(R\) with 
+\(f(a) = c\) and \(f(b) = d.\)</p>
+
+<p><br />
+<a href="../../../../">Back to course home</a></p>
+
+
+  </div>
+</div>
+<meta id="js-data" data-title="Multiplication and division of Functions" data-base="/seng5005/assets/json/corrispondingQuestionTopic.json">
+
+    </article>
+    <footer>
+<hr class="slender">
+<div class="credits">
+This work is supported by the <a href="https://www.nsf.gov/" target="_blank">NSF</a> IUSE/PFE:RED award No. <a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=1730568" target="_blank">1730568</a>. Site created with <a href="//jekyllrb.com" target="_blank">Jekyll</a> using the <a href="//github.com/clayh53/tufte-jekyll" target="_blank">Tufte theme</a>. &copy; 2020 by ECU.
+</div>
+</footer>
+
+
+
+  </body>
+</html>

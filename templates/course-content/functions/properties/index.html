@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+  
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Classification of Functions</title>
+  <meta name="description" content="Content relevant for computer science and mathematics majors.">
+
+  <!-- Google Fonts loaded here depending on setting in _data/options.yml true loads font, blank does not--><link href='//fonts.googleapis.com/css?family=Lato:400,400italic' rel='stylesheet' type='text/css'><!-- Load up MathJax script if needed ... specify in /_data/options.yml file--><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS_CHTML"></script><!-- <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-75587219-1', 'auto');
+  ga('send', 'pageview');
+  </script> -->
+
+  <link rel="canonical" href="http://localhost:4000/seng5005/course-content/functions/properties/">
+  <link rel="alternate" type="application/rss+xml" title="Discrete structures" href="http://localhost:4000/seng5005/feed.xml" />
+
+  <!-- bootstrap cdn -->
+  
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+  <!-- jquery for accordion -->
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    $( "#accordion" ).accordion();
+  } );
+  </script>
+
+  <link rel="stylesheet" href="../../../css/tufte.css" />
+  <link rel="stylesheet" href="../../../css/style.css" />
+
+  <!-- custom javascript-->
+  <script src="../../../assets/js/question.js"></script>
+
+</head>
+
+  <body>
+    <!--- Header and nav template site-wide -->
+
+
+<header>
+    <nav class="group">
+    <a href="../../../">Home</a>
+    <a href="http://ispel.cs.ecu.edu/" target="_blank">ISPeL</a>
+    <a href="../../../syllabus/" target="_blank">Fall 2020</a>
+    <a href="https://github.com/vngudivada/ISPeL-content-discrete-structures.git" target="_blank">GitHub</a>
+    </nav>
+</header>
+
+
+
+    <article class="group">
+      <!-- <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: {
+      Macros: {
+        e: "\\epsilon",
+        xti: "x^{(i)}",
+        yti: "y^{(i)}",
+        bfy: "{\\bf y}",
+        bfx: "{\\bf x}",
+        bfg: "{\\bf g}",
+        bfbeta: "{\\bf \\beta}",
+        tp: "\\tilde p",
+        pt: "p_\\theta",
+        E: "{\\mathbb{E}}",
+        Ind: "{\\mathbb{I}}",
+        KL: "{\\mathbb{KL}}",
+        Re: "{\\mathbb{R}}",
+        Dc: "{\\mathcal{D}}",
+        Tc: "{\\mathcal{T}}",
+        Xc: "{\\mathcal{X}}",
+        note: ["\\textcolor{blue}{[NOTE: #1]}",1]
+      }
+    }
+  });
+</script> -->
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h1>Classification of functions</h1>
+      <p class="subtitle"></p>
+    </div>
+    <div class="col">
+      <button type="button" class="btn-questions" onclick="connectToQuiz()">Pratice Question</button>
+      <button type="button" class="btn-questions" onclick="getQuestions()">Post-Test</button>
+      <button type="button" class="btn-questions" onclick="getQuestions()">Pre-Test</button>
+    </div>
+  </div>
+  <div class="row">
+    
+<p>Given a rule \(r(x) = y\) mapping elements \(x\) in the collection \(D,\) the Domain set of \(r,\) to elements \(y\) in a collection \(R,\) the Range set of \(R,\) the rule defines a relationship that has behaviors. These behaviors are used
+to classify rules. It is important to clarify that all rules must map every element in the Domain set to at least one element in the Range set.</p>
+
+<p>If for each element \(x\) in the Domain set \(D,\) there is only one value \(r(x)\) assigned to \(x,\) then the rule is a well-defined function.   The set of all rules from the set \(D\) to the set \(R\) can then be partitioned into either the set of
+functions from \(D\) to \(R\) or in the complement of this set.</p>
+
+<p>In the following examples, the Domain set is the set of all integers \(D = Z = \{ \ldots, -2, -1, 0, 1, 2, \ldots \}\) and the range set be the subset of \(Z,\) \(R = \{ -1, 1\}.\)
+There are an infinte number of rules that could be defined from \(D\) to \(R,\) and the collection of all rules will make up the countably infinite Universal set \(U.\) The subset of \(U\) containing the rules from \(D\) to \(R\) that are well-defined will be denoted \(W.\)  This set, like \(U,\) is also infinite.</p>
+
+<p><strong>Example 1</strong>
+For the rule \(r_1\) define \(r_{1}(x)\) with the statement “if \(x\) is in \(Z\) then \(r_{1} (x) = 1\) for \(x &gt; 0\) and \(r_{1}(x) = -1\) for \(x \leq 0.\)  For each integer \(x\) there is a unique image \(r_1(x)\) in \(R.\) Thus \(r_{1}\) is in \(W\).</p>
+
+<p><strong>Example 2</strong>
+A rule in the complement of \(W,\) that is in the set of rules that are not well-defined, is the rule \(r_{2}\) where
+\(r_{2}(x) = \begin{cases} 
+      -1 &amp; x \geq  0 \\
+      1 &amp; x \leq 0 \\
+   \end{cases}\)</p>
+
+<p><strong>Example 3</strong>
+Consider the rule \(r_{3}\) from \(D= Z\) to \(R = \{ -1, 1\}\) where \(r_{3}(x) = 1\) for all \(x\) in \(D.\)  This is a well-defined function.  To prove this, assume \(r_3\) is not well-defined, and we arrive at a contradiction.  By our assumption that \(r_3\) is not well-defined, we can choose two elements \(y_1\) and \(y_2\) in \(R\) 
+with \(y_1 \neq y_2\) with \(r_{3}(x) = y_1\) and \(r_{3}(x) = y_2.\)  The rule is defined so that \(r_{3}(x) = 1\) for all \(x\) so \(r_{3}(x) = 1 = y_1 = y_2.\) This is in contradiction to our assumption.  We started with an assumption of truth of a statement that lead to a statement that cannot be true for the assumption.  If follows that the 
+assumption is false.  There does not exist a pair of distinct elements in our range that are both the image of the same \(x\) in the Domain set.  We have given a “proof by contradiction” that \(r_{3}\) is well-defined.</p>
+
+<p>The Image set for a rule is the collection of all elements that are images of some element in the Domain set under the mapping.  For the rules in Examples 1 -3 we have that the Image sets of \(r_1\) and of \(r_{2}\) is all of \(R = \{-1, 1\}.\)  Since the Image set is equal to the Range set, these two rules maps are said to map onto the Range set and are called <strong>surjections.</strong>  For rule \(r_{3}\) the Image set is a proper subset of \(R,\) \(\{1\}.\)  The rule \(r_{3}\) is in the subset of \(U\) of all well-defined functions from \(D = Z\) to \(R,\) but not in 
+the set of surjections from \(D\) to \(R.\)  It is also said that \(r_{1}\) and \(r_{2}\) map onto \(R\) and \(r_{3}\) does not map onto \(R.\)</p>
+
+<p>The subset \(W\) of \(U\) is a proper subset since not every element in \(U\) is also in \(W.\) In set notation, it is written \(W \subset U.\)  The complement of \(W\) is the collection of all rules from \(D\) to \(R\) that are not well-defined functions, and if we union \(W\) with the complement of \(W,\) written \(W^{c},\) we have all the rules from \(D\) to \(R.\)</p>
+
+\[U = \{r \vert r \text{ is a rule with Domain} D \text{ and Range set } R\}\]
+
+\[U = W \cup W^{c}\]
+
+<p>In the same way, let \(O\) be the set of all injections from \(D\) that map onto \(R.\) then</p>
+
+\[U = O \cup O^{c}.\]
+
+<p>Both the collections of sets \(\{ W, W^{c}\}\) and \(\{O , O^{c}\}\) partition the superset \(U\) of rules from \(D\) to \(R.\)  There is some overlap between the individual sets though.  The set of well-defined functions is not disjoint from the set of surjections nor disjoint from the set of rules that do not map onto \(R.\)  The rule \(r_{3}\)
+is in the intersection of the sets \(W\) and \(O^{c}.\) Using notation for “element of” and “intersection,” the translation of this statement is \(r_{3} \in W \cap O^{c}.\)  The collection \(\{ W, O^{c}\}\) is not a partition of \(U.\)  The rule \(r_{1}\) is in both \(W\) and \(O,\) so the intersection of \(W\) and \(O\) is not the emptyset, \(\emptyset.\) Thus, \(\{W, O\}\) is not a partition of \(U\) for the same reason that \(\{W, O^{c}\}\) is not a partion of \(U.\)</p>
+
+<p>If to each element \(x\) in \(D\) their is a unique image in the Range set \(R,\) the rule is considered well-defined.  This does not restrict the case where an element in the Range set has more than one “pre-image” in the Domain set.  Consider the rule in Example 1, \(r_{1},\) where the set of pre-images of the element \(1\) in the Range set is the set of all counting numbers \(\{ 1, 2, 3, \ldots\}.\)  A rule is an <strong>injection</strong> if the size of the pre-image set for every element in the Range is at most 1.  That is, for every element \(y\) in the Range set, there is either no element in the Domain set that 
+maps onto \(y\) with the rule or there is a unique element in the Domain set, call it \(r^{-1}(x).\)  A function that satisfies this condition is classified as an injection.  Let the set of all injections from \(D\) to \(R\) be represented by \(J.\)  These rule are also said to be 1 - 1 since for every element of the domain has exactly one image in the Image set, and every element in the Image set of the rule has exactly one pre-image in the Domain set.</p>
+
+<p>The size of the Domain set and the Range set have an impact on whether or not a rule can be a surjection or an injection.  In the case of \(r_1\), \(r_2\) and \(r_3\) the Domain set has size or cardinality \(\infty\) which means that the size of the set can be thought of as growing without bound.  The cardinality of the Range set for all three of these rules is \(\vert \{ -1, 1\}\vert = 2.\) There are many maps that can be defined that are surjections since it is only required that each element in the infinite Domain set be taken to either 1 or -1, not both.  However, it is not possible
+to define an injection from a Domain set that is infinite in size to a Range set that has finite size.  The set \(J\) of all injections from \(D = Z\) to \(R = \{ -1, 1\}\) is the Empty set and the complement of \(J\) is the Universal set \(U\) of all rules from \(D\) to \(R.\)</p>
+
+<p><strong>Example 4</strong>
+For this rule, we take our Domain set to be \(D = Z =  \{ \ldots, -2, -1, 0, 1, 2, \ldots \}\) and the Range set \(R = N =  \{ 0, 1, 2, \ldots \}\).  Define \(r_{4}\) with the statement \(r_4(x) = -2x-1\) if \(x &lt; 0\) and \(r_4(x) = 2x\) if \(x \geq 0.\) This rule is both surjective and injective.</p>
+
+<p>When a rule is both an surjection and an injection as in the case of \(r_4\) above, the rule is said to be a <strong>bijection</strong>.  Let’s restate the definitions more formally for the types of functions introduced so far.</p>
+
+<p>A rule \(r\) with Domain set \(D\) and Range set \(R\)</p>
+
+<ul>
+  <li>which maps every element \(x\) in \(D\) to a unique element in \(R\) is a well-defined function.</li>
+  <li>for which every element \(y\) in the Range set of \(r\) has a pre-image in \(D\) is a surjection (onto mapping).</li>
+  <li>for which every element \(y\) in the Image set of \(r\) has a unique pre-image in \(D\) is an injection (1-1 mapping).</li>
+  <li>is a bijection if it is both a surjective and injective map.</li>
+</ul>
+
+<p><br />
+<a href="../../../">Back to course home</a></p>
+
+
+  </div>
+</div>
+<meta id="js-data" data-title="Classification of Functions" data-base="/seng5005/assets/json/corrispondingQuestionTopic.json">
+
+    </article>
+    <footer>
+<hr class="slender">
+<div class="credits">
+This work is supported by the <a href="https://www.nsf.gov/" target="_blank">NSF</a> IUSE/PFE:RED award No. <a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=1730568" target="_blank">1730568</a>. Site created with <a href="//jekyllrb.com" target="_blank">Jekyll</a> using the <a href="//github.com/clayh53/tufte-jekyll" target="_blank">Tufte theme</a>. &copy; 2020 by ECU.
+</div>
+</footer>
+
+
+
+  </body>
+</html>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+  
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Countable and Uncountable Sets</title>
+  <meta name="description" content="Content relevant for computer science and mathematics majors.">
+
+  <!-- Google Fonts loaded here depending on setting in _data/options.yml true loads font, blank does not--><link href='//fonts.googleapis.com/css?family=Lato:400,400italic' rel='stylesheet' type='text/css'><!-- Load up MathJax script if needed ... specify in /_data/options.yml file--><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS_CHTML"></script><!-- <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-75587219-1', 'auto');
+  ga('send', 'pageview');
+  </script> -->
+
+  <link rel="canonical" href="http://localhost:4000/seng5005/course-content/set-theory/properties/countable-uncountable/">
+  <link rel="alternate" type="application/rss+xml" title="Discrete structures" href="http://localhost:4000/seng5005/feed.xml" />
+
+  <!-- bootstrap cdn -->
+  
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+  <!-- jquery for accordion -->
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    $( "#accordion" ).accordion();
+  } );
+  </script>
+
+  <link rel="stylesheet" href="../../../../css/tufte.css" />
+  <link rel="stylesheet" href="../../../../css/style.css" />
+
+  <!-- custom javascript-->
+  <script src="../../../../assets/js/question.js"></script>
+
+</head>
+
+  <body>
+    <!--- Header and nav template site-wide -->
+
+
+<header>
+    <nav class="group">
+    <a href="../../../../">Home</a>
+    <a href="http://ispel.cs.ecu.edu/" target="_blank">ISPeL</a>
+    <a href="../../../../syllabus/" target="_blank">Fall 2020</a>
+    <a href="https://github.com/vngudivada/ISPeL-content-discrete-structures.git" target="_blank">GitHub</a>
+    </nav>
+</header>
+
+
+
+    <article class="group">
+      <!-- <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: {
+      Macros: {
+        e: "\\epsilon",
+        xti: "x^{(i)}",
+        yti: "y^{(i)}",
+        bfy: "{\\bf y}",
+        bfx: "{\\bf x}",
+        bfg: "{\\bf g}",
+        bfbeta: "{\\bf \\beta}",
+        tp: "\\tilde p",
+        pt: "p_\\theta",
+        E: "{\\mathbb{E}}",
+        Ind: "{\\mathbb{I}}",
+        KL: "{\\mathbb{KL}}",
+        Re: "{\\mathbb{R}}",
+        Dc: "{\\mathcal{D}}",
+        Tc: "{\\mathcal{T}}",
+        Xc: "{\\mathcal{X}}",
+        note: ["\\textcolor{blue}{[NOTE: #1]}",1]
+      }
+    }
+  });
+</script> -->
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h1>Countable and uncountable sets</h1>
+      <p class="subtitle"></p>
+    </div>
+    <div class="col">
+      <button type="button" class="btn-questions" onclick="connectToQuiz()">Pratice Question</button>
+      <button type="button" class="btn-questions" onclick="getQuestions()">Post-Test</button>
+      <button type="button" class="btn-questions" onclick="getQuestions()">Pre-Test</button>
+    </div>
+  </div>
+  <div class="row">
+    
+<p>The size of a set \(S\) is referred to as the set’s cardinality, denoted by \(\vert S\vert\). If there are a finite number of elements in the set, the size of the set is the same as the number of elements in the set.</p>
+
+<p><strong>Example 1:</strong> 
+Machine Language is the language that computers can “read,” and programming languages at some point become sequences of 0s and 1s which are the only two symbols in the Machine Language alphabet.  The set \(B = \{0, 1\}\) has cardinality, \(\vert B \vert = 2.\)</p>
+
+<p>It seems straightfoward that the set in Example 1, \(B,\) has cardinality 2 because there are just 2 elements to list out using set notation.  Things get more complicated when the set is defined using set builder notation or rules for inclusion.  A more fomal definition of the cardinality of a set \(S\) used is the following.  For a set \(S,\) the set is finite with <strong>cardinality</strong> \(\vert S \vert = n\) if there is a mapping \(f\) from \(S\) to the subset of the positive integers \(Z^{+}_n = \{1, 2, 3, \ldots n}\) that is well-defined, assigns to every element \(x\) in $S\(exactly one element\)f(x)\(in\)Z^{+}_n,\(and one-to-one, to every element\)m\(in\)Z^{+}_n\(there is exactly one element\)f^{-1}( m).\(The set\)S\(is then a finite set and is countable.  The set\)S\(is finitely countable with cardinality\)\vert S \vert \infty\(if there exists a well-defined one-to-one mapping from\)S\(to\)Z^+.$$</p>
+
+<p>For the set \(B = \{0, 1\}\) in Example 1, a proof that \(\vert B \vert = 2 requires the introduction of a mapping from\)B\(to\)Z^+_2\(that is well-defined and onto.   There are many possible mappings, but consider the mapping\)f\(from\)B\(to\)Z^+_2 = {1, 2}\(defined so that\)f(0) = 1\(and\)f(1) = 2.\(to complete the argument that\)\vert B \vert = 2,$$ one needs to prove that this mapping is well-defined and one-to-one.</p>
+
+<p>Let’s consider a larger set, one that is countably fintite in size.</p>
+
+<p><strong>Example 2:</strong>
+Let the set \(Y\) be the set of numbers \(y\) where \(y = 2*x +1\) where \(x\) is in the set of all positive integers less than or equal to one googolplex = \(10^{(10^{100})}.\)  To make the reference easier we will write googolplex as 1 ggp.  The intent is to prove that \(\vert Y \vert = 1 ggp.\) Consider the mapping \(f\) from \(Y\) to \(Z^+_{ggp}\) defined by  \(f(y) = \frac{y - 1}{2}.\)  One way to prove that \(f\) is well-defined is to assume that \(f\) is not well-defined and show that this assumption leads to a contradiction. The proof begins by assuming that there exists two distinct images of an element \(y\) in \(Y\) that are not equal: \(f(y) = x_1 \neq x_2 = f(y).\) Following the implications of the truth of the assumption implies\(y \neq y.\)  This is a false statement, and it follows that the assumption must have been false.  Thus, \(f\) is well-defined.  Secondly, one must show that \(f\) is one-to-one.  Begin by assuming that there are two distinct elements \(y_1\) and \(y_2\) in \(Y\) with \(f(y_1) = f(y_2).\)  This leads to a contradiction and proves that \(f\) is one-to-one.  \(Even though the size of the set\)Y\(is huge,\)Y$$ has a finite number of elements in it.</p>
+
+<p>The well-defined, one-to-one mapping in the definiton of the cardinality is a mathematical network connecting the two sets so that every source has one and only one destination and vice versa.  This can only happen if the source and destination sets are the same size. In Example 2, we know the size of the set \(Z_ggp^+\\) is 1 ggp, so the proof outlined gives us that \(\ver Y \vert = ggp.\)</p>
+
+<p>The collection of all finite sets and Countably infinite sets define the set of Countable sets.</p>
+
+<p><strong>Example 3:</strong>
+The following common sets are countable. To prove that one of these sets is countable requires a proof that constructs the one-to-one, onto mapping from either a finite subset of \(N\) or from \(N\) to the set. When reading set notation, the symbol \(x \in S\) is used to signal that \(x\) is an element of \(S,\) and a vertical bar \(\vert\) is read “such that” or “so that.”</p>
+
+<p>  The Empty set, \(\emptyset\)</p>
+
+<p>  The set of integers modulo positive integer \(n\), \(Z_{n} = \{0, 1, 2, \ldots, n\}\)</p>
+
+<p>  The set of all integers, \(Z = \{\ldots ,-3, -2, -1, 0, 1, 2, 3, \ldots \}\)</p>
+
+<p>  The set of all positive integers, \(Z^+ = \{1, 2, 3, \ldots \}\)</p>
+
+<p>  The set of all negative integers, \(Z^- = \{-1, -2, -3, \ldots\}\)</p>
+
+<p>  The set of natural numbers, \(N = \{0, 1, 2, 3, \ldots\}\)</p>
+
+<p>  The set of rational numbers, \(Q = \{ \frac{x}{y} \vert x \in  Z \text{ and } y \in Z - \{ 0\}\}\)</p>
+
+<p>  The set of all even integers, \(E = \{x \vert \text { there exists a } y \in Z \text{ and } x = 2y\}.\)</p>
+
+<p>  The set of Gaussian integers, \(Z[i] = \{x + yi \text{ so that } x, y \in Z\},\) here \(i = \sqrt{-1}\)</p>
+
+<p>For a set \(S\) not among the Countable sets, there does not exist a one-to-one mapping from the infinite set \(N\) onto all of \(S.\)  In other words, if we started counting the elements of \(S,\) we would run out of counting numbers before running out of elements in \(S\) to count. The set of all sets that are not in the Countable set are called Infinte sets.   We can also say that the complement of the Countable set is the Infinite set.   The cardinality of an infinite set is defined to be \(\infty\).</p>
+
+<p><strong>Example 3:</strong>
+The following common sets are infinte, not countable.</p>
+
+<p>  The set of all reals, \(R\).</p>
+
+<p>  The set of all irrational numbers, \(I\).</p>
+
+<p>  The set of all complex numbers, \(C = \{x + yi \vert x,y \in R\}\) or using a one-to-one onto mapping that preserves the behavior of \(C\) we can also represent \(C\) as the set \(\{(x,y) \vert  x,y  \in R\}.\)</p>
+
+<p>Since a direct proof that one of the sets \(S\) given in Example 3 is infinite would require a sequence of true statemens showing that of all possible one-to-one mappings from \(N\) to \(S\) none of them are onto \(S,\) a proof that begins by assuming that there is a such a mapping and ends with the consequential truth assumption of a statement that is known to be false can be more successful.  This method of proof is referred to as “proof by contradiction.”</p>
+
+<p><br />
+<a href="../../../../">Back to course home</a></p>
+
+  </div>
+</div>
+<meta id="js-data" data-title="Countable and Uncountable Sets" data-base="/seng5005/assets/json/corrispondingQuestionTopic.json">
+
+    </article>
+    <footer>
+<hr class="slender">
+<div class="credits">
+This work is supported by the <a href="https://www.nsf.gov/" target="_blank">NSF</a> IUSE/PFE:RED award No. <a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=1730568" target="_blank">1730568</a>. Site created with <a href="//jekyllrb.com" target="_blank">Jekyll</a> using the <a href="//github.com/clayh53/tufte-jekyll" target="_blank">Tufte theme</a>. &copy; 2020 by ECU.
+</div>
+</footer>
+
+
+
+  </body>
+</html>

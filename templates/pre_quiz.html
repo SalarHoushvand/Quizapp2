@@ -32,14 +32,33 @@
 <div class="container">
     <div class="row">
         <div class="col">
-            <!-- // pre-quiz form -->
+
+            <h3>Learning Content</h3>
             <form action="/pre_quiz" method="POST" enctype="multipart/form-data" class="pre-quiz-form">
+                <!-- // topic selector -->
+                <label for="topic">Select Content Topic :</label><br>
+                <select id="contentTopic" name="contentTopic" class="form-control pre-quiz-input">
+
+                    {% for i in content_topics %}
+                    <option name="{{ i }}" value="{{ i }}">{{ i }}</option>
+                    {% endfor %}
+
+                </select>
+
+                <!-- // submit button -->
+                <button type="submit" class="register-btn" value="content" name="btn">Start Learning</button>
+
+                <br>
+                <br>
+                <br>
+                <h3>Quiz</h3>
+
+                <!-- // pre-quiz form -->
+
                 <!-- // topic selector -->
                 <label for="topic">Select a topic for quiz :</label><br>
                 <select id="topic" name="topic" class="form-control pre-quiz-input">
-                    {% for i in topics %}
-                    <option name="{{ i }}" value="{{ i }}">{{ i }}</option>
-                    {% endfor %}
+
                 </select>
 
                 <br>
@@ -47,7 +66,7 @@
                 <label for="questionNumber">Number of Questions:</label><br>
                 <input type="text" id="questionNumber" name="questionNumber" class="form-control pre-quiz-input"><br>
                 <!-- // submit button -->
-                <button type="submit" class="register-btn">Start Quiz</button>
+                <button type="submit" class="register-btn" value="quiz" name="btn">Start Quiz</button>
             </form>
 
             <br>

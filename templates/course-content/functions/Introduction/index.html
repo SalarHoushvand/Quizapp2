@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+  
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Preliminaries of Functions</title>
+  <meta name="description" content="Content relevant for computer science and mathematics majors.">
+
+  <!-- Google Fonts loaded here depending on setting in _data/options.yml true loads font, blank does not--><link href='//fonts.googleapis.com/css?family=Lato:400,400italic' rel='stylesheet' type='text/css'><!-- Load up MathJax script if needed ... specify in /_data/options.yml file--><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS_CHTML"></script><!-- <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-75587219-1', 'auto');
+  ga('send', 'pageview');
+  </script> -->
+
+  <link rel="canonical" href="http://localhost:4000/seng5005/course-content/functions/Introduction/">
+  <link rel="alternate" type="application/rss+xml" title="Discrete structures" href="http://localhost:4000/seng5005/feed.xml" />
+
+  <!-- bootstrap cdn -->
+  
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+  <!-- jquery for accordion -->
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    $( "#accordion" ).accordion();
+  } );
+  </script>
+
+  <link rel="stylesheet" href="../../../css/tufte.css" />
+  <link rel="stylesheet" href="../../../css/style.css" />
+
+  <!-- custom javascript-->
+  <script src="../../../assets/js/question.js"></script>
+
+</head>
+
+  <body>
+    <!--- Header and nav template site-wide -->
+
+
+<header>
+    <nav class="group">
+    <a href="../../../">Home</a>
+    <a href="http://ispel.cs.ecu.edu/" target="_blank">ISPeL</a>
+    <a href="../../../syllabus/" target="_blank">Fall 2020</a>
+    <a href="https://github.com/vngudivada/ISPeL-content-discrete-structures.git" target="_blank">GitHub</a>
+    </nav>
+</header>
+
+
+
+    <article class="group">
+      <!-- <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: {
+      Macros: {
+        e: "\\epsilon",
+        xti: "x^{(i)}",
+        yti: "y^{(i)}",
+        bfy: "{\\bf y}",
+        bfx: "{\\bf x}",
+        bfg: "{\\bf g}",
+        bfbeta: "{\\bf \\beta}",
+        tp: "\\tilde p",
+        pt: "p_\\theta",
+        E: "{\\mathbb{E}}",
+        Ind: "{\\mathbb{I}}",
+        KL: "{\\mathbb{KL}}",
+        Re: "{\\mathbb{R}}",
+        Dc: "{\\mathcal{D}}",
+        Tc: "{\\mathcal{T}}",
+        Xc: "{\\mathcal{X}}",
+        note: ["\\textcolor{blue}{[NOTE: #1]}",1]
+      }
+    }
+  });
+</script> -->
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h1>Preliminaries of functions</h1>
+      <p class="subtitle"></p>
+    </div>
+    <div class="col">
+      <button type="button" class="btn-questions" onclick="connectToQuiz()">Pratice Question</button>
+      <button type="button" class="btn-questions" onclick="getQuestions()">Post-Test</button>
+      <button type="button" class="btn-questions" onclick="getQuestions()">Pre-Test</button>
+    </div>
+  </div>
+  <div class="row">
+    
+<p><span class="newthought">Functions</span> are rules used to map one set of objects to another set of objects.  These rules help to describe events that occur like the trends in the stock market, the spread of viruses, the expected run time of computer programs and much more.  Functions allow us to model observed behavior, identify pattens and produce information that can be used to solve problems and support solutions.</p>
+
+<p>A function has three components: two collections of items and a clear rule for moving between the collections.  What makes the rule “clear,” will be the concept of a <em>well-defined function</em>.  An illustration of a function would be a collection of paint in gallon containers, a house with rooms to be painted, and a set of instructions, our rule, for the painter that tells the painter which color paint to use with each of the rooms.  To help us to represent the paint and rooms, lets use curly brackets.</p>
+
+<p>Starting with the paint, we are considering all the paint available to the painter to consist of these three colors:</p>
+
+\[\text{Paint} = \{ \text{ Sky Blue}, \text{ Almost Sunset}, \text{Builder Beige} \}\]
+
+<p>In the context of mathematics and computer science, the set of possible paints is referred to as the <em>domain set</em> for the function. It is the collection of
+items that we start with, so the set can also be called the <em>source set</em>.</p>
+
+<p>The home is the collection of all possible rooms that could be painted. Again using our set notation that wraps a list of rooms separated by commas in curly brackets:</p>
+
+\[\text{Home} = \{ \text{Bedroom}, \text{Kitchen}, \text{Bathroom}, \text{Livingroom}\}\]
+
+<p>The rooms in the home will be the destination for a can of paint, so the home is known as the destination set or, more commonly, the range set. Not all the rooms will necessarily be painted, so the smaller set of rooms that will be assigned a color by the rule is called the image set.</p>
+
+<p>There are many rules that we could define to instruct the painter. Consider the following chart:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Domain = Paint</th>
+      <th style="text-align: left"> </th>
+      <th>Range = Home</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">Sky Blue</td>
+      <td style="text-align: left"> </td>
+      <td>Bedroom</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Almost Sunset</td>
+      <td style="text-align: left"> </td>
+      <td>Bathroom</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Builder Beige</td>
+      <td style="text-align: left"> </td>
+      <td>Livingroom</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Note,  not every room in the home will be painted with this rule.  This fact does not make the definition of a well-defined function false.  The requirement is that every element in the domain set is mapped to a unique element of the range set.  The collection of rooms that will be painted is referred to as the image set, and the image set of a rule is always a subset of the range set.</p>
+
+<p>The table above indicates that the Sky Blue paint is for the Bedroom. Only the Bathroom will be painted the color Almost Sunset, and only the Livingroom will be Builder Beige. Since every paint color is used and every paint color will be used in only one room, the rule described is considered well-defined.</p>
+
+<p>Each row of the table represents a 2-tuple, an ordered pair,
+consisting of one element \(x\) from the domain Set and one element \(y\) from the range Set. We can inspect each row individually as the 2-tuple \((x, y).\) The first row of the table is \((\text{Sky Blue}, \text{Bedroom}),\) the second
+row is \((\text{Almost Sunset}, \text{Bathroom}),\) and the third row is \((\text{Builder Beige}, \text{Livingroom}).\)</p>
+
+<p>A Venn diagram allows us to visualize this rule.  Note that every paint color in the domain set of our illustration is mapped to only one room in the range set.  This is the key feature of a well-defined function, every element in 
+the domain set has exactly one image in the range set.  The Image set for the rule is shaded yellow, and is completely contained inside the Range set of the rule.</p>
+
+<p><label for="well" class="margin-toggle">⊕</label>
+<input type="checkbox" id="well" class="margin-toggle" />
+<span class="marginnote"><img class="fullwidth" src="../../../course-content/graphics/functions/well-defined.svg" alt="A rule is well-defined when every element in the source is mapped to exactly one element in the destination set. " /><br />
+    A rule is well-defined when every element in the source is mapped to exactly one element in the destination set. 
+</span></p>
+
+<!---  <img src="../../../../assets/img/well-defined.svg" alt="Drawing" style="width: 333px;" align="center;"> --->
+
+<p>An example of a rule that is not well-defined would be the collection of 2-tuples represented with the following Venn diagram.</p>
+
+<p><label for="notwell" class="margin-toggle">⊕</label>
+<input type="checkbox" id="notwell" class="margin-toggle" />
+<span class="marginnote"><img class="fullwidth" src="../../../course-content/graphics/functions/not-well-defined.svg" alt="For this rule, there is an element in the source that is mapped to two different elements in the destination set.  So, this rule is not well-defined. " /><br />
+    For this rule, there is an element in the source that is mapped to two different elements in the destination set.  So, this rule is not well-defined. 
+</span>
+<!---  <img src="../../../../assets/img/not-well-defined.svg" alt="Drawing" style="width: 333px;" align="center;">  ---></p>
+
+<p>\(\{ (\text{Sky Blue}, \text{Bedroom}), (\text{Builder Beige}, \text{Kitchen}),\)
+\((\text{Builder Beige}, \text{Livingroom}), (\text{Almost Sunset}, \text{Bathroom})\}\).</p>
+
+<p><br />
+<a href="../../../">Back to course home</a></p>
+
+
+  </div>
+</div>
+<meta id="js-data" data-title="Preliminaries of Functions" data-base="/seng5005/assets/json/corrispondingQuestionTopic.json">
+
+    </article>
+    <footer>
+<hr class="slender">
+<div class="credits">
+This work is supported by the <a href="https://www.nsf.gov/" target="_blank">NSF</a> IUSE/PFE:RED award No. <a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=1730568" target="_blank">1730568</a>. Site created with <a href="//jekyllrb.com" target="_blank">Jekyll</a> using the <a href="//github.com/clayh53/tufte-jekyll" target="_blank">Tufte theme</a>. &copy; 2020 by ECU.
+</div>
+</footer>
+
+
+
+  </body>
+</html>
