@@ -58,7 +58,9 @@
                 <!-- // topic selector -->
                 <label for="topic">Select a topic for quiz :</label><br>
                 <select id="topic" name="topic" class="form-control pre-quiz-input">
-
+                    {% for i in topics %}
+                    <option name="{{ i }}" value="{{ i }}">{{ i }}</option>
+                    {% endfor %}
                 </select>
 
                 <br>
