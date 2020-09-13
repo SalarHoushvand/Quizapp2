@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4146e228-63bf-4e78-bcf4-4c7cf6edb3a3" name="Default Changelist" comment="" />
+    <list default="true" id="4146e228-63bf-4e78-bcf4-4c7cf6edb3a3" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/templates/course-content/set-theory/properties/cardinality/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/course-content/set-theory/properties/cardinality/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/course-content/set-theory/properties/complement/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/course-content/set-theory/properties/complement/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/course-content/set-theory/properties/countable-uncountable/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/course-content/set-theory/properties/countable-uncountable/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/course-content/set-theory/properties/set-equality/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/course-content/set-theory/properties/set-equality/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/course-content/set-theory/subsets/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/course-content/set-theory/subsets/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/course-content/set-theory/universal-set/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/course-content/set-theory/universal-set/index.html" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,8 +20,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3520">
-              <caret line="176" column="11" lean-forward="true" selection-start-line="176" selection-start-column="11" selection-end-line="176" selection-end-column="11" />
+            <state relative-caret-position="272">
+              <caret line="107" lean-forward="true" selection-start-line="107" selection-end-line="107" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
@@ -49,7 +56,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="842" />
     <option name="y" value="10" />
     <option name="width" value="1085" />
@@ -144,7 +151,7 @@
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.08647141" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.087866105" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -160,8 +167,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3520">
-          <caret line="176" column="11" lean-forward="true" selection-start-line="176" selection-start-column="11" selection-end-line="176" selection-end-column="11" />
+        <state relative-caret-position="272">
+          <caret line="107" lean-forward="true" selection-start-line="107" selection-end-line="107" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
           </folding>

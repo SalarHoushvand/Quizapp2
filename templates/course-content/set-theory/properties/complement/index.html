@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
-  
-  <head>
+
+<head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,7 +9,12 @@
   <title>Complement of a Set</title>
   <meta name="description" content="Content relevant for computer science and mathematics majors.">
 
-  <!-- Google Fonts loaded here depending on setting in _data/options.yml true loads font, blank does not--><link href='//fonts.googleapis.com/css?family=Lato:400,400italic' rel='stylesheet' type='text/css'><!-- Load up MathJax script if needed ... specify in /_data/options.yml file--><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS_CHTML"></script><!-- <script>
+  <!-- Google Fonts loaded here depending on setting in _data/options.yml true loads font, blank does not-->
+  <link href='//fonts.googleapis.com/css?family=Lato:400,400italic' rel='stylesheet' type='text/css'>
+  <!-- Load up MathJax script if needed ... specify in /_data/options.yml file-->
+  <script type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS_CHTML"></script>
+  <!-- <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -20,53 +25,74 @@
   </script> -->
 
   <link rel="canonical" href="http://localhost:4000/seng5005/course-content/set-theory/properties/complement/">
-  <link rel="alternate" type="application/rss+xml" title="Discrete structures" href="http://localhost:4000/seng5005/feed.xml" />
+  <link rel="alternate" type="application/rss+xml" title="Discrete structures"
+    href="http://localhost:4000/seng5005/feed.xml" />
 
   <!-- bootstrap cdn -->
-  
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-  
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-  
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+    integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    crossorigin="anonymous"></script>
 
   <!-- jquery for accordion -->
   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <script>
-  $( function() {
-    $( "#accordion" ).accordion();
-  } );
+    $(function () {
+      $("#accordion").accordion();
+    });
   </script>
-
-  <link rel="stylesheet" href="../../../../css/tufte.css" />
-  <link rel="stylesheet" href="../../../../css/style.css" />
+  <link rel="stylesheet" href="../../../../static/stylesheets/tufte.css" />
+  <link rel="stylesheet" href="../../../../static/stylesheets/style.css" />
 
   <!-- custom javascript-->
   <script src="../../../../assets/js/question.js"></script>
 
 </head>
 
-  <body>
-    <!--- Header and nav template site-wide -->
-
-
-<header>
-    <nav class="group">
-    <a href="../../../../">Home</a>
-    <a href="http://ispel.cs.ecu.edu/" target="_blank">ISPeL</a>
-    <a href="../../../../syllabus/" target="_blank">Fall 2020</a>
-    <a href="https://github.com/vngudivada/ISPeL-content-discrete-structures.git" target="_blank">GitHub</a>
-    </nav>
-</header>
+<body>
+  <!--- Header and nav template site-wide -->
 
 
 
-    <article class="group">
-      <!-- <script type="text/x-mathjax-config">
+  <nav class="navbar navbar-expand-md navbar-dark sticky-top">
+    <div class="container-fluid">
+      <!-- // welcome message -->
+
+
+      <!-- // collapse toggle button -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- // navbar items -->
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active"><a class="nav-link active" href="{{ url_for('pre_quiz')}}">Dashboard</a>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="{{ url_for('logout')}}">Log out</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+
+
+  <article class="group">
+    <!-- <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
     TeX: {
       Macros: {
@@ -92,101 +118,138 @@
   });
 </script> -->
 
-<div class="container">
-  <div class="row">
-    <div class="col">
-      <h1>Complement of a set</h1>
-      <p class="subtitle"></p>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <h1>Complement of a set</h1>
+          <p class="subtitle"></p>
+        </div>
+
+      </div>
+      <div class="row">
+
+        <p>For a set \(S,\) we define the complement of \(S\) to be the collection of all the elements not in \(S.\) If
+          there is a Universal set \(U,\) then the complement of set \(S\) is the set containing all elements in \(U\)
+          that are not \(S\).</p>
+
+        <p>Using set notation, the complement of a set \(S\) is the set \(\{ x \vert x \in U \text{ and } x \notin S
+          \}\).</p>
+
+        <p>There is no concensus for the notation of the complement of \(S.\) Here are just a few of the ways the
+          complement of a set can be referenced:</p>
+
+        \[S^{c}, S^{\prime}, \bar{S}, S^{~}\]
+
+        <p>and if \(U\) is the Universal set, then the complement of \(S\) is also written as \(U - S\).</p>
+
+        <p><strong>Example 1:</strong>
+          For the set \(Z^+\) of all positive integers, the complement of \(Z^+\) is the set of all negative integers
+          \(Z^-\) unioned with the set containing \(0.\) That is \({Z^{+}}^{c} = Z^- \cup \{0\} = \{\ldots ,-3, -2, -1,
+          0\}\)</p>
+
+        <p><strong>Example 2:</strong>
+          Take the universal set to be the set of all integers, \(Z.\)
+          The set of all even integers \(E\) is contained in \(Z\) thus \(E\) is a subset of \(Z\). The complement of
+          \(E,\) \(\bar{E} = U - E,\) is the set of all odd integers.</p>
+
+        <p><strong>Example 3:</strong>
+          Let \(M = 3Z\) be the set of integers that are multiples of 3.
+          Since there is a pattern defined among the elements of the collection \(M,\) we can list out the elements with
+          our set notation:</p>
+
+        \[M = \{ \ldots ,-9,-6,-3,0,3,6,9,\ldots \}\]
+
+        <p>A rule for defining the compliment of M would be “the set of all integers \(x\) so that when \(x\) is divided
+          by \(3,\) the remainder is either \(1 or 2,\)”
+          or using set notation (read \(\vert\) as “such that” and \(\in\) as “is an element of”):</p>
+
+        <p>\(\bar{M} = \{ x \in Z \text{ such that } x = 3q + r \text{ where } q \in\)Z\(\text{ and } r \in \{ 1,
+          2\}\}\)</p>
+
+        <p>Finding the complement of a set \(S\) is a unary operator on the set of all possible sets. In other words
+          complement operator is a mapping from all possible sets to all possible sets. The mapping takes as input a set
+          \(S\) as the source, and projects this source to the set’s complement.</p>
+
+        <p><strong>Example 4:</strong>
+          To simplify, we take the Universal set \(U\) to be the subset of integers \(U = \{ 0, 1, 2\}.\) Let \(S = \{
+          0, 2\}\). Then the complement of \(S\) is the set \(\bar{S} = \{ 3\}\).</p>
+
+        <p>To further illustrate the complement as an operator, the set of all possible sets in \(U\) is the set \(\{\{
+          \}, \{ 0\}, \{ 1\},\{ 2\}, \{ 0, 1\}, \{ 0, 2\}, \{ 1,2\}, \{ 0, 1, 2\}\}\). The complement operator in this
+          case. is the mapping:</p>
+
+        \[\{ \} \rightarrow \{ 0, 1,2\}, \{ 0\} \rightarrow \{ 1,2\}, \{ 1\} \rightarrow \{ 0, 2\}, \{ 2\} \rightarrow
+        \{ 0, 1\},\]
+
+        \[\{ 0, 1\} \rightarrow \{ 2\}, \{ 0, 2 \} \rightarrow \{ 1\}, \{ 1, 2\} \rightarrow \{ 0 \}, \{ 0, 1, 2\}
+        \rightarrow \{ \}.\]
+
+        <p>By defining the complement of a set to be a mapping from the set of all sets to itself, we can apply this map
+          more than once. In mathematical terms, we can take the composition of the complement with the complement as
+          Example 4 illustrates:</p>
+
+        <p><strong>Example 5:</strong>
+          In Example 3, the complement of the set \(\{ 2\}\) is the set \(\{ 0, 1\}.\) We can now take the complement of
+          this destination set for \(\{2 \}\) so that</p>
+
+        \[\{2 \} \longrightarrow \bar{\{2\}} = \{ 0, 1\} \longrightarrow \bar{\bar{\{ 2\}}} = \{ 2\}\]
+
+        <p>Observe that the complement of the complement of the set \(\{ 2\}\) in Example 4 is the original set \(\{
+          2\}.\) In general, the complement of the complement of a set is the set: \(\bar{\bar{S}} = S\). In
+          mathematics, a function that is its own inverse is called an involution. The complement is a function, a
+          mapping, from the set of all sets to the set of all sets. For every set \(S,\) the mapping is \(S \rightarrow
+          S^{c}\). The inverse function is the mapping with the same Domain and Range sets that takes \(S^{c}\) to
+          \(S.\) It can be proven that these two functions are the same mapping.</p>
+
+        <p>For a given set \(A\) and Universal set \(U,\) the complement \(\bar{A} = A^{c}\) is the set of all elements
+          that are not in \(A\) (but are in \(U\)). The Venn diagram below illustrates the relationship between the sets
+          \(A, A^{c} \text{ and } U.\) The grey shaded area is the complement of \(A\).</p>
+
+        <p><label for="set-comp" class="margin-toggle">⊕</label>
+          <input type="checkbox" id="set-comp" class="margin-toggle" />
+          <span class="marginnote"><img class="fullwidth"
+              src="../../../../static/images/graphics/set-theory/set-complement.svg"
+              alt="The complement of the set $$A$$, $$A^{c},$$ is the set containing all elements in the Universal set that are not in $$A$$. " /><br />
+            The complement of the set \(A\), \(A^{c},\) is the set containing all elements in the Universal set that are
+            not in \(A\).
+          </span></p>
+
+        <p>Now, the complement of the shaded area, the complement of \(A,\) is the set of all elements in \(U\) not in
+          \(A^{c}\). Therefore, \(( A^{c})^{c} = A\).</p>
+
+        <p>It is natural to wonder about the two end cases for sets, the Empty set and the Universal set. What are the
+          complements of these two sets?</p>
+
+        <p>The Universal set, \(U,\) is the collection of all possible elements. Thus, there are no elements \(x\) that
+          are in \(U\) and not in \(U,\) \(x \notin U.\) Writing the complement of \(U\) using our set difference
+          notation, \(\bar{U} = U - U = \emptyset\).</p>
+
+        <p>In the case of the Empty set, \(\emptyset,\) the set does not contain any elements. The definition of the
+          complement of \(\emptyset,\) denoted \(\bar{\emptyset},\) is the collection of elements \(x\) that are not in
+          \(\emptyset.\) We then have that for all \(x,\) \(x \in \bar{\emptyset}\).</p>
+
+        <p><br />
+          <!-- <a href="../../../../">Back to course home</a></p> -->
+
+
+      </div>
     </div>
-    <div class="col">
-      <button type="button" class="btn-questions" onclick="connectToQuiz()">Pratice Question</button>
-      <button type="button" class="btn-questions" onclick="getQuestions()">Post-Test</button>
-      <button type="button" class="btn-questions" onclick="getQuestions()">Pre-Test</button>
+    <meta id="js-data" data-title="Complement of a Set"
+      data-base="/seng5005/assets/json/corrispondingQuestionTopic.json">
+
+  </article>
+  <footer>
+    <hr class="slender">
+    <div class="credits">
+      This work is supported by the <a href="https://www.nsf.gov/" target="_blank">NSF</a> IUSE/PFE:RED award No. <a
+        href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=1730568" target="_blank">1730568</a>. Site created with
+      <a href="//jekyllrb.com" target="_blank">Jekyll</a> using the <a href="//github.com/clayh53/tufte-jekyll"
+        target="_blank">Tufte theme</a>. &copy; 2020 by ECU.
     </div>
-  </div>
-  <div class="row">
-    
-<p>For a set \(S,\) we define the complement of \(S\) to be the collection of all the elements not in \(S.\)  If there is a Universal set \(U,\) then the complement of set \(S\) is the set containing all elements in \(U\) that are not \(S\).</p>
-
-<p>Using set notation, the complement of a set \(S\) is the set \(\{ x \vert x \in U \text{ and } x \notin S \}\).</p>
-
-<p>There is no concensus for the notation of the complement of \(S.\) Here are just a few of the ways the complement of a set can be referenced:</p>
-
-\[S^{c}, S^{\prime}, \bar{S}, S^{~}\]
-
-<p>and if \(U\) is the Universal set, then the complement of \(S\) is also written as \(U - S\).</p>
-
-<p><strong>Example 1:</strong>
-For the set \(Z^+\) of all positive integers, the complement of \(Z^+\) is the set of all negative integers \(Z^-\) unioned with the set containing \(0.\) That is \({Z^{+}}^{c} = Z^- \cup \{0\} = \{\ldots ,-3, -2, -1, 0\}\)</p>
-
-<p><strong>Example 2:</strong>
-Take the universal set to be the set of all integers, \(Z.\)
-The set of all even integers \(E\) is contained in \(Z\) thus \(E\) is a subset of \(Z\). The complement of \(E,\) \(\bar{E} = U - E,\) is the set of all odd integers.</p>
-
-<p><strong>Example 3:</strong> 
-Let \(M = 3Z\) be the set of integers that are multiples of 3.
-Since there is a pattern defined among the elements of the collection \(M,\) we can list out the elements with our set notation:</p>
-
-\[M = \{ \ldots ,-9,-6,-3,0,3,6,9,\ldots \}\]
-
-<p>A rule for defining the compliment of M would be “the set of all integers \(x\) so that when \(x\) is divided by \(3,\) the remainder is either \(1 or 2,\)”
-or using set notation (read \(\vert\) as “such that” and \(\in\) as “is an element of”):</p>
-
-<p>\(\bar{M} = \{ x \in Z \text{ such that } x = 3q + r \text{ where } q \in\)Z\(\text{ and } r \in \{ 1, 2\}\}\)</p>
-
-<p>Finding the  complement of a set \(S\) is a unary operator on the set of all possible sets.  In other words complement operator is a mapping from all possible sets to all possible sets.  The mapping takes as input a set \(S\) as the source, and projects this source to the set’s complement.</p>
-
-<p><strong>Example 4:</strong>
-To simplify, we take the Universal set \(U\) to be the subset of integers \(U = \{ 0, 1, 2\}.\)  Let \(S = \{ 0, 2\}\). Then the complement of \(S\) is the set \(\bar{S} = \{ 3\}\).</p>
-
-<p>To further illustrate the complement as an operator, the set of all possible sets in \(U\) is the set \(\{\{ \}, \{ 0\}, \{ 1\},\{ 2\}, \{ 0, 1\}, \{ 0, 2\}, \{ 1,2\}, \{ 0, 1, 2\}\}\).  The complement operator in this case. is the mapping:</p>
-
-\[\{ \} \rightarrow \{ 0, 1,2\}, \{ 0\} \rightarrow \{ 1,2\}, \{ 1\} \rightarrow \{ 0, 2\}, \{ 2\} \rightarrow \{ 0, 1\},\]
-
-\[\{ 0, 1\} \rightarrow \{ 2\}, \{ 0, 2 \} \rightarrow \{ 1\}, \{ 1, 2\} \rightarrow \{ 0 \}, \{ 0, 1, 2\} \rightarrow \{ \}.\]
-
-<p>By defining the complement of a set to be a mapping from the set of all sets to itself, we can apply this map more than once.  In mathematical terms, we can take the composition of the complement with the complement as Example 4 illustrates:</p>
-
-<p><strong>Example 5:</strong>
-In Example 3, the complement of the set \(\{ 2\}\) is the set \(\{ 0, 1\}.\)  We can now take the complement of this destination set for \(\{2 \}\) so that</p>
-
-\[\{2 \} \longrightarrow \bar{\{2\}} = \{ 0, 1\} \longrightarrow \bar{\bar{\{ 2\}}} = \{ 2\}\]
-
-<p>Observe that the complement of the complement of the set \(\{ 2\}\) in Example 4 is the original set \(\{ 2\}.\) In general, the complement of the complement of a set is the set: \(\bar{\bar{S}} = S\). In mathematics, a function that is its own inverse is called an involution.  The complement is a function, a mapping, from the set of all sets to the set of all sets. For every set \(S,\) the mapping is \(S \rightarrow S^{c}\).  The inverse function is the mapping with the same Domain and Range sets that takes \(S^{c}\) to \(S.\) It can be proven that these two functions are the same mapping.</p>
-
-<p>For a given set \(A\) and Universal set \(U,\) the complement \(\bar{A} = A^{c}\) is the set of all elements that are not in \(A\) (but are in \(U\)). The Venn diagram below illustrates the relationship between the sets \(A, A^{c} \text{ and } U.\) The grey shaded area is the complement of \(A\).</p>
-
-<p><label for="set-comp" class="margin-toggle">⊕</label>
-<input type="checkbox" id="set-comp" class="margin-toggle" />
-<span class="marginnote"><img class="fullwidth" src="../../../../course-content/graphics/set-theory/set-complement.svg" alt="The complement of the set $$A$$, $$A^{c},$$ is the set containing all elements in the Universal set that are not in $$A$$. " /><br />
-    The complement of the set \(A\), \(A^{c},\) is the set containing all elements in the Universal set that are not in \(A\). 
-</span></p>
-
-<p>Now, the complement of the shaded area, the complement of \(A,\) is the set of all elements in \(U\) not in \(A^{c}\).  Therefore, \(( A^{c})^{c} = A\).</p>
-
-<p>It is natural to wonder about the two end cases for sets, the Empty set and the Universal set. What are the complements of these two sets?</p>
-
-<p>The Universal set, \(U,\) is the collection of all possible elements. Thus, there are no elements \(x\) that are in \(U\) and not in \(U,\) \(x \notin U.\) Writing the complement of \(U\) using our set difference notation, \(\bar{U} = U - U = \emptyset\).</p>
-
-<p>In the case of the Empty set, \(\emptyset,\) the set does not contain any elements. The definition of the complement of \(\emptyset,\) denoted \(\bar{\emptyset},\) is the collection of elements \(x\) that are not in \(\emptyset.\) We then have that for all \(x,\) \(x \in \bar{\emptyset}\).</p>
-
-<p><br />
-<a href="../../../../">Back to course home</a></p>
-
-
-  </div>
-</div>
-<meta id="js-data" data-title="Complement of a Set" data-base="/seng5005/assets/json/corrispondingQuestionTopic.json">
-
-    </article>
-    <footer>
-<hr class="slender">
-<div class="credits">
-This work is supported by the <a href="https://www.nsf.gov/" target="_blank">NSF</a> IUSE/PFE:RED award No. <a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=1730568" target="_blank">1730568</a>. Site created with <a href="//jekyllrb.com" target="_blank">Jekyll</a> using the <a href="//github.com/clayh53/tufte-jekyll" target="_blank">Tufte theme</a>. &copy; 2020 by ECU.
-</div>
-</footer>
+  </footer>
 
 
 
-  </body>
+</body>
+
 </html>
