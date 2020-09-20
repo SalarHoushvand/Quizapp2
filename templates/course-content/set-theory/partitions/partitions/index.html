@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
-  
-  <head>
+
+<head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,7 +9,12 @@
   <title>Set partitions</title>
   <meta name="description" content="Content relevant for computer science and mathematics majors.">
 
-  <!-- Google Fonts loaded here depending on setting in _data/options.yml true loads font, blank does not--><link href='//fonts.googleapis.com/css?family=Lato:400,400italic' rel='stylesheet' type='text/css'><!-- Load up MathJax script if needed ... specify in /_data/options.yml file--><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS_CHTML"></script><!-- <script>
+  <!-- Google Fonts loaded here depending on setting in _data/options.yml true loads font, blank does not-->
+  <link href='//fonts.googleapis.com/css?family=Lato:400,400italic' rel='stylesheet' type='text/css'>
+  <!-- Load up MathJax script if needed ... specify in /_data/options.yml file-->
+  <script type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS_CHTML"></script>
+  <!-- <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -20,53 +25,72 @@
   </script> -->
 
   <link rel="canonical" href="http://localhost:4000/seng5005/course-content/set-theory/partitions/partitions/">
-  <link rel="alternate" type="application/rss+xml" title="Discrete structures" href="http://localhost:4000/seng5005/feed.xml" />
+  <link rel="alternate" type="application/rss+xml" title="Discrete structures"
+    href="http://localhost:4000/seng5005/feed.xml" />
 
   <!-- bootstrap cdn -->
-  
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-  
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-  
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+    integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    crossorigin="anonymous"></script>
 
   <!-- jquery for accordion -->
   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <script>
-  $( function() {
-    $( "#accordion" ).accordion();
-  } );
+    $(function () {
+      $("#accordion").accordion();
+    });
   </script>
 
-  <link rel="stylesheet" href="../../../../css/tufte.css" />
-  <link rel="stylesheet" href="../../../../css/style.css" />
+  <link rel="stylesheet" href="../../../../static/stylesheets/tufte.css" />
+  <link rel="stylesheet" href="../../../../static/stylesheets/style.css" />
 
   <!-- custom javascript-->
   <script src="../../../../assets/js/question.js"></script>
 
 </head>
 
-  <body>
-    <!--- Header and nav template site-wide -->
+<body>
+  <!--- Header and nav template site-wide -->
 
 
-<header>
-    <nav class="group">
-    <a href="../../../../">Home</a>
-    <a href="http://ispel.cs.ecu.edu/" target="_blank">ISPeL</a>
-    <a href="../../../../syllabus/" target="_blank">Fall 2020</a>
-    <a href="https://github.com/vngudivada/ISPeL-content-discrete-structures.git" target="_blank">GitHub</a>
-    </nav>
-</header>
+  <nav class="navbar navbar-expand-md navbar-dark sticky-top">
+    <div class="container-fluid">
+      <!-- // welcome message -->
 
 
+      <!-- // collapse toggle button -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-    <article class="group">
-      <!-- <script type="text/x-mathjax-config">
+      <!-- // navbar items -->
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active"><a class="nav-link active" href="{{ url_for('pre_quiz')}}">Dashboard</a>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="{{ url_for('logout')}}">Logout</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+  <article class="group">
+    <!-- <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
     TeX: {
       Macros: {
@@ -92,65 +116,93 @@
   });
 </script> -->
 
-<div class="container">
-  <div class="row">
-    <div class="col">
-      <h1>Set partitions</h1>
-      <p class="subtitle"></p>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <h1>Set partitions</h1>
+          <p class="subtitle"></p>
+        </div>
+
+      </div>
+      <div class="row">
+
+        <p>When finding the union of two sets \(A\) and \(B,\) it is necessary to check that the new set does not
+          contain any repeated instances. For example, \(A = \{1, 2, 3\}\) and \(B = \{2, 3, 4\}\) the resulting set
+          after union is the set</p>
+
+        \[A \cup B = \{1, 2, 3, 2, 3, 4\} - \{2, 3\} = \{1, 2, 3, 4\}\]
+
+        <p>This is because sets are unordered collections of unique elements. The set of elements that the two sets have
+          in common, \(A \cap B,\) must be identified to remove multiple instances of these elements in the union.</p>
+
+        <p>We say that two sets that do not share any elements in common are mutually exclusive, or pairwise disjoint.
+          In our above example, the sets \(A\) and \(B\) are not disjoint.</p>
+
+        <p>By definition, disjoint sets are sets that share no common elements. It is straight forward to prove the
+          following statement.</p>
+
+        <p>Statement: The intersection of disjoint sets is the Empty set, \(\emptyset.\)</p>
+
+        <p>Proof: Let \(A\) and \(B\) be two disjoint sets. Assume that the intersecion of \(A\) and \(B\) is not the
+          Emptyset. Then, there is at least one element in \(A \cap B.\) Let \(x\) be such an element. Since \(x\) is in
+          \(A \cap B,\) it follows that \(x\) is in \(A\) and \(x\) is in \(B\) by the defintion of set intersection.
+          The truth of the previous statement would imply that \(A\) and \(B\) are not disjoint sets.</p>
+
+        <p>The assumption of the truth of the statement that \(A\) and \(B\) is not the Emptyset can only result in the
+          statement that \(A\) and \(B\) are disjoint being false. Therefore, the only true sequence of statements
+          starting with \(A\) and \(B\) are disjoint sets implies the intersection of \(A\) and \(B\) is the Emptyset is
+          also true. \(\blacksquare\)</p>
+
+        <p>The Powerset of a set \(S\) is the collection of all possible subsets of \(S\). In the module for Powersets,
+          the size of the Powerset of set \(S,\) \(\mathcal{P}(S)\) is shown to grow exponentially as the size \(n\) of
+          set \(S\) increases. To quickly illustrate we take a set of size, cardinality, 2 and find it’s Powerset. Let
+          \(S = \{0, 1\}.\) Then the Powerset of \(S\) is \(\mathcal{P}(S)= \{ \{ \}, \{ 0\}, \{ 1\}, \{ 0,1\}\}.\)
+          Starting with a set \(S\) of cardinality \(\vert S \vert = n = 2,\) \(\mathcal{P}(S)\) has size \(2^{n} = 4.\)
+        </p>
+
+        <p>There are sets in \(\mathcal{P}(S)\) that are not pairwise disjoint. That is, there are pairs of sets that
+          have elements in common. One example is the proper subset \(\{0\}\) and the set \(S = \{0 , 1\}.\) Notice that
+          the intersection of these two sets is non-empty, \(\{0\} \cap \{ 0, 1\} = \{0\}.\) While the subsets of \(S\)
+          in the Powerset of \(S\) ‘‘cover” \(S,\) they do so in a way that creates an overlapping of sets.</p>
+
+        <p><label for="power" class="margin-toggle">⊕</label>
+          <input type="checkbox" id="power" class="margin-toggle" />
+          <span class="marginnote"><img class="fullwidth"
+              src="../../../../static/images/graphics/set-theory/powerset.svg"
+              alt="The set $$S = \{0,1\}$$ is covered by it's Powerset with the elements of the Powerset represented by the ellipse, the two circles and the rectangle" /><br />
+            The set \(S = \{0,1\}\) is covered by it’s Powerset with the elements of the Powerset represented by the
+            ellipse, the two circles and the rectangle
+          </span>
+          <!--- <img src="../../../../assets/img/powerset.svg" alt="Drawing" style="width: 333px;" align="center;"> --->
+        </p>
+
+        <p>In some cases, it is useful to partition a set into non-empty disjoint sets that cover the original set. In
+          the case of our set \(S,\) a partition of \(S\) would be \(\{ \{0\}, \{1\}\}\), and it turns out that this is
+          the only collection of subset whose union is \(S.\) One may try to argue that \(\{ \{0,1\} \}\) is a
+          collection of non-empty subsets of \(S\) that forms a partion of \(S.\) But, there is a piece of the
+          definition of a partition of a set that is false. The union of the sets in the partition is equal to the set,
+          and set union is a binary operation meaning that it takes in as input two sets. It takes at least two to
+          partition.</p>
+
+        <p><br />
+
+      </div>
     </div>
-    <div class="col">
-      <button type="button" class="btn-questions" onclick="connectToQuiz()">Pratice Question</button>
-      <button type="button" class="btn-questions" onclick="getQuestions()">Post-Test</button>
-      <button type="button" class="btn-questions" onclick="getQuestions()">Pre-Test</button>
+    <meta id="js-data" data-title="Set partitions" data-base="/seng5005/assets/json/corrispondingQuestionTopic.json">
+
+  </article>
+  <footer>
+    <hr class="slender">
+    <div class="credits">
+      This work is supported by the <a href="https://www.nsf.gov/" target="_blank">NSF</a> IUSE/PFE:RED award No. <a
+        href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=1730568" target="_blank">1730568</a>. Site created with
+      <a href="//jekyllrb.com" target="_blank">Jekyll</a> using the <a href="//github.com/clayh53/tufte-jekyll"
+        target="_blank">Tufte theme</a>. &copy; 2020 by ECU.
     </div>
-  </div>
-  <div class="row">
-    
-<p>When finding the union of two sets \(A\) and \(B,\) it is necessary to check that the new set does not contain any repeated instances. For example, \(A = \{1, 2, 3\}\) and \(B = \{2, 3, 4\}\) the resulting set after union is the set</p>
-
-\[A \cup B = \{1, 2, 3, 2, 3, 4\} - \{2, 3\} = \{1, 2, 3, 4\}\]
-
-<p>This is because sets are unordered collections of unique elements.  The set of elements that the two sets have in common, \(A \cap B,\) must be identified to remove multiple instances of these elements in the union.</p>
-
-<p>We say that two sets that do not share any elements in common are mutually exclusive, or pairwise disjoint. In our above example, the sets \(A\) and \(B\) are not disjoint.</p>
-
-<p>By definition, disjoint sets are sets that share no common elements. It is straight forward to prove the following statement.</p>
-
-<p>Statement: The intersection of disjoint sets is the Empty set, \(\emptyset.\)</p>
-
-<p>Proof: Let \(A\) and \(B\) be two disjoint sets.  Assume that the intersecion of \(A\) and \(B\) is not the Emptyset. Then, there is at least one element in \(A \cap B.\) Let \(x\) be such an element.  Since \(x\) is in \(A \cap B,\) it follows that  \(x\) is in \(A\) and \(x\) is in \(B\) by the defintion of set intersection.  The truth of the previous statement would imply that \(A\) and \(B\) are not disjoint sets.</p>
-
-<p>The assumption of the truth of the statement that \(A\) and \(B\) is not the Emptyset can only result in the statement that \(A\) and \(B\) are disjoint being false.  Therefore, the only true sequence of statements starting with \(A\) and \(B\) are disjoint sets implies the intersection of \(A\) and \(B\) is the Emptyset is also true.  \(\blacksquare\)</p>
-
-<p>The Powerset of a set \(S\) is the collection of all possible subsets of \(S\).  In the module for Powersets, the size of the Powerset of set \(S,\) \(\mathcal{P}(S)\) is shown to grow exponentially as the size \(n\) of set \(S\) increases.  To quickly illustrate we take a set of size, cardinality, 2 and find it’s Powerset.  Let \(S = \{0, 1\}.\) Then the Powerset of \(S\) is \(\mathcal{P}(S)= \{ \{ \}, \{ 0\}, \{ 1\}, \{ 0,1\}\}.\)  Starting with a set \(S\) of cardinality \(\vert S \vert = n = 2,\) \(\mathcal{P}(S)\) has size \(2^{n} = 4.\)</p>
-
-<p>There are sets in \(\mathcal{P}(S)\) that are not pairwise disjoint.  That is, there are pairs of sets that have elements in common.  One example is the proper subset \(\{0\}\) and the set \(S = \{0 , 1\}.\) Notice that the intersection of these two sets is non-empty, \(\{0\} \cap \{ 0, 1\} = \{0\}.\) While the subsets of \(S\) in the Powerset of \(S\) ‘‘cover” \(S,\) they do so in a way that creates an overlapping of sets.</p>
-
-<p><label for="power" class="margin-toggle">⊕</label>
-<input type="checkbox" id="power" class="margin-toggle" />
-<span class="marginnote"><img class="fullwidth" src="../../../../course-content/graphics/set-theory/powerset.svg" alt="The set $$S = \{0,1\}$$ is covered by it's Powerset with the elements of the Powerset represented by the ellipse, the two circles and the rectangle" /><br />
-    The set \(S = \{0,1\}\) is covered by it’s Powerset with the elements of the Powerset represented by the ellipse, the two circles and the rectangle
-</span>
-<!--- <img src="../../../../assets/img/powerset.svg" alt="Drawing" style="width: 333px;" align="center;"> ---></p>
-
-<p>In some cases, it is useful to partition a set into non-empty disjoint sets that cover the original set.  In the case of our set \(S,\) a partition of \(S\) would be \(\{ \{0\}, \{1\}\}\), and it turns out that this is the only collection of subset whose union is \(S.\) One may try to argue that \(\{ \{0,1\} \}\) is a collection of non-empty subsets of \(S\) that forms a partion of \(S.\) But, there is a piece of the definition of a partition of a set that is false.  The union of the sets in the partition is equal to the set, and set union is a binary operation meaning that it takes in as input two sets.  It takes at least two to partition.</p>
-
-<p><br />
-<a href="../../../../">Back to course home</a></p>
-
-  </div>
-</div>
-<meta id="js-data" data-title="Set partitions" data-base="/seng5005/assets/json/corrispondingQuestionTopic.json">
-
-    </article>
-    <footer>
-<hr class="slender">
-<div class="credits">
-This work is supported by the <a href="https://www.nsf.gov/" target="_blank">NSF</a> IUSE/PFE:RED award No. <a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=1730568" target="_blank">1730568</a>. Site created with <a href="//jekyllrb.com" target="_blank">Jekyll</a> using the <a href="//github.com/clayh53/tufte-jekyll" target="_blank">Tufte theme</a>. &copy; 2020 by ECU.
-</div>
-</footer>
+  </footer>
 
 
 
-  </body>
+</body>
+
 </html>

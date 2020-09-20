@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4146e228-63bf-4e78-bcf4-4c7cf6edb3a3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/templates/course-content/set-theory/properties/cardinality/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/course-content/set-theory/properties/cardinality/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/course-content/set-theory/properties/complement/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/course-content/set-theory/properties/complement/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/course-content/set-theory/properties/countable-uncountable/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/course-content/set-theory/properties/countable-uncountable/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/course-content/set-theory/properties/set-equality/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/course-content/set-theory/properties/set-equality/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/course-content/set-theory/subsets/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/course-content/set-theory/subsets/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/course-content/set-theory/universal-set/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/course-content/set-theory/universal-set/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -20,8 +15,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="107" lean-forward="true" selection-start-line="107" selection-end-line="107" />
+            <state relative-caret-position="312">
+              <caret line="109" column="19" selection-start-line="109" selection-start-column="19" selection-end-line="109" selection-end-column="19" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
@@ -56,7 +51,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="842" />
     <option name="y" value="10" />
     <option name="width" value="1085" />
@@ -68,22 +63,12 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="Quizapp2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Quizapp2" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
+      <pane id="ProjectPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -140,10 +125,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="848" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Favorites" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.13606341" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13606341" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Version Control" />
       <window_info anchor="bottom" id="Python Console" />
@@ -151,7 +135,7 @@
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.087866105" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.17015342" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -167,8 +151,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="107" lean-forward="true" selection-start-line="107" selection-end-line="107" />
+        <state relative-caret-position="312">
+          <caret line="109" column="19" selection-start-line="109" selection-start-column="19" selection-end-line="109" selection-end-column="19" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
           </folding>

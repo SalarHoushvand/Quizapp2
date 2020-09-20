@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
-  
-  <head>
+
+<head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,7 +9,12 @@
   <title>Set Union</title>
   <meta name="description" content="Content relevant for computer science and mathematics majors.">
 
-  <!-- Google Fonts loaded here depending on setting in _data/options.yml true loads font, blank does not--><link href='//fonts.googleapis.com/css?family=Lato:400,400italic' rel='stylesheet' type='text/css'><!-- Load up MathJax script if needed ... specify in /_data/options.yml file--><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS_CHTML"></script><!-- <script>
+  <!-- Google Fonts loaded here depending on setting in _data/options.yml true loads font, blank does not-->
+  <link href='//fonts.googleapis.com/css?family=Lato:400,400italic' rel='stylesheet' type='text/css'>
+  <!-- Load up MathJax script if needed ... specify in /_data/options.yml file-->
+  <script type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS_CHTML"></script>
+  <!-- <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -20,53 +25,74 @@
   </script> -->
 
   <link rel="canonical" href="http://localhost:4000/seng5005/course-content/set-theory/operations/set-union/">
-  <link rel="alternate" type="application/rss+xml" title="Discrete structures" href="http://localhost:4000/seng5005/feed.xml" />
+  <link rel="alternate" type="application/rss+xml" title="Discrete structures"
+    href="http://localhost:4000/seng5005/feed.xml" />
 
   <!-- bootstrap cdn -->
-  
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-  
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-  
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+    integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    crossorigin="anonymous"></script>
 
   <!-- jquery for accordion -->
   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <script>
-  $( function() {
-    $( "#accordion" ).accordion();
-  } );
+    $(function () {
+      $("#accordion").accordion();
+    });
   </script>
 
-  <link rel="stylesheet" href="../../../../css/tufte.css" />
-  <link rel="stylesheet" href="../../../../css/style.css" />
+  <link rel="stylesheet" href="../../../../static/stylesheets/tufte.css" />
+  <link rel="stylesheet" href="../../../../static/stylesheets/style.css" />
 
   <!-- custom javascript-->
   <script src="../../../../assets/js/question.js"></script>
 
 </head>
 
-  <body>
-    <!--- Header and nav template site-wide -->
+<body>
+  <!--- Header and nav template site-wide -->
 
 
-<header>
-    <nav class="group">
-    <a href="../../../../">Home</a>
-    <a href="http://ispel.cs.ecu.edu/" target="_blank">ISPeL</a>
-    <a href="../../../../syllabus/" target="_blank">Fall 2020</a>
-    <a href="https://github.com/vngudivada/ISPeL-content-discrete-structures.git" target="_blank">GitHub</a>
-    </nav>
-</header>
+  <nav class="navbar navbar-expand-md navbar-dark sticky-top">
+    <div class="container-fluid">
+      <!-- // welcome message -->
+
+
+      <!-- // collapse toggle button -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- // navbar items -->
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active"><a class="nav-link active" href="{{ url_for('pre_quiz')}}">Dashboard</a>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="{{ url_for('logout')}}">Logout</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
 
 
-    <article class="group">
-      <!-- <script type="text/x-mathjax-config">
+
+  <article class="group">
+    <!-- <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
     TeX: {
       Macros: {
@@ -92,135 +118,178 @@
   });
 </script> -->
 
-<div class="container">
-  <div class="row">
-    <div class="col">
-      <h1>Set union</h1>
-      <p class="subtitle"></p>
-    </div>
-    <div class="col">
-      <button type="button" class="btn-questions" onclick="connectToQuiz()">Pratice Question</button>
-      <button type="button" class="btn-questions" onclick="getQuestions()">Post-Test</button>
-      <button type="button" class="btn-questions" onclick="getQuestions()">Pre-Test</button>
-    </div>
-  </div>
-  <div class="row">
-    <p>Sets are objects that we can define operations on, just like we define addition and subtraction between two elements of the special set \(R\) of all real numbers.  Addition on two real numbers is considered a binary operation since addition accepts two terms as input.  Addition for sets is called “union,” and essentially adding all the elements in the two sets into one new set.</p>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <h1>Set union</h1>
+          <p class="subtitle"></p>
+        </div>
 
-<p>Let \(S_1\) and \(S_2\) be two sets.  Then the union of \(S_1\) and \(S_2\) is a new set that is the collection of all elements in \(S_1\) and \(S_2.\) The traditional operator for union is the symbol \(\cup.\) We write \(S_1 \cup S_2\) and say “S sub 1 union S sub 2.” More formally, we can define the union of two sets with the statement of the rule</p>
+      </div>
+      <div class="row">
+        <p>Sets are objects that we can define operations on, just like we define addition and subtraction between two
+          elements of the special set \(R\) of all real numbers. Addition on two real numbers is considered a binary
+          operation since addition accepts two terms as input. Addition for sets is called “union,” and essentially
+          adding all the elements in the two sets into one new set.</p>
 
-\[x \text{ is in } S_1 \cup S_2 \text{ if either x is in } S_1 \text{ or x is in } S_2.\]
+        <p>Let \(S_1\) and \(S_2\) be two sets. Then the union of \(S_1\) and \(S_2\) is a new set that is the
+          collection of all elements in \(S_1\) and \(S_2.\) The traditional operator for union is the symbol \(\cup.\)
+          We write \(S_1 \cup S_2\) and say “S sub 1 union S sub 2.” More formally, we can define the union of two sets
+          with the statement of the rule</p>
 
-<p>Without indexes, let us call the first set \(A\) and the second set \(B.\)  Each set is represented in the Venn diagram below with a canonical circle inside a rectangle that illustrates the super-set collection of all possible elements.  The union of sets \(A\) and \(B\) is the combined collection of the elements in the shaded regions. The elements of the sets (counted only once) collected together, creating one new collection we denote \(A \cup B.\)</p>
+        \[x \text{ is in } S_1 \cup S_2 \text{ if either x is in } S_1 \text{ or x is in } S_2.\]
 
-<p><label for="set-union" class="margin-toggle">⊕</label>
-<input type="checkbox" id="set-union" class="margin-toggle" />
-<span class="marginnote"><img class="fullwidth" src="../../../../course-content/graphics/set-theory/set-union.svg" alt="The union of the sets $$A$$ and $$B$$, denoted $$A \cup B,$$ is the set containing all elements of the set $$A$$, or set $$B$$, or both the sets." /><br />
-    The union of the sets \(A\) and \(B\), denoted \(A \cup B,\) is the set containing all elements of the set \(A\), or set \(B\), or both the sets.
-</span></p>
+        <p>Without indexes, let us call the first set \(A\) and the second set \(B.\) Each set is represented in the
+          Venn diagram below with a canonical circle inside a rectangle that illustrates the super-set collection of all
+          possible elements. The union of sets \(A\) and \(B\) is the combined collection of the elements in the shaded
+          regions. The elements of the sets (counted only once) collected together, creating one new collection we
+          denote \(A \cup B.\)</p>
 
-<p><strong>Example 1:</strong>
-Let E = \(\{0, 2, 4\}\) and  O = \(\{1, 3, 5\}\). Then \(E \cup O = \{0,1, 2, 3, 4, 5\}\)</p>
+        <p><label for="set-union" class="margin-toggle">⊕</label>
+          <input type="checkbox" id="set-union" class="margin-toggle" />
+          <span class="marginnote"><img class="fullwidth"
+              src="../../../../static/images/graphics/set-theory/set-union.svg"
+              alt="The union of the sets $$A$$ and $$B$$, denoted $$A \cup B,$$ is the set containing all elements of the set $$A$$, or set $$B$$, or both the sets." /><br />
+            The union of the sets \(A\) and \(B\), denoted \(A \cup B,\) is the set containing all elements of the set
+            \(A\), or set \(B\), or both the sets.
+          </span></p>
 
-<p>The guidelines we gave for a set specified that the elements of a set are unique, no repeats. This means that when we union two sets together that share a common element, that element is only represented in the set one time.</p>
+        <p><strong>Example 1:</strong>
+          Let E = \(\{0, 2, 4\}\) and O = \(\{1, 3, 5\}\). Then \(E \cup O = \{0,1, 2, 3, 4, 5\}\)</p>
 
-<p><strong>Example 2:</strong>
-Let \(S_1 = \{a, e, i, o, u\}\) and  \(S_2 = \{b, i, n, g, o\}.\) Then \(S_1 \cup S_2 = \{a, e, i, o, u, b, n, g\}\).</p>
+        <p>The guidelines we gave for a set specified that the elements of a set are unique, no repeats. This means that
+          when we union two sets together that share a common element, that element is only represented in the set one
+          time.</p>
 
-<p>The following example demonstrates one of the relationships that exist between the set of positive integers \(Z^+\) and the set of natural numbers \(N.\)</p>
+        <p><strong>Example 2:</strong>
+          Let \(S_1 = \{a, e, i, o, u\}\) and \(S_2 = \{b, i, n, g, o\}.\) Then \(S_1 \cup S_2 = \{a, e, i, o, u, b, n,
+          g\}\).</p>
 
-<p><strong>Example 3:</strong>
-Let \(A = {0}\) and \(Z^+\) be the set of all positive integers.  Then \(A \cup Z^+ = {0, 1, 2, 4, \ldots} = N,\) the set of natural numbers.</p>
+        <p>The following example demonstrates one of the relationships that exist between the set of positive integers
+          \(Z^+\) and the set of natural numbers \(N.\)</p>
 
-<p><strong>Example 4:</strong>
-Let \(A = { } = \emptyset\) and \(Z^+\) be the set of all positive integers.  Then \(\emptyset \cup Z^+ = Z^+.\)</p>
+        <p><strong>Example 3:</strong>
+          Let \(A = {0}\) and \(Z^+\) be the set of all positive integers. Then \(A \cup Z^+ = {0, 1, 2, 4, \ldots} =
+          N,\) the set of natural numbers.</p>
 
-<p>The statement in Example 4 is referred to as the identity property with respect to set union in that:
-if \(A\) is a set, \(A \cup \emptyset = A = \emptyset \cup A.\)</p>
+        <p><strong>Example 4:</strong>
+          Let \(A = { } = \emptyset\) and \(Z^+\) be the set of all positive integers. Then \(\emptyset \cup Z^+ =
+          Z^+.\)</p>
 
-<p>In evaluating an algebraic expression like 2 + 4 + 5, most would simply say the value of the expression is 11 without a second thought about the fact that addition is a binary operation.  The importance is in the details.  Addition is a binary operator, so when defining addition, the input taken in consists only of two real numbers. Using a left to right approach, one would find the sum of 2 and 4, 6. Then use 6 as the first term in the new addition problem to find 6 + 5.</p>
+        <p>The statement in Example 4 is referred to as the identity property with respect to set union in that:
+          if \(A\) is a set, \(A \cup \emptyset = A = \emptyset \cup A.\)</p>
 
-<p>Set union for sets is exactly the same as addition among elements of the set \(R.\) Only two sets are unioned at one time.  Additionally, set union can be extended to an infinite number of terms.  When adding many terms, the standard is to use a capital sigma to indicate summation.</p>
+        <p>In evaluating an algebraic expression like 2 + 4 + 5, most would simply say the value of the expression is 11
+          without a second thought about the fact that addition is a binary operation. The importance is in the details.
+          Addition is a binary operator, so when defining addition, the input taken in consists only of two real
+          numbers. Using a left to right approach, one would find the sum of 2 and 4, 6. Then use 6 as the first term in
+          the new addition problem to find 6 + 5.</p>
 
-\[\Sigma_{i = 1}^5 i = 1 + 2 + 3 + 4 + 5 = 15\]
+        <p>Set union for sets is exactly the same as addition among elements of the set \(R.\) Only two sets are unioned
+          at one time. Additionally, set union can be extended to an infinite number of terms. When adding many terms,
+          the standard is to use a capital sigma to indicate summation.</p>
 
-<p>The above sum is actually:</p>
+        \[\Sigma_{i = 1}^5 i = 1 + 2 + 3 + 4 + 5 = 15\]
 
-\[(((1 + 2) + 3) + 4) + 5\]
+        <p>The above sum is actually:</p>
 
-<p>In the same way, set union can be extended to expressions involving more than two sets.  In fact, set union can be extented to an infinite number of sets as we see in the next few examples.  As you look through the examples, also pay attention to the role that the Empty set and the Universal set play. <br /></p>
+        \[(((1 + 2) + 3) + 4) + 5\]
 
-<p><strong>Example 5:</strong>
-Let</p>
+        <p>In the same way, set union can be extended to expressions involving more than two sets. In fact, set union
+          can be extented to an infinite number of sets as we see in the next few examples. As you look through the
+          examples, also pay attention to the role that the Empty set and the Universal set play. <br /></p>
 
-<p>\(S_1\) = {0,1}, \(S_2\) = {0,1,2}, and \(S_3\) = {0,1,2,3}. Then, \(\cup_{i = 1}^3 S_i = (S_1 \cup S_2) \cup S_3\) = {0, 2, 3}.</p>
+        <p><strong>Example 5:</strong>
+          Let</p>
 
-<p>There are some key properties about set union that should be noted:
-For sets \(A,\) \(B\) and \(C,\) the complement set of \(A\) is \(A^{c}\) and \(U\) is the Universal set.</p>
+        <p>\(S_1\) = {0,1}, \(S_2\) = {0,1,2}, and \(S_3\) = {0,1,2,3}. Then, \(\cup_{i = 1}^3 S_i = (S_1 \cup S_2) \cup
+          S_3\) = {0, 2, 3}.</p>
 
-<p>Set union is:</p>
+        <p>There are some key properties about set union that should be noted:
+          For sets \(A,\) \(B\) and \(C,\) the complement set of \(A\) is \(A^{c}\) and \(U\) is the Universal set.</p>
 
-<ol>
-  <li>
-    <p><strong>commutative</strong>: \(A \cup B\) is the same set as \(A \cup B\)</p>
-  </li>
-  <li>
-    <p><strong>associative</strong>: \((A \cup B) \cup C\) is the same set as \(A \cup (B \cup C)\)</p>
-  </li>
-</ol>
+        <p>Set union is:</p>
 
-<p>Set union has an identity:</p>
+        <ol>
+          <li>
+            <p><strong>commutative</strong>: \(A \cup B\) is the same set as \(A \cup B\)</p>
+          </li>
+          <li>
+            <p><strong>associative</strong>: \((A \cup B) \cup C\) is the same set as \(A \cup (B \cup C)\)</p>
+          </li>
+        </ol>
 
-\[A \cup \emptyset = A\]
+        <p>Set union has an identity:</p>
 
-<p>The union of a set with its complement is the Universal set:</p>
+        \[A \cup \emptyset = A\]
 
-\[A \cup A^{c} = U\]
+        <p>The union of a set with its complement is the Universal set:</p>
 
-<p>If there is a Universal set, \(U\), then:</p>
+        \[A \cup A^{c} = U\]
 
-\[A \cup U = U.\]
+        <p>If there is a Universal set, \(U\), then:</p>
 
-<p>A visual representation for a set intersection can be helpful when studying the derived set. A Venn diagram is one way to depict the intersection of sets. In the following image, the sets \(A\) and \(B\) are drawn as circles and the intersection of A and B, \(A \cap B,\) is indicated by the shaded area.</p>
+        \[A \cup U = U.\]
 
-<p>An example of the union of sets from the “real-world” is a web query search for relative information.  Let’s say a user is interested in information available on the web about US presidents.  Before we begin, the Universal set is the set of all webpages that could be returned to the user through their webb browser.  The Empty set would be the result set when there are no relevant webpages indexed for US presidents.  Without going into a lot of detail, a simple approach for the server is to find the set of all webpages where “US” is mentioned along with the set of all webpages containing the term “president” then  return the union of these two sets.</p>
+        <p>A visual representation for a set intersection can be helpful when studying the derived set. A Venn diagram
+          is one way to depict the intersection of sets. In the following image, the sets \(A\) and \(B\) are drawn as
+          circles and the intersection of A and B, \(A \cap B,\) is indicated by the shaded area.</p>
 
-<p>As a set, the webpages would not have a ordering nor would duplicate pages be included.  The results would contain many pages that are relevant to the US but not to US presidents and also sites that mention presidents that are not US presidents.  The union of the sets contains elements that are in unique to each set as well as the elements that are in both sets.</p>
+        <p>An example of the union of sets from the “real-world” is a web query search for relative information. Let’s
+          say a user is interested in information available on the web about US presidents. Before we begin, the
+          Universal set is the set of all webpages that could be returned to the user through their webb browser. The
+          Empty set would be the result set when there are no relevant webpages indexed for US presidents. Without going
+          into a lot of detail, a simple approach for the server is to find the set of all webpages where “US” is
+          mentioned along with the set of all webpages containing the term “president” then return the union of these
+          two sets.</p>
 
-<p>Since a set cannot contain duplicate elements, when we find the union of two sets it is important to complete the operation and remove from the union any elements that are common to both sets. Specifically:</p>
+        <p>As a set, the webpages would not have a ordering nor would duplicate pages be included. The results would
+          contain many pages that are relevant to the US but not to US presidents and also sites that mention presidents
+          that are not US presidents. The union of the sets contains elements that are in unique to each set as well as
+          the elements that are in both sets.</p>
 
-<p>If \(A = \{ 1, 3, 5, 7\}\) and \(B = \{1, 5, 9\}\) then we would construct the union of \(A\) and \(B\) by following the steps:</p>
+        <p>Since a set cannot contain duplicate elements, when we find the union of two sets it is important to complete
+          the operation and remove from the union any elements that are common to both sets. Specifically:</p>
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">Create</span> <span class="n">an</span> <span class="n">empty</span> <span class="nb">set</span> <span class="n">called</span> <span class="n">A</span> <span class="n">U</span> <span class="n">B</span>
+        <p>If \(A = \{ 1, 3, 5, 7\}\) and \(B = \{1, 5, 9\}\) then we would construct the union of \(A\) and \(B\) by
+          following the steps:</p>
+
+        <figure class="highlight">
+          <pre><code class="language-python" data-lang="python"><span class="n">Create</span> <span class="n">an</span> <span class="n">empty</span> <span class="nb">set</span> <span class="n">called</span> <span class="n">A</span> <span class="n">U</span> <span class="n">B</span>
 <span class="n">For</span> <span class="nb">all</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">A</span>
 	<span class="n">add</span> <span class="n">x</span> <span class="n">into</span> <span class="n">A</span> <span class="n">U</span> <span class="n">B</span>
 <span class="n">For</span> <span class="nb">all</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">B</span>
     <span class="k">if</span> <span class="n">x</span> <span class="ow">is</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">A</span> <span class="n">U</span> <span class="n">B</span>
-		<span class="n">add</span> <span class="n">x</span> <span class="n">into</span> <span class="n">A</span> <span class="n">U</span> <span class="n">B</span></code></pre></figure>
+		<span class="n">add</span> <span class="n">x</span> <span class="n">into</span> <span class="n">A</span> <span class="n">U</span> <span class="n">B</span></code></pre>
+        </figure>
 
-<p>Following the above set of instructions takes us a total of 8 steps = number of elements in set \(A\) + number of elements in set \(B\) plus 1 to create the emptyset (excluding the check to see if \(x\) is not already in \(A \cup B.\) The value of \(A \cup B\) moves through the following values:</p>
+        <p>Following the above set of instructions takes us a total of 8 steps = number of elements in set \(A\) +
+          number of elements in set \(B\) plus 1 to create the emptyset (excluding the check to see if \(x\) is not
+          already in \(A \cup B.\) The value of \(A \cup B\) moves through the following values:</p>
 
-<p>\(A \cup B =\)
-\(\{ \} \rightarrow \{1\} \rightarrow \{1, 3\} \rightarrow \{1, 3, 5\} \xrightarrow[]{3} \{1, 3, 5, 7\} \rightarrow  \{1, 3, 5, 7, 9\}\)</p>
+        <p>\(A \cup B =\)
+          \(\{ \} \rightarrow \{1\} \rightarrow \{1, 3\} \rightarrow \{1, 3, 5\} \xrightarrow[]{3} \{1, 3, 5, 7\}
+          \rightarrow \{1, 3, 5, 7, 9\}\)</p>
 
-<p>The resulting value of the set is \(A \cup B = \{1, 3, 5, 7, 9\}\)</p>
+        <p>The resulting value of the set is \(A \cup B = \{1, 3, 5, 7, 9\}\)</p>
 
-<p><br />
-<a href="../../../../">Back to course home</a></p>
+      </div>
+    </div>
+    <meta id="js-data" data-title="Set Union" data-base="/seng5005/assets/json/corrispondingQuestionTopic.json">
 
-  </div>
-</div>
-<meta id="js-data" data-title="Set Union" data-base="/seng5005/assets/json/corrispondingQuestionTopic.json">
-
-    </article>
-    <footer>
-<hr class="slender">
-<div class="credits">
-This work is supported by the <a href="https://www.nsf.gov/" target="_blank">NSF</a> IUSE/PFE:RED award No. <a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=1730568" target="_blank">1730568</a>. Site created with <a href="//jekyllrb.com" target="_blank">Jekyll</a> using the <a href="//github.com/clayh53/tufte-jekyll" target="_blank">Tufte theme</a>. &copy; 2020 by ECU.
-</div>
-</footer>
-
+  </article>
+  <footer>
+    <hr class="slender">
+    <div class="credits">
+      This work is supported by the <a href="https://www.nsf.gov/" target="_blank">NSF</a> IUSE/PFE:RED award No. <a
+        href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=1730568" target="_blank">1730568</a>. Site created with
+      <a href="//jekyllrb.com" target="_blank">Jekyll</a> using the <a href="//github.com/clayh53/tufte-jekyll"
+        target="_blank">Tufte theme</a>. &copy; 2020 by ECU.
+    </div>
+  </footer>
 
 
-  </body>
+
+</body>
+
 </html>

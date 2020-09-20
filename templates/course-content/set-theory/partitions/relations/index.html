@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
-  
-  <head>
+
+<head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,7 +9,12 @@
   <title>Defining relations on a set</title>
   <meta name="description" content="Content relevant for computer science and mathematics majors.">
 
-  <!-- Google Fonts loaded here depending on setting in _data/options.yml true loads font, blank does not--><link href='//fonts.googleapis.com/css?family=Lato:400,400italic' rel='stylesheet' type='text/css'><!-- Load up MathJax script if needed ... specify in /_data/options.yml file--><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS_CHTML"></script><!-- <script>
+  <!-- Google Fonts loaded here depending on setting in _data/options.yml true loads font, blank does not-->
+  <link href='//fonts.googleapis.com/css?family=Lato:400,400italic' rel='stylesheet' type='text/css'>
+  <!-- Load up MathJax script if needed ... specify in /_data/options.yml file-->
+  <script type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS_CHTML"></script>
+  <!-- <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -20,53 +25,73 @@
   </script> -->
 
   <link rel="canonical" href="http://localhost:4000/seng5005/course-content/set-theory/partitions/relations/">
-  <link rel="alternate" type="application/rss+xml" title="Discrete structures" href="http://localhost:4000/seng5005/feed.xml" />
+  <link rel="alternate" type="application/rss+xml" title="Discrete structures"
+    href="http://localhost:4000/seng5005/feed.xml" />
 
   <!-- bootstrap cdn -->
-  
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-  
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-  
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+    integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    crossorigin="anonymous"></script>
 
   <!-- jquery for accordion -->
   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <script>
-  $( function() {
-    $( "#accordion" ).accordion();
-  } );
+    $(function () {
+      $("#accordion").accordion();
+    });
   </script>
 
-  <link rel="stylesheet" href="../../../../css/tufte.css" />
-  <link rel="stylesheet" href="../../../../css/style.css" />
+  <link rel="stylesheet" href="../../../../static/stylesheets/tufte.css" />
+  <link rel="stylesheet" href="../../../../static/stylesheets/style.css" />
 
   <!-- custom javascript-->
   <script src="../../../../assets/js/question.js"></script>
 
 </head>
 
-  <body>
-    <!--- Header and nav template site-wide -->
+<body>
+  <!--- Header and nav template site-wide -->
 
 
-<header>
-    <nav class="group">
-    <a href="../../../../">Home</a>
-    <a href="http://ispel.cs.ecu.edu/" target="_blank">ISPeL</a>
-    <a href="../../../../syllabus/" target="_blank">Fall 2020</a>
-    <a href="https://github.com/vngudivada/ISPeL-content-discrete-structures.git" target="_blank">GitHub</a>
-    </nav>
-</header>
+  <nav class="navbar navbar-expand-md navbar-dark sticky-top">
+    <div class="container-fluid">
+      <!-- // welcome message -->
+
+
+      <!-- // collapse toggle button -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- // navbar items -->
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active"><a class="nav-link active" href="{{ url_for('pre_quiz')}}">Dashboard</a>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="{{ url_for('logout')}}">Logout</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
 
 
-    <article class="group">
-      <!-- <script type="text/x-mathjax-config">
+  <article class="group">
+    <!-- <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
     TeX: {
       Macros: {
@@ -92,110 +117,120 @@
   });
 </script> -->
 
-<div class="container">
-  <div class="row">
-    <div class="col">
-      <h1>Defining relations on a set</h1>
-      <p class="subtitle"></p>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <h1>Defining relations on a set</h1>
+          <p class="subtitle"></p>
+        </div>
+
+      </div>
+      <div class="row">
+
+        <p>While a <em>partition</em> of a set is a grouping of its elements into non-empty subsets in such a way that
+          every element is included in exactly one subset, a relation on a set \(S\) is a condition that determines if
+          \(a \sim b\) is true.</p>
+
+        <p><strong>Example 1</strong>
+          Let \(S = \{0, 1, 2, 3, 4\}\) a relation \(\sim\) on \(S\) is the rule “\(a\) and \(b\) have the same
+          remainder when divided by 3 .” To decide which elements are make this statement true, we can build a chart:
+        </p>
+
+        <table style="width:100%">
+          <tr>
+            <th> </th>
+            <th>0</th>
+            <th>1</th>
+            <th>2</th>
+            <th>3</th>
+            <th>4</th>
+          </tr>
+          <tr>
+            <td>0 </td>
+            <td> True </td>
+            <td> False </td>
+            <td> False </td>
+            <td> True </td>
+            <td> False </td>
+          </tr>
+          <tr>
+            <td>1 </td>
+            <td> False </td>s
+            <td> True </td>
+            <td> False </td>
+            <td> False </td>
+            <td> True </td>
+          </tr>
+          <tr>
+            <td>2 </td>
+            <td> False </td>
+            <td> False </td>
+            <td> True </td>
+            <td> False </td>
+            <td> False </td>
+          </tr>
+          <tr>
+            <td>3 </td>
+            <td> True </td>
+            <td> False </td>
+            <td> False </td>
+            <td> True </td>
+            <td> False </td>
+          </tr>
+          <tr>
+            <td>4 </td>
+            <td> False </td>
+            <td> True </td>
+            <td> False </td>
+            <td> False </td>
+            <td> True </td>
+          </tr>
+        </table>
+
+        <p><label for="partmod3" class="margin-toggle">⊕</label>
+          <input type="checkbox" id="partmod3" class="margin-toggle" />
+          <span class="marginnote"><img class="fullwidth"
+              src="../../../../static/images/graphics/set-theory/partition-mod-3.svg"
+              alt="The set $$\{0, 1, 2, 3, 4\}$$ is partitioned by a set of three sets $$\{0, 3\}$$, $$\{1, 4\}$$ and $$\{2\}$$." /><br />
+            The set \(\{0, 1, 2, 3, 4\}\) is partitioned by a set of three sets \(\{0, 3\}\), \(\{1, 4\}\) and
+            \(\{2\}\).
+          </span></p>
+
+        <p>A relation \(\sim\) on a set \(S\) is an <strong>equivalence relation</strong> if:</p>
+
+        <ol>
+          <li>the relation is <em>reflexive</em>, for all \(x\) in \(S,\) the statement “\(x \sim x\)” is true; and</li>
+          <li>the relation is <em>symmetric</em>, that is for all \(x\) and \(y\) in \(S\) the statement “\(x \sim y
+            \rightarrow y \sim x\);” and</li>
+          <li>the relation is <em>transitive</em>, for all \(x, y\) and \(z\) in \(S\) the statement “If \(x \sim y\)
+            and \(y \sim x\) then \(x \sim z.\)”</li>
+        </ol>
+
+        <p>Every <em>equivalence relation</em> on a set defines a partition of the set, and every partition defines an
+          equivalence relation. Our example of the partition of the set \(\{0, 1, 2, 3, 4\}\) is generated by
+          the relation \(x \sim y\) if and only if \(\lfloor \frac{x}{3}\rfloor = \lfloor \frac{y}{3}\rfloor.\)</p>
+
+        <p><br />
+
+
+      </div>
     </div>
-    <div class="col">
-      <button type="button" class="btn-questions" onclick="connectToQuiz()">Pratice Question</button>
-      <button type="button" class="btn-questions" onclick="getQuestions()">Post-Test</button>
-      <button type="button" class="btn-questions" onclick="getQuestions()">Pre-Test</button>
+    <meta id="js-data" data-title="Defining relations on a set"
+      data-base="/seng5005/assets/json/corrispondingQuestionTopic.json">
+
+  </article>
+  <footer>
+    <hr class="slender">
+    <div class="credits">
+      This work is supported by the <a href="https://www.nsf.gov/" target="_blank">NSF</a> IUSE/PFE:RED award No. <a
+        href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=1730568" target="_blank">1730568</a>. Site created with
+      <a href="//jekyllrb.com" target="_blank">Jekyll</a> using the <a href="//github.com/clayh53/tufte-jekyll"
+        target="_blank">Tufte theme</a>. &copy; 2020 by ECU.
     </div>
-  </div>
-  <div class="row">
-    
-<p>While a <em>partition</em> of a set is a grouping of its elements into non-empty subsets in such a way that every element is included in exactly one subset, a relation on a set \(S\) is a condition that determines if \(a \sim b\) is true.</p>
-
-<p><strong>Example 1</strong>
-Let \(S = \{0, 1, 2, 3, 4\}\) a relation \(\sim\) on \(S\) is the rule “\(a\) and \(b\) have the same remainder when divided by 3 .”  To decide which elements are make this statement true, we can build a chart:</p>
-
-<table style="width:100%">
-  <tr>
-    <th> </th>
-    <th>0</th>
-    <th>1</th>
-    <th>2</th>
-    <th>3</th>
-    <th>4</th>
-  </tr>
-  <tr>
-    <td>0 </td>
-    <td> True </td>
-    <td> False </td>
-    <td> False </td>
-    <td> True </td>
-    <td> False </td>
-  </tr>
-  <tr>
-   <td>1 </td>
-    <td> False </td>s
-    <td> True </td>
-    <td> False </td>
-    <td> False </td>
-    <td> True </td>
-  </tr>
-  <tr>
-   <td>2 </td>
-    <td> False </td>
-    <td> False </td>
-    <td> True </td>
-    <td> False </td>
-    <td> False </td>
-  </tr>
-  <tr>
-   <td>3 </td>
-    <td> True </td>
-    <td> False </td>
-    <td> False </td>
-    <td> True </td>
-    <td> False </td>
-  </tr>
-  <tr>
-   <td>4 </td>
-    <td> False </td>
-    <td> True </td>
-    <td> False </td>
-    <td> False </td>
-    <td> True </td>
-  </tr>
-</table>
-
-<p><label for="partmod3" class="margin-toggle">⊕</label>
-<input type="checkbox" id="partmod3" class="margin-toggle" />
-<span class="marginnote"><img class="fullwidth" src="../../../../course-content/graphics/set-theory/partition-mod-3.svg" alt="The set $$\{0, 1, 2, 3, 4\}$$ is partitioned by a set of three sets $$\{0, 3\}$$, $$\{1, 4\}$$ and $$\{2\}$$." /><br />
-    The set \(\{0, 1, 2, 3, 4\}\) is partitioned by a set of three sets \(\{0, 3\}\), \(\{1, 4\}\) and \(\{2\}\).
-</span></p>
-
-<p>A relation \(\sim\) on a set \(S\) is an <strong>equivalence relation</strong> if:</p>
-
-<ol>
-  <li>the relation is <em>reflexive</em>, for all \(x\) in \(S,\) the statement “\(x \sim x\)” is true; and</li>
-  <li>the relation is <em>symmetric</em>, that is for all \(x\) and \(y\) in \(S\) the statement “\(x \sim y \rightarrow y \sim x\);” and</li>
-  <li>the relation is <em>transitive</em>, for all \(x, y\) and \(z\) in \(S\) the statement “If \(x \sim y\) and \(y \sim x\) then \(x \sim z.\)”</li>
-</ol>
-
-<p>Every <em>equivalence relation</em> on a set defines a partition of the set, and every partition defines an equivalence relation. Our example of the partition of the set \(\{0, 1, 2, 3, 4\}\) is generated by
-the relation \(x \sim y\) if and only if \(\lfloor \frac{x}{3}\rfloor = \lfloor \frac{y}{3}\rfloor.\)</p>
-
-<p><br />
-<a href="../../../../">Back to course home</a></p>
-
-
-  </div>
-</div>
-<meta id="js-data" data-title="Defining relations on a set" data-base="/seng5005/assets/json/corrispondingQuestionTopic.json">
-
-    </article>
-    <footer>
-<hr class="slender">
-<div class="credits">
-This work is supported by the <a href="https://www.nsf.gov/" target="_blank">NSF</a> IUSE/PFE:RED award No. <a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=1730568" target="_blank">1730568</a>. Site created with <a href="//jekyllrb.com" target="_blank">Jekyll</a> using the <a href="//github.com/clayh53/tufte-jekyll" target="_blank">Tufte theme</a>. &copy; 2020 by ECU.
-</div>
-</footer>
+  </footer>
 
 
 
-  </body>
+</body>
+
 </html>

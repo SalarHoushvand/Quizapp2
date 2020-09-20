@@ -113,6 +113,25 @@ def pre_quiz():
         'Complement': 'course-content/set-theory/properties/complement/index.html',
         'Countable Uncountable': 'course-content/set-theory/properties/countable-uncountable/index.html',
         'Set Equality': 'course-content/set-theory/properties/set-equality/index.html',
+
+        'Mod': 'course-content/set-theory/partitions/mod/index.html',
+        'Partitions': 'course-content/set-theory/partitions/partitions/index.html',
+        'Power Set': 'course-content/set-theory/partitions/power-set/index.html',
+        'Relations': 'course-content/set-theory/partitions/relations/index.html',
+        'Cartesian Product': 'course-content/set-theory/operations/cartesian-product/index.html',
+        'Set Difference': 'course-content/set-theory/operations/set-difference/index.html',
+        'Set Intersection': 'course-content/set-theory/operations/set-intersection/index.html',
+        'Set Symmetric Difference': 'course-content/set-theory/operations/set-symmetric-difference/index.html',
+        'Set Union': 'course-content/set-theory/operations/set-union/index.html',
+
+
+
+
+      
+
+
+
+
     }
 
     content_topics = []
