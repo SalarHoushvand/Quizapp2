@@ -57,23 +57,23 @@
             <input type="radio" id="option1" name="{{ i['questionID'] }}" value="1">
             <label class="quiz-radio" for="option1" {% if i["correctAnswer"] == 1 %} style="background-color: #C7FFC6;"
                 {% elif user_selections[questions.index(i)] == 1 and i["correctAnswer"] != 1 %}
-                style="background-color: #FEC7C7;" {% endif %}>{{ i["answers"][0] }}</label><br>
+                style="background-color: #FEC7C7;" {% endif %}>{{ i["answers"][0] | safe }}</label><br>
 
             <input type="radio" id="option2" name="{{ i['questionID'] }}" value="2">
             <label class="quiz-radio" for="option2" {% if i["correctAnswer"] == 2 %} style="background-color: #C7FFC6;"
                 {% elif user_selections[questions.index(i)] == 2 and i["correctAnswer"] != 2 %}
-                style="background-color: #FEC7C7;" {% endif %}>{{ i["answers"][1] }}</label><br>
+                style="background-color: #FEC7C7;" {% endif %}>{{ i["answers"][1] | safe }}</label><br>
 
             <input type="radio" id="option3" name="{{ i['questionID'] }}" value="3">
             <label class="quiz-radio" class="quiz-radio" for="option3" {% if  i["correctAnswer"] == 3 %}
                 style="background-color: #C7FFC6;"
                 {% elif user_selections[questions.index(i)] == 3 and i["correctAnswer"] != 3 %}
-                style="background-color: #FEC7C7;" {% endif %}>{{ i["answers"][2] }}</label><br>
+                style="background-color: #FEC7C7;" {% endif %}>{{ i["answers"][2] | safe }}</label><br>
 
             <input type="radio" id="option4" name="{{ i['questionID'] }}" value="4">
             <label class="quiz-radio" for="option4" {% if  i["correctAnswer"] == 4 %} style="background-color: #C7FFC6;"
                 {% elif user_selections[questions.index(i)] == 4 and i["correctAnswer"] != 4 %}
-                style="background-color: #FEC7C7;" {% endif %}>{{ i["answers"][3] }}</label><br>
+                style="background-color: #FEC7C7;" {% endif %}>{{ i["answers"][3] | safe }}</label><br>
 
             <br>
             <br>
