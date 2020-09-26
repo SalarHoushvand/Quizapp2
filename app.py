@@ -122,16 +122,11 @@ def pre_quiz():
         'Set Difference': 'course-content/set-theory/operations/set-difference/index.html',
         'Set Intersection': 'course-content/set-theory/operations/set-intersection/index.html',
         'Set Symmetric Difference': 'course-content/set-theory/operations/set-symmetric-difference/index.html',
-        'Set Union': 'course-content/set-theory/operations/set-union/index.html',
+        'Set Union': 'course-content/set-theory/operations/set-union/index.html'
+    }
 
-
-
-
-      
-
-
-
-
+    topic_questionUrl_dict = {
+        'Set Union': 'union of sets'
     }
 
     content_topics = []
@@ -144,6 +139,7 @@ def pre_quiz():
             # get number of requested questions from form
             question_num = request.form.get('questionNumber')
             selected_topic = request.form.get('topic')
+            print(question_num)
             print(selected_topic)
             # make an API call based on users choices
             if selected_topic == 'union of sets' or selected_topic == 'symmetric difference' or selected_topic == 'partition' or selected_topic == 'difference of sets' or selected_topic == 'complement' or selected_topic == 'cartesian product':
@@ -181,7 +177,9 @@ def pre_quiz():
             content_topic = request.form.get('contentTopic')
 
 
-            return render_template(topic_urls[content_topic])
+            # return render_template(topic_urls[content_topic])
+
+            return render_template("content.html", topic = topic_urls[content_topic], quizUrl = topic_questionUrl_dict[content_topic])
 
     else:
 
