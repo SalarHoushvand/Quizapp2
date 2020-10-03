@@ -130,6 +130,7 @@ input[type="radio"] {
 }
 
 .quiz-radio {
+    font-size: 20px;
     position: relative;
     border: none;
     padding: 10px 10px;

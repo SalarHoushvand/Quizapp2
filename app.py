@@ -126,7 +126,7 @@ def pre_quiz():
     }
 
     topic_questionUrl_dict = {
-        'Set Union': 'union of sets'
+        'Set Union': 'union of sets',
     }
 
     content_topics = []
@@ -178,8 +178,10 @@ def pre_quiz():
 
 
             # return render_template(topic_urls[content_topic])
-
-            return render_template("content.html", topic = topic_urls[content_topic], quizUrl = topic_questionUrl_dict[content_topic])
+            if content_topic in topic_questionUrl_dict:
+                return render_template("content.html", topic = topic_urls[content_topic], quizUrl = topic_questionUrl_dict[content_topic])
+            else:
+                return render_template("content.html", topic = topic_urls[content_topic], quizUrl = "none")
 
     else:
 

@@ -1,6 +1,6 @@
 {% extends "prelogin-layout.html" %}
 
-{% block title %}Quiz{% endblock %}
+{% block title %}Practice Question{% endblock %}
 
 {% block content %}
 
@@ -37,7 +37,7 @@
     <div class="row">
         <div class="col quiz-col">
 
-            <h1>Quiz</h1>
+            <h1>Practice Question</h1>
 
             <form action="{{ url_for('quiz', quiz_id=quiz_id) }}" method="POST" enctype="multipart/form-data"
                 value="{{ quiz_id }}" name="quiz">
@@ -87,18 +87,18 @@
 
                     </div>
                     <a href="#carouselExampleControls" role="button" data-slide="prev" style="text-align: center;">
-                        <button class="register-btn-white">
+                        <button class="register-btn">
                             <span class="carousel-control-prev-icon" aria-hidden="true">Previous</span>
 
                         </button> </a>
                     <a href="#carouselExampleControls" role="button" data-slide="next"> <button
-                            class="register-btn-white">
+                            class="register-btn">
                             <span class="carousel-control-next-icon" aria-hidden="true">Next</span>
 
                         </button> </a>
                 </div>
                 <!-- //submit button -->
-                <button type="submit" class="register-btn-white">Submit</button>
+                <button type="submit" class="register-btn">Submit</button>
                 <br>
                 <br>
                 <br>
