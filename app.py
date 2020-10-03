@@ -9,6 +9,7 @@ import requests
 from clarifai.errors import ApiError
 import uuid
 from datetime import date
+from bs4 import BeautifulSoup
 
 # APP
 app = Flask(__name__,static_url_path='/static')
@@ -26,6 +27,19 @@ db = mds.SQLAlchemy(app)
 login = LoginManager()
 login.init_app(app)
 
+
+#==============================================================
+# Helper functions
+# Parse the body of the html file
+def parseBody(htmlPage):
+    cwd = os.getcwd()
+    htmlPagePath = os.path.join(cwd, "templates",htmlPage)
+    print("Parsing body")
+    with open(htmlPagePath, 'r', errors="ignore") as f:
+        contents = f.read()
+        soup = BeautifulSoup(contents, 'html.parser')
+        return soup.body
+#==============================================================
 
 # load the current user
 @login.user_loader
@@ -106,6 +120,7 @@ def pre_quiz():
     # save topics in a var
     topic_json = topics.json()
 
+    # key: topic name, value: topic html path
     topic_urls = {
         'Universal Set': 'course-content/set-theory/universal-set/index.html',
         'Sub Sets': 'course-content/set-theory/subsets/index.html',
@@ -125,6 +140,7 @@ def pre_quiz():
         'Set Union': 'course-content/set-theory/operations/set-union/index.html'
     }
 
+    # key: topic name, value: quiz/api
     topic_questionUrl_dict = {
         'Set Union': 'union of sets',
     }
@@ -179,9 +195,11 @@ def pre_quiz():
 
             # return render_template(topic_urls[content_topic])
             if content_topic in topic_questionUrl_dict:
-                return render_template("content.html", topic = topic_urls[content_topic], quizUrl = topic_questionUrl_dict[content_topic])
+                body = parseBody(topic_urls[content_topic])
+                return render_template("content.html", topic = body, quizUrl = topic_questionUrl_dict[content_topic])
             else:
-                return render_template("content.html", topic = topic_urls[content_topic], quizUrl = "none")
+                body = parseBody(topic_urls[content_topic])
+                return render_template("content.html", topic = body, quizUrl = "none")
 
     else:
 

@@ -1,6 +1,6 @@
 {% extends "prelogin-layout.html" %}
 
-{% block title %}Test{% endblock %}
+{% block title %}Content{% endblock %}
 
 {% block content %}
 <!--- Header and nav template site-wide -->
@@ -27,7 +27,8 @@
 </nav>
 
 <!--<h1> This is a test page to test on adding plain html to template </h1>-->
-{% include topic %}
+<!-- { include topic } -->
+{{ topic|safe }}
 
 <form action="/pre_quiz" method="POST" enctype="multipart/form-data" class="pre-quiz-form">
     <input type="hidden" id="topic" name="topic" value="{{ quizUrl }}">
