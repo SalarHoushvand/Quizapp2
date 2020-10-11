@@ -9,47 +9,22 @@
   <title>Function properties (bijection)</title>
   <meta name="description" content="Content relevant for computer science and mathematics majors.">
 
-  <!-- Google Fonts loaded here depending on setting in _data/options.yml true loads font, blank does not--><link href='//fonts.googleapis.com/css?family=Lato:400,400italic' rel='stylesheet' type='text/css'><!-- Load up MathJax script if needed ... specify in /_data/options.yml file--><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS_CHTML"></script><!-- <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-75587219-1', 'auto');
-  ga('send', 'pageview');
-  </script> -->
-
-  <link rel="canonical" href="http://localhost:4000/seng5005/course-content/functions/properties/bijection/">
-  <link rel="alternate" type="application/rss+xml" title="Discrete structures" href="http://localhost:4000/seng5005/feed.xml" />
-
-  <!-- bootstrap cdn -->
-  
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-  
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-  
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  <!-- Google Fonts loaded here depending on setting in _data/options.yml true loads font, blank does not--><link href='//fonts.googleapis.com/css?family=Lato:400,400italic' rel='stylesheet' type='text/css'><!-- Load up MathJax script if needed ... specify in /_data/options.yml file--><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS_CHTML"></script><link rel="canonical" href="http://localhost:4000/course-content/functions/properties/bijection/">
+  <link rel="alternate" type="application/rss+xml" title="Discrete structures" href="http://localhost:4000/feed.xml" />
 
   <!-- jquery for accordion -->
   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-  <script>
-  $( function() {
-    $( "#accordion" ).accordion();
-  } );
-  </script>
 
+  <!-- ionicons for accordion -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+
+  <!-- local stylesheets -->
   <link rel="stylesheet" href="../../../../css/tufte.css" />
   <link rel="stylesheet" href="../../../../css/style.css" />
 
-  <!-- custom javascript-->
-  <script src="../../../../assets/js/question.js"></script>
-
 </head>
-
   <body>
     <!--- Header and nav template site-wide -->
 
@@ -66,7 +41,10 @@
 
 
     <article class="group">
-      <!-- <script type="text/x-mathjax-config">
+      <h1>Function properties (bijection)</h1>
+<p class="subtitle"></p>
+
+<!-- <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
     TeX: {
       Macros: {
@@ -92,28 +70,17 @@
   });
 </script> -->
 
-<div class="container">
-  <div class="row">
-    <div class="col">
-      <h1>Function properties (bijection)</h1>
-      <p class="subtitle"></p>
-    </div>
-    <div class="col">
-      <button type="button" class="btn-questions" onclick="connectToQuiz()">Pratice Question</button>
-      <button type="button" class="btn-questions" onclick="getQuestions()">Post-Test</button>
-      <button type="button" class="btn-questions" onclick="getQuestions()">Pre-Test</button>
-    </div>
-  </div>
-  <div class="row">
-    
-<p>Content under development \(\ldots\)</p>
+
+<p>A function \((D_f, R_f, f)\) is said to be a bijection if it is both injective and surjective, meaning that every \(y\) in the Range set of \(f,\) \(R_f,\) is the image of exactly one element \(x\) in Domain set of \(f,\) \(D_f\) so that is a one-to-once correspondence between the elements of \(D_f\) and the elements of \(R_f.\)</p>
+
+<p><strong>Example 4</strong> Take the Domain set to be \(D_f = Z = { \ldots, -2, -1, 0, 1, 2, \ldots }\) and the Range set \(R_f = N = { 0, 1, 2, \ldots }\). Define \(f\) with the statement \(f(x) = -2x-1\) if \(x &lt; 0\) and \(f(x) = 2x\) if \(x \geq 0.\) To show that \(f\) is onto, or rather surjective, we note that if \(y\) is in \(R_f,\) then \(y\) is either even or odd. In the case that \(y\) is even, there is an integer \(z\) so that \(y = 2z.\) It follows that since \(y \geq 0,\) \(z \geq 0.\) By the rule, \(f(z) = 2z = y.\) In the case that \(y\) is odd, then there exists an integer \(z\) with \(y = 2z -1.\)  Since \(y \geq 1,\) \(2z-1 \geq 1\) and \(z \geq 1.\) Using the properties of multiplication, addition and the ordering of the integers, \(-z \leq -1..\) Since \(-(-z) = z,\) we have an integer \(\hat{z} = -z \leq 1 &lt; 0,\) with \(f(\hat{z}) = y = 2(-\hat{z}))-1 = -2\hat{z} - 1.\)
+To prove that \(f\) is one-to-one, or injective, assume there is an \(y\) in \(R_f\) and \(x_1, x_2\) in \(D_f\) with \(x_1 \neq x_2.\) If both \(x_1\) and \(x_2\) are greater than \(0,\) then \(x_1 \neq x_2\) implies  \(2x_1 \neq 2x_2.\) So that \(f(x_1) \neq f(x_2).\) If both \(x_1\) and \(x_2\) are less than \(x_1 \neq x_2\) implies that \(2x_1 - 1 \neq 2x_2 -1.\) And again, \(f(x_1) \neq f(x_2).\)  The only other case is if \(x_1\) and \(x_2\) are both \(0,\) but we are only out to test whether \(f\) is injective, meaining that if two elements in the Domain set are not equal, then their images are not equal. 
+The function \(f\) is thus a bijection.</p>
 
 <p><br />
 <a href="../../../../">Back to course home</a></p>
 
-  </div>
-</div>
-<meta id="js-data" data-title="Function properties (bijection)" data-base="/seng5005/assets/json/corrispondingQuestionTopic.json">
+
 
     </article>
     <footer>
@@ -125,5 +92,7 @@ This work is supported by the <a href="https://www.nsf.gov/" target="_blank">NSF
 
 
 
+    
+<script src="/accordion.js"></script>
   </body>
 </html>

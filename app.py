@@ -35,10 +35,15 @@ def parseBody(htmlPage):
     cwd = os.getcwd()
     htmlPagePath = os.path.join(cwd, "templates",htmlPage)
     print("Parsing body")
-    with open(htmlPagePath, 'r', errors="ignore") as f:
+    with open(htmlPagePath, 'r', encoding="utf-8") as f:
         contents = f.read()
         soup = BeautifulSoup(contents, 'html.parser')
-        return soup.body
+        body = soup.body
+        
+        body.header.decompose()
+        body.footer.decompose()
+
+        return body
 #==============================================================
 
 # load the current user
@@ -137,7 +142,8 @@ def pre_quiz():
         'Set Difference': 'course-content/set-theory/operations/set-difference/index.html',
         'Set Intersection': 'course-content/set-theory/operations/set-intersection/index.html',
         'Set Symmetric Difference': 'course-content/set-theory/operations/set-symmetric-difference/index.html',
-        'Set Union': 'course-content/set-theory/operations/set-union/index.html'
+        'Set Union': 'course-content/set-theory/operations/set-union/index.html',
+        'Empty Set' : 'course-content/set-theory/empty-set/index.html'
     }
 
     # key: topic name, value: quiz/api
@@ -196,6 +202,7 @@ def pre_quiz():
             # return render_template(topic_urls[content_topic])
             if content_topic in topic_questionUrl_dict:
                 body = parseBody(topic_urls[content_topic])
+                print(body)
                 return render_template("content.html", topic = body, quizUrl = topic_questionUrl_dict[content_topic])
             else:
                 body = parseBody(topic_urls[content_topic])

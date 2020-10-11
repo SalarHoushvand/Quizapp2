@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
-
-<head>
+  
+  <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,88 +9,42 @@
   <title>Modular arithmetic, relations, and partitions</title>
   <meta name="description" content="Content relevant for computer science and mathematics majors.">
 
-  <!-- Google Fonts loaded here depending on setting in _data/options.yml true loads font, blank does not-->
-  <link href='//fonts.googleapis.com/css?family=Lato:400,400italic' rel='stylesheet' type='text/css'>
-  <!-- Load up MathJax script if needed ... specify in /_data/options.yml file-->
-  <script type="text/javascript"
-    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS_CHTML"></script>
-  <!-- <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-75587219-1', 'auto');
-  ga('send', 'pageview');
-  </script> -->
-
-  <link rel="canonical" href="http://localhost:4000/seng5005/course-content/set-theory/partitions/mod/">
-  <link rel="alternate" type="application/rss+xml" title="Discrete structures"
-    href="http://localhost:4000/seng5005/feed.xml" />
-
-  <!-- bootstrap cdn -->
-
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
-    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-    crossorigin="anonymous"></script>
-
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
-    integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-    crossorigin="anonymous"></script>
+  <!-- Google Fonts loaded here depending on setting in _data/options.yml true loads font, blank does not--><link href='//fonts.googleapis.com/css?family=Lato:400,400italic' rel='stylesheet' type='text/css'><!-- Load up MathJax script if needed ... specify in /_data/options.yml file--><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS_CHTML"></script><link rel="canonical" href="http://localhost:4000/course-content/set-theory/partitions/mod/">
+  <link rel="alternate" type="application/rss+xml" title="Discrete structures" href="http://localhost:4000/feed.xml" />
 
   <!-- jquery for accordion -->
   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-  <script>
-    $(function () {
-      $("#accordion").accordion();
-    });
-  </script>
 
-  <link rel="stylesheet" href="../../../../static/stylesheets/tufte.css" />
-  <link rel="stylesheet" href="../../../../static/stylesheets/style.css" />
+  <!-- ionicons for accordion -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
 
-  <!-- custom javascript-->
-  <script src="../../../../assets/js/question.js"></script>
+  <!-- local stylesheets -->
+  <link rel="stylesheet" href="../../../../css/tufte.css" />
+  <link rel="stylesheet" href="../../../../css/style.css" />
 
 </head>
-
-<body>
-  <!--- Header and nav template site-wide -->
-
-
-  <nav class="navbar navbar-expand-md navbar-dark sticky-top">
-    <div class="container-fluid">
-      <!-- // welcome message -->
+  <body>
+    <!--- Header and nav template site-wide -->
 
 
-      <!-- // collapse toggle button -->
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <!-- // navbar items -->
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item active"><a class="nav-link active" href="{{ url_for('pre_quiz')}}">Dashboard</a>
-          </li>
-          <li class="nav-item"><a class="nav-link" href="{{ url_for('logout')}}">Logout</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+<header>
+    <nav class="group">
+    <a href="../../../../">Home</a>
+    <a href="http://ispel.cs.ecu.edu/" target="_blank">ISPeL</a>
+    <a href="../../../../syllabus/" target="_blank">Fall 2020</a>
+    <a href="https://github.com/vngudivada/ISPeL-content-discrete-structures.git" target="_blank">GitHub</a>
+    </nav>
+</header>
 
 
-  <article class="group">
-    <!-- <script type="text/x-mathjax-config">
+
+    <article class="group">
+      <h1>Modular arithmetic, relations, and partitions</h1>
+<p class="subtitle"></p>
+
+<!-- <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
     TeX: {
       Macros: {
@@ -116,64 +70,32 @@
   });
 </script> -->
 
-    <div class="container">
-      <div class="row">
-        <div class="col">
-          <h1>Modular arithmetic, relations, and partitions</h1>
-          <p class="subtitle"></p>
-        </div>
 
-      </div>
-      <div class="row">
+<p>Modular arithmetic is a common thread running through the topics of discrete structures.  At this juncture, we investigate modular arithmetic in terms of set theory.</p>
 
-        <p>Modular arithmetic is a common thread running through the topics of discrete structures. At this juncture, we
-          investigate modular arithmetic in terms of set theory.</p>
+<p>Firstly, we need to understand what we meant by division of two integers.  Take as the Universal
+set, \(U,\) the set of all integers \(U= Z = \{ \ldots, -3, -2, -1, 0, 1, 2, 3, \ldots \}.\)  For two elements \(x\) and \(y\) in \(Z,\) where \(y\) is not 0, we say that the integer \(y\) divides the integer \(x\) if there is an integer \(q\) where 
+\(x = q*y + 0.\)</p>
 
-        <p>Firstly, we need to understand what we meant by division of two integers. Take as the Universal
-          set, \(U,\) the set of all integers \(U= Z = \{ \ldots, -3, -2, -1, 0, 1, 2, 3, \ldots \}.\) For two elements
-          \(x\) and \(y\) in \(Z,\) where \(y\) is not 0, we say that the integer \(y\) divides the integer \(x\) if
-          there is an integer \(q\) where
-          \(x = q*y + 0.\)</p>
+<p>For example \(8\) is divisible by \(2\) because there exists an integer \(q = 4\) so that \(8 = 2*4 + 0.\)  One way to prove that an integer \(x\) is divisible by integer \(y \neq 0\) is to show the existence of the integer \(q\) with \(x = qy + 0\) as we did with \(x = 8\) and \(y = 2.\)</p>
 
-        <p>For example \(8\) is divisible by \(2\) because there exists an integer \(q = 4\) so that \(8 = 2*4 + 0.\)
-          One way to prove that an integer \(x\) is divisible by integer \(y \neq 0\) is to show the existence of the
-          integer \(q\) with \(x = qy + 0\) as we did with \(x = 8\) and \(y = 2.\)</p>
+<p>However, to prove that \(x = 7\) is not divisible by \(2\) requires either an exhaustive search for integer \(q\) mentioned in the definiton of division or a sequence of true statements implying the truth of the statement that no such \(q\) exists.</p>
 
-        <p>However, to prove that \(x = 7\) is not divisible by \(2\) requires either an exhaustive search for integer
-          \(q\) mentioned in the definiton of division or a sequence of true statements implying the truth of the
-          statement that no such \(q\) exists.</p>
+<p>To begin a draft of such a proof, let’s reframe the problem using more familiar terms.  For \(x = 7\) and \(y = 2,\)  we are looking for the integer solution set to the equation \(7 - 2q = 0.\)  In set notation, we need \(S = \{ q \vert 7 - 2q = 0\}.\)   The graph of this line consists of the points \(\{(q,y) \vert q \in Z  \text{ and } 7- 2q = y \}.\)   Visualizing the graph of the line \(7 - 2x = y\) in the \(x-y\) plane, the solution set \(S\) contains the \(x\) intercept of the line if the x-intercept is of the form \((q,0)\) where \(q\) is an integer.  Otherwise, the solution set \(S\) will be the Emptyset, \(\emptyset.\)</p>
 
-        <p>To begin a draft of such a proof, let’s reframe the problem using more familiar terms. For \(x = 7\) and \(y
-          = 2,\) we are looking for the integer solution set to the equation \(7 - 2q = 0.\) In set notation, we need
-          \(S = \{ q \vert 7 - 2q = 0\}.\) The graph of this line consists of the points \(\{(q,y) \vert q \in Z \text{
-          and } 7- 2q = y \}.\) Visualizing the graph of the line \(7 - 2x = y\) in the \(x-y\) plane, the solution set
-          \(S\) contains the \(x\) intercept of the line if the x-intercept is of the form \((q,0)\) where \(q\) is an
-          integer. Otherwise, the solution set \(S\) will be the Emptyset, \(\emptyset.\)</p>
+<p>The graph of the line \(7 - 2x = y\) is continuous through the \(x\)-axis crossing at a point between \((3, 0)\) and \((4,0)\)  since \(7 - 2(3) &gt; 0 &gt; 7 - 2(4).\)  The solution set \(S\) is empty and we conclude that \(7\) is not divisible by \(2.\)</p>
 
-        <p>The graph of the line \(7 - 2x = y\) is continuous through the \(x\)-axis crossing at a point between \((3,
-          0)\) and \((4,0)\) since \(7 - 2(3) &gt; 0 &gt; 7 - 2(4).\) The solution set \(S\) is empty and we conclude
-          that \(7\) is not divisible by \(2.\)</p>
+<p>The information gained by looking at the previous example goes beyond our original attempt to prove \(7\) is not divisible by \(2.\)  The exercise provided insight into the steps needed in general.</p>
 
-        <p>The information gained by looking at the previous example goes beyond our original attempt to prove \(7\) is
-          not divisible by \(2.\) The exercise provided insight into the steps needed in general.</p>
+<p>We have demonstrated a common approach that is taken when solving a challenging problem is to determine the steps involved in a solution.  First propose the steps for a solution, and then test out the solution on a trial case or cases.  This can save time in the long run by potentially catching errors before they occur and correcting the approach.</p>
 
-        <p>We have demonstrated a common approach that is taken when solving a challenging problem is to determine the
-          steps involved in a solution. First propose the steps for a solution, and then test out the solution on a
-          trial case or cases. This can save time in the long run by potentially catching errors before they occur and
-          correcting the approach.</p>
+<p>Here is the proposed solution:  For any integer \(x\) and positive integer \(y,\) determine the largest positive multiple of \(y\) less than or equal to \(x.\)  If the difference  between 
+\(x\) and this largest multiple of \(y\) is \(0\) then \(x\) is divisible by \(y.\)</p>
 
-        <p>Here is the proposed solution: For any integer \(x\) and positive integer \(y,\) determine the largest
-          positive multiple of \(y\) less than or equal to \(x.\) If the difference between
-          \(x\) and this largest multiple of \(y\) is \(0\) then \(x\) is divisible by \(y.\)</p>
+<p>In general, for an integer \(x\) and non-zero integer \(y,\) we can determine the largest multiple of \(y\) less than or equal to \(x\) and the remainder using the following steps.  Then the solution to the problem
+of determining if \(x\) is divisible by \(y\) is solved by finding the remainder (residual) \(x - qy.\) If the residual \(r\) equals \(0,\) then \(x\) is divisible by \(y.\)  As we craft the steps needed, we are careful to consider the cases when \(x = 0, x &lt; 0\) and \(x &gt; 0.\)</p>
 
-        <p>In general, for an integer \(x\) and non-zero integer \(y,\) we can determine the largest multiple of \(y\)
-          less than or equal to \(x\) and the remainder using the following steps. Then the solution to the problem
-          of determining if \(x\) is divisible by \(y\) is solved by finding the remainder (residual) \(x - qy.\) If the
-          residual \(r\) equals \(0,\) then \(x\) is divisible by \(y.\) As we craft the steps needed, we are careful to
-          consider the cases when \(x = 0, x &lt; 0\) and \(x &gt; 0.\)</p>
-
-        <figure class="highlight">
-          <pre><code class="language-python" data-lang="python"><span class="n">given</span> <span class="n">x</span><span class="p">,</span><span class="n">y</span> 
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">given</span> <span class="n">x</span><span class="p">,</span><span class="n">y</span> 
 
 <span class="n">trackit</span> <span class="o">=</span> <span class="n">x</span> 
 <span class="n">q</span> <span class="o">=</span> <span class="mi">0</span>
@@ -188,188 +110,159 @@
 		<span class="n">trackit</span> <span class="o">=</span> <span class="n">trackit</span> <span class="o">+</span> <span class="n">y</span>
 		<span class="n">q</span> <span class="o">=</span> <span class="n">q</span> <span class="o">-</span> <span class="mi">1</span>
 
-<span class="k">print</span> <span class="n">q</span></code></pre>
-        </figure>
+<span class="k">print</span> <span class="n">q</span></code></pre></figure>
 
-        <p>Walking through the above steps, the value of \(x\) and \(y\) remain fixed. The variable trackit is assigned
-          to be \(x\) at the start. If \(x\) is greater than or equal to \(0,\) we subtract \(y\) from \(x\) and
-          increment \(q\) until the first difference is negative. If \(x\) is less than \(0,\)
-          we iteratively add on \(y\) and decrease \(q\) until the result is greater than \(0.\)</p>
+<p>Walking through the above steps, the value of \(x\) and \(y\) remain fixed. The variable trackit is assigned to be \(x\) at the start.  If \(x\) is greater than or equal to \(0,\) we subtract \(y\) from \(x\) and increment \(q\) until the first difference is negative.  If \(x\) is less than \(0,\)
+we iteratively add on \(y\) and decrease \(q\) until the result is greater than \(0.\)</p>
 
-        <p>For \(x = 0\) and \(y = 2,\) the printed value of \(q\) is \(0.\) It is the case that residual, or remainder
-          when \(x\) is divided by \(y\) is \(x - qy = 0 -0(2) = 0.\)</p>
+<p>For \(x = 0\) and \(y = 2,\)  the printed value of \(q\) is \(0.\) It is the case that residual, or remainder when \(x\) is divided by \(y\) is \(x - qy = 0 -0(2) = 0.\)</p>
 
-        <p>For \(x = 1\) and \(y = 2,\) the printed value of \(q\) is \(0.\) The residual, or remeainder when \(1\) is
-          divided by \(2\) is \(1 -0(2) = 1.\)</p>
+<p>For \(x = 1\) and \(y = 2,\)  the printed value of \(q\) is \(0.\)  The residual, or remeainder when \(1\) is divided by \(2\) is \(1 -0(2) = 1.\)</p>
 
-        <p>For \(x = 2,\) \(q = 1\) and the residual is \(0.\)</p>
+<p>For \(x = 2,\) \(q = 1\) and the residual is \(0.\)</p>
 
-        <p>For \(x = 3,\) \(q = 1\) and the residual is \(1.\)</p>
+<p>For \(x = 3,\) \(q = 1\) and the residual is \(1.\)</p>
 
-        <p>We summarize output values and the residual for \(x\) and \(y = 2\):</p>
+<p>We summarize output values and the residual for \(x\) and \(y = 2\):</p>
 
-        <table>
-          <tbody>
-            <tr>
-              <td>x</td>
-              <td> </td>
-              <td> </td>
-              <td>q</td>
-              <td> </td>
-              <td> </td>
-              <td>residual</td>
-            </tr>
-            <tr>
-              <td>-1</td>
-              <td> </td>
-              <td> </td>
-              <td>-1</td>
-              <td> </td>
-              <td> </td>
-              <td>1</td>
-            </tr>
-            <tr>
-              <td>0</td>
-              <td> </td>
-              <td> </td>
-              <td>0</td>
-              <td> </td>
-              <td> </td>
-              <td>0</td>
-            </tr>
-            <tr>
-              <td>1</td>
-              <td> </td>
-              <td> </td>
-              <td>0</td>
-              <td> </td>
-              <td> </td>
-              <td>1</td>
-            </tr>
-            <tr>
-              <td>7</td>
-              <td> </td>
-              <td> </td>
-              <td>3</td>
-              <td> </td>
-              <td> </td>
-              <td>1</td>
-            </tr>
-          </tbody>
-        </table>
+<table>
+  <tbody>
+    <tr>
+      <td>x</td>
+      <td> </td>
+      <td> </td>
+      <td>q</td>
+      <td> </td>
+      <td> </td>
+      <td>residual</td>
+    </tr>
+    <tr>
+      <td>-1</td>
+      <td> </td>
+      <td> </td>
+      <td>-1</td>
+      <td> </td>
+      <td> </td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>0</td>
+      <td> </td>
+      <td> </td>
+      <td>0</td>
+      <td> </td>
+      <td> </td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td> </td>
+      <td> </td>
+      <td>0</td>
+      <td> </td>
+      <td> </td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td> </td>
+      <td> </td>
+      <td>3</td>
+      <td> </td>
+      <td> </td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
 
-        <p>For \(x = -1, 1\) and \(7,\) the residual is \(1.\) It is then the case that residual, or remainder when
-          \(x\) is divided by \(y\) is \(x - qy = 7 -3(2) = 1.\)</p>
+<p>For \(x = -1, 1\) and \(7,\) the residual is \(1.\) It is then the case that residual, or remainder when \(x\) is divided by \(y\) is \(x - qy = 7 -3(2) = 1.\)</p>
 
-        <p>Modular arithmetic begins with forming a relation on the integers, denoted \(\equiv\) and defined as follows:
-        </p>
+<p>Modular arithmetic begins with forming a relation on the integers, denoted \(\equiv\) and defined as follows:</p>
 
-        <p>For integers \(x\) and \(z,\) \(x \equiv z \pmod{y}\) if the residual when dividing \(x\) by \(y\) is equal
-          to the residual when dividing \(z\) by \(y.\)</p>
+<p>For integers \(x\) and \(z,\) \(x \equiv z \pmod{y}\) if the residual when dividing \(x\) by \(y\) is equal to the residual when dividing \(z\) by \(y.\)</p>
 
-        <p>From our discussion above, \(7 \equiv -1 \pmod{2}.\)</p>
+<p>From our discussion above, \(7 \equiv -1 \pmod{2}.\)</p>
 
-        <p>The “mod” relation is an equivalence relation and partions the set of integers into a disjoint subsets, and
-          each of these subsets is viewed as a new object called an equivalence class.</p>
+<p>The “mod” relation is an equivalence relation and partions the set of integers into a disjoint subsets, and each of these subsets is viewed as a new object called an equivalence class.</p>
 
-        <p>To prove that \(x \equiv z \pmod{y}\) is an equivalence relation on \(Z,\) one would need to show that the
-          relation is reflexive, transitive and symmetric.</p>
+<p>To prove that \(x \equiv z \pmod{y}\) is an equivalence relation on \(Z,\) one would need to show that the relation is reflexive, transitive and symmetric.</p>
 
-        <p>For \(y = 2,\) the partitions defined by \(\equiv \pmod{2}\) are the disjoint subsets:</p>
+<p>For \(y = 2,\) the partitions defined by \(\equiv \pmod{2}\) are the disjoint subsets:</p>
 
-        \[\ [1] = \{\ldots -3, -1, 1, 3, 5, \ldots\} \text{ and } [0] = \{\ldots -4, -2, 0, 2, 4, \ldots\}\]
+\[\ [1] = \{\ldots -3, -1, 1, 3, 5, \ldots\} \text{ and } [0] = \{\ldots -4, -2, 0,  2, 4, \ldots\}\]
 
-        <p>Observe that \([1]^{c}= [0]\), \([1] \cap [0] = \emptyset\) and \([0] \cup [1] = Z.\)</p>
+<p>Observe that \([1]^{c}= [0]\), \([1] \cap [0] = \emptyset\) and \([0] \cup [1] = Z.\)</p>
 
-        <p>The set of classes \(\{ [0] , [1] \}\) is truly the set \(Z_2\) which can be mapped onto the set \(\{0,1\}.\)
-          A map also exists from the Powerset of \(Z_2\) to the Powerset of \(\{0,1\}.\)</p>
+<p>The set of classes \(\{ [0] , [1] \}\) is truly the set \(Z_2\) which can be mapped onto the set \(\{0,1\}.\)  A map also exists from the Powerset of \(Z_2\) to the Powerset of \(\{0,1\}.\)</p>
 
-        \[\{ \} \rightarrow \{ \}\]
+\[\{ \} \rightarrow \{ \}\]
 
-        \[\{ [0] \} \rightarrow \{ 0\}\]
+\[\{ [0] \} \rightarrow \{ 0\}\]
 
-        \[\{ [1] \} \rightarrow \{ 1 \}\]
+\[\{ [1] \} \rightarrow \{ 1 \}\]
 
-        \[\{ [0], [1]\} \rightarrow \{ 0, 1\}\]
+\[\{ [0], [1]\} \rightarrow \{ 0, 1\}\]
 
-        <p>But what is even more beautiful is the mapping from \(Z\) to \(Z_n\) where \(n\) is a positive integer. The
-          map that
-          takes \(x\) in \(Z\) to the equivalence class element \([x]\) of \(Z\) where the set \([x]\) is created by the
-          \(\equiv \pmod{n}\) relation.</p>
+<p>But what is even more beautiful is the mapping from \(Z\) to \(Z_n\) where \(n\) is a positive integer.  The map that
+takes \(x\) in \(Z\) to the equivalence class element \([x]\) of \(Z\) where the set \([x]\) is created by the \(\equiv \pmod{n}\) relation.</p>
 
-        <p>When \(n = 2,\) the map takes \(7 \longrightarrow [7]\) However, there is some flexibility in referring to
-          the elements of \(Z_2\) since \([1] = \{ \ldots, -1, 1, 3, 5, 7 \ldots \}\) and \([-1] = [-3] = \cdots = [7] =
-          \cdots\),
-          there are an infinte number of ways for us to refer to the same element in \(Z_2.\) The same is true for the
-          elements equivalent to \([0] \in Z_2\) such as \([2]\) and \([-2]\).</p>
+<p>When \(n = 2,\) the map takes \(7 \longrightarrow [7]\) However, there is some flexibility in referring to the elements of \(Z_2\) since \([1] = \{ \ldots, -1, 1, 3, 5, 7 \ldots \}\) and \([-1] = [-3] = \cdots = [7] = \cdots\), 
+there are an infinte number of ways for us to refer to the same element in \(Z_2.\)  The same is true for the elements equivalent to \([0] \in Z_2\) such as \([2]\) and \([-2]\).</p>
 
-        <p>The set \(Z_n\) can have no repeated elements by definiton, and the convention is to only use the elements
-          \([0], [1], \ldots, [n-1]\) when working with the set and operations on the set.</p>
+<p>The set \(Z_n\) can have no repeated elements by definiton, and the convention is to only use the elements \([0], [1], \ldots, [n-1]\) when working with the set and operations on the set.</p>
 
-        <p>In general <strong>Modular Arithmetic</strong> is defined on elements (equivalence classes) \([x]\) and
-          \([y]\) in \(Z_n\) with</p>
+<p>In general <strong>Modular Arithmetic</strong> is defined on elements (equivalence classes) \([x]\) and \([y]\) in \(Z_n\) with</p>
 
-        \[[x] + [y] = [z], where (x + y) \equiv z \pmod{n}.\]
+\[[x] + [y] = [z], where (x + y) \equiv z \pmod{n}.\]
 
-        <p><strong>Example 1</strong>
-          In \(Z_7\), \([1] = \{\ldots, -6, 1, 8, \ldots\}\) and \([16] = \{ \ldots, -5, 2 , 9, 16, \ldots \}\) the
-          result of adding
-          \([1] + [3] = [4]\) in \(Z_2,\) which is reassuring to many. However, when adding \([3]\) and \([6]\) in
-          $$Z_2, we have</p>
+<p><strong>Example 1</strong>
+In \(Z_7\), \([1] = \{\ldots, -6, 1, 8, \ldots\}\) and \([16] = \{ \ldots, -5, 2 , 9, 16,  \ldots \}\) the result of adding
+\([1] + [3] = [4]\) in \(Z_2,\) which is reassuring to many. However, when adding \([3]\) and \([6]\) in $$Z_2, we have</p>
 
-        <p>\([3] + [6] = [2]\) since \((3 + 6) \equiv 9 \equiv 2 \pmod{2}.\)</p>
+<p>\([3] + [6] = [2]\) since \((3 + 6) \equiv 9 \equiv 2 \pmod{2}.\)</p>
 
-        <p><label for="set-union" class="margin-toggle">⊕</label>
-          <input type="checkbox" id="set-union" class="margin-toggle" />
-          <span class="marginnote"><img class="fullwidth" src="../../../../static/images/graphics/set-theory/mod7.svg"
-              alt="To add 3 and 6 in $$Z_7,$$ you can start at 6 and rotate clockwise 3 units to the 2 on the circle." /><br />
-            To add 3 and 6 in \(Z_7,\) you can start at 6 and rotate clockwise 3 units to the 2 on the circle.
-          </span></p>
+<p><label for="set-union" class="margin-toggle">⊕</label>
+<input type="checkbox" id="set-union" class="margin-toggle" />
+<span class="marginnote"><img class="fullwidth" src="../../../../course-content/graphics/set-theory/mod7.svg" alt="To add 3 and 6 in $$Z_7,$$ you can start at 6 and rotate clockwise 3 units to the 2 on the circle." /><br />
+    To add 3 and 6 in \(Z_7,\) you can start at 6 and rotate clockwise 3 units to the 2 on the circle.
+</span></p>
 
-        <p>Set union and modular arithmetic are very different operations in \(Z_2\). Consider the union of \([0]\) and
-          \([1]\) in \(Z_2.\)</p>
+<p>Set union and modular arithmetic are very different operations in \(Z_2\). Consider the union of \([0]\) and \([1]\) in \(Z_2.\)</p>
 
-        \[[0] \cup [1] = Z\]
+\[[0] \cup [1] = Z\]
 
-        <p>and modular arithmetic on the elements (equivalence classes) of \(Z_2\) gives us:</p>
+<p>and modular arithmetic on the elements (equivalence classes) of \(Z_2\) gives us:</p>
 
-        <p>\([0] + [1] = [x]\) where \(x \equiv (0 + 1) \pmod{2}\)</p>
+<p>\([0] + [1] = [x]\) where \(x \equiv (0 + 1) \pmod{2}\)</p>
 
-        <p><strong>Student project</strong>: For your choice of a prime number \(p &gt; 3\), let \(S = \{ 0, 1, 2,
-          \ldots, p-1 \}.\) Illustrate the concepts of partitions, power sets and relations:</p>
+<p><strong>Student project</strong>:  For your choice of a prime number \(p &gt; 3\), let \(S = \{ 0, 1, 2, \ldots, p-1 \}.\)  Illustrate the concepts of partitions, power sets and relations:</p>
 
-        <ol>
-          <li>
-            <p>Find the power set of \(S\), \(\mathcal{P}(S)\) and the cardinality of \(\mathcal{P}(S).\)</p>
-          </li>
-          <li>
-            <p>Define a relation on a set \(S\) that satisfies the properties of an equivalence relation. What are the
-              subsets of the partition of \(S\) generated by your relation?</p>
-          </li>
-        </ol>
+<ol>
+  <li>
+    <p>Find the power set of \(S\), \(\mathcal{P}(S)\) and the cardinality of \(\mathcal{P}(S).\)</p>
+  </li>
+  <li>
+    <p>Define a relation on a set \(S\) that satisfies the properties of an equivalence relation.  What are the subsets of the partition of \(S\) generated by your relation?</p>
+  </li>
+</ol>
 
-        <p><br />
+<p><br />
+<a href="../../../../">Back to course home</a></p>
 
 
 
-      </div>
-    </div>
-    <meta id="js-data" data-title="Modular arithmetic, relations, and partitions"
-      data-base="/seng5005/assets/json/corrispondingQuestionTopic.json">
 
-  </article>
-  <footer>
-    <hr class="slender">
-    <div class="credits">
-      This work is supported by the <a href="https://www.nsf.gov/" target="_blank">NSF</a> IUSE/PFE:RED award No. <a
-        href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=1730568" target="_blank">1730568</a>. Site created with
-      <a href="//jekyllrb.com" target="_blank">Jekyll</a> using the <a href="//github.com/clayh53/tufte-jekyll"
-        target="_blank">Tufte theme</a>. &copy; 2020 by ECU.
-    </div>
-  </footer>
+    </article>
+    <footer>
+<hr class="slender">
+<div class="credits">
+This work is supported by the <a href="https://www.nsf.gov/" target="_blank">NSF</a> IUSE/PFE:RED award No. <a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=1730568" target="_blank">1730568</a>. Site created with <a href="//jekyllrb.com" target="_blank">Jekyll</a> using the <a href="//github.com/clayh53/tufte-jekyll" target="_blank">Tufte theme</a>. &copy; 2020 by ECU.
+</div>
+</footer>
 
 
 
-</body>
-
+    
+<script src="/accordion.js"></script>
+  </body>
 </html>

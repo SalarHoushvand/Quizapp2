@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
-
-<head>
+  
+  <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,89 +9,42 @@
   <title>Set Equality</title>
   <meta name="description" content="Content relevant for computer science and mathematics majors.">
 
-  <!-- Google Fonts loaded here depending on setting in _data/options.yml true loads font, blank does not-->
-  <link href='//fonts.googleapis.com/css?family=Lato:400,400italic' rel='stylesheet' type='text/css'>
-  <!-- Load up MathJax script if needed ... specify in /_data/options.yml file-->
-  <script type="text/javascript"
-    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS_CHTML"></script>
-  <!-- <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-75587219-1', 'auto');
-  ga('send', 'pageview');
-  </script> -->
-
-  <link rel="canonical" href="http://localhost:4000/seng5005/course-content/set-theory/properties/set-equality/">
-  <link rel="alternate" type="application/rss+xml" title="Discrete structures"
-    href="http://localhost:4000/seng5005/feed.xml" />
-
-  <!-- bootstrap cdn -->
-
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
-    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-    crossorigin="anonymous"></script>
-
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
-    integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-    crossorigin="anonymous"></script>
+  <!-- Google Fonts loaded here depending on setting in _data/options.yml true loads font, blank does not--><link href='//fonts.googleapis.com/css?family=Lato:400,400italic' rel='stylesheet' type='text/css'><!-- Load up MathJax script if needed ... specify in /_data/options.yml file--><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS_CHTML"></script><link rel="canonical" href="http://localhost:4000/course-content/set-theory/properties/set-equality/">
+  <link rel="alternate" type="application/rss+xml" title="Discrete structures" href="http://localhost:4000/feed.xml" />
 
   <!-- jquery for accordion -->
   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-  <script>
-    $(function () {
-      $("#accordion").accordion();
-    });
-  </script>
 
-  <link rel="stylesheet" href="../../../../static/stylesheets/tufte.css" />
-  <link rel="stylesheet" href="../../../../static/stylesheets/style.css" />
+  <!-- ionicons for accordion -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
 
-  <!-- custom javascript-->
-  <script src="../../../../assets/js/question.js"></script>
+  <!-- local stylesheets -->
+  <link rel="stylesheet" href="../../../../css/tufte.css" />
+  <link rel="stylesheet" href="../../../../css/style.css" />
 
 </head>
-
-<body>
-  <!--- Header and nav template site-wide -->
-
-
-  <nav class="navbar navbar-expand-md navbar-dark sticky-top">
-    <div class="container-fluid">
-      <!-- // welcome message -->
+  <body>
+    <!--- Header and nav template site-wide -->
 
 
-      <!-- // collapse toggle button -->
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <!-- // navbar items -->
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item active"><a class="nav-link active" href="{{ url_for('pre_quiz')}}">Dashboard</a>
-          </li>
-          <li class="nav-item"><a class="nav-link" href="{{ url_for('logout')}}">Logout</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+<header>
+    <nav class="group">
+    <a href="../../../../">Home</a>
+    <a href="http://ispel.cs.ecu.edu/" target="_blank">ISPeL</a>
+    <a href="../../../../syllabus/" target="_blank">Fall 2020</a>
+    <a href="https://github.com/vngudivada/ISPeL-content-discrete-structures.git" target="_blank">GitHub</a>
+    </nav>
+</header>
 
 
 
-  <article class="group">
-    <!-- <script type="text/x-mathjax-config">
+    <article class="group">
+      <h1>Set equality</h1>
+<p class="subtitle"></p>
+
+<!-- <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
     TeX: {
       Macros: {
@@ -117,152 +70,92 @@
   });
 </script> -->
 
-    <div class="container">
-      <div class="row">
-        <div class="col">
-          <h1>Set equality</h1>
-          <p class="subtitle"></p>
-        </div>
 
-      </div>
-      <div class="row">
+<p>We will often need to test or prove that two given collections of items are equal.  In some cases the sets are expressed differently, and in other instances the equality of the sets will “seem” obvious. In either case, an argument must be made that demonstrates that the two sets are equal.</p>
 
-        <p>We will often need to test or prove that two given collections of items are equal. In some cases the sets are
-          expressed differently, and in other instances the equality of the sets will “seem” obvious. In either case, an
-          argument must be made that demonstrates that the two sets are equal.</p>
+<p>Before delving into the definition for set equality and the essentials of showing two sets are equal, consider a closely related concept in mathematics.  The following is a statement that two objects are equal. These objects are expressions in the current case, and the objects are different in their appearance but we are given that they are equal. If we assume this to be true, the usual next step is to write a new statement about the value(s) of \(x\) that must then be true. Specifically, what are the values of \(x\)?</p>
 
-        <p>Before delving into the definition for set equality and the essentials of showing two sets are equal,
-          consider a closely related concept in mathematics. The following is a statement that two objects are equal.
-          These objects are expressions in the current case, and the objects are different in their appearance but we
-          are given that they are equal. If we assume this to be true, the usual next step is to write a new statement
-          about the value(s) of \(x\) that must then be true. Specifically, what are the values of \(x\)?</p>
+\[\frac{1}{2}x + \frac{1}{4} = \frac{3}{20}\]
 
-        \[\frac{1}{2}x + \frac{1}{4} = \frac{3}{20}\]
+<p>The next true statement could be found by multiplying through by the least common denominator of all the terms.</p>
 
-        <p>The next true statement could be found by multiplying through by the least common denominator of all the
-          terms.</p>
+\[10x + 5 = 3\]
 
-        \[10x + 5 = 3\]
+<p>Again, the two expressions look different but are considered equivalent. The truth of this statement implies the truth of the statement:</p>
 
-        <p>Again, the two expressions look different but are considered equivalent. The truth of this statement implies
-          the truth of the statement:</p>
+<p>\(10x = -2\)
+and also the truth of:
+\(x = \frac {-1}{5}\)</p>
 
-        <p>\(10x = -2\)
-          and also the truth of:
-          \(x = \frac {-1}{5}\)</p>
+<p>The progression of statements that must be true if equality holds for the initial statement is a basic “proof.”  Now to define what it means for objects to be equal when the objects are sets.</p>
 
-        <p>The progression of statements that must be true if equality holds for the initial statement is a basic
-          “proof.” Now to define what it means for objects to be equal when the objects are sets.</p>
+<p>For sets, the definition of equality is written with two similar statements. Sets \(A\) and \(B\) are equivalent if both the statements are true:</p>
 
-        <p>For sets, the definition of equality is written with two similar statements. Sets \(A\) and \(B\) are
-          equivalent if both the statements are true:</p>
+<p>\(\text{If the element } x \text{ is in the set } A, \text{ then the element } x \text{ is in the set } B\).
+\(\text{If the element } x \text{ is in the set } B, \text{ then the element } x \text{ is in the set } A\).</p>
 
-        <p>\(\text{If the element } x \text{ is in the set } A, \text{ then the element } x \text{ is in the set } B\).
-          \(\text{If the element } x \text{ is in the set } B, \text{ then the element } x \text{ is in the set } A\).
-        </p>
+<p>Both statements relay information about the containment of one set in the other, and we can alternatively say that the sets \(A\) and \(B\) are equal if both the following statements are true:</p>
 
-        <p>Both statements relay information about the containment of one set in the other, and we can alternatively say
-          that the sets \(A\) and \(B\) are equal if both the following statements are true:</p>
+<p>\(\text{The set } B \text{ is contained in the set } A\). <br />
+\(\text{The set } A \text{ is contained in the set } B\).</p>
 
-        <p>\(\text{The set } B \text{ is contained in the set } A\). <br />
-          \(\text{The set } A \text{ is contained in the set } B\).</p>
+<p>Using the notation \(B \subseteq A\) to mean that the set \(B\) is contained in the set \(A,\) we can further reduce the entire definition of set equality to:</p>
 
-        <p>Using the notation \(B \subseteq A\) to mean that the set \(B\) is contained in the set \(A,\) we can further
-          reduce the entire definition of set equality to:</p>
+\[A = B \text{ if and only if } (A \subset B) \text{ and } (B \subset A)\]
 
-        \[A = B \text{ if and only if } (A \subset B) \text{ and } (B \subset A)\]
+<p><em>Example 1:</em>
+For set \(A = \{1, 2, 3, 4\}\) and set \(\emptyset = \{ \},\) the two sets are defined by enumerating their elements, and visual inspection shows that these two sets are not equal.  Afterall, the definiton of equality requires that \(\emptyset\) be contained in \(A.\) This is true.  So if we suspect that the two sets are not equal, you need to show the other statement, \(A \subseteq \emptyset\) is false.  Since the element 1 is in \(A\) and 1 is not in \(\emptyset,\) the set \(A\) is not contained in \(\emptyset.\) The definition is not a true statement, so the sets are not equal.</p>
 
-        <p><em>Example 1:</em>
-          For set \(A = \{1, 2, 3, 4\}\) and set \(\emptyset = \{ \},\) the two sets are defined by enumerating their
-          elements, and visual inspection shows that these two sets are not equal. Afterall, the definiton of equality
-          requires that \(\emptyset\) be contained in \(A.\) This is true. So if we suspect that the two sets are not
-          equal, you need to show the other statement, \(A \subseteq \emptyset\) is false. Since the element 1 is in
-          \(A\) and 1 is not in \(\emptyset,\) the set \(A\) is not contained in \(\emptyset.\) The definition is not a
-          true statement, so the sets are not equal.</p>
+<p>Here is another example where both of the sets are finite and defined by listing out their respective elements.</p>
 
-        <p>Here is another example where both of the sets are finite and defined by listing out their respective
-          elements.</p>
+<p><em>Example 2:</em> 
+ Let \(A = \{0, 1\}\) and \(B = \{0, 2\}.\)  Note that the intersection of the sets, \(A \cap B,\) is nonempty since the element \(0\) is in both \(A\) and \(B.\) However, there is an element in \(A,\) the element \(1,\) that is not in the set \(B.\) Thus \(A\) is not contained in \(B.\) We already have a false statement in the definition of equal sets, so we have proven that \(A\) is not equal to \(B.\)</p>
 
-        <p><em>Example 2:</em>
-          Let \(A = \{0, 1\}\) and \(B = \{0, 2\}.\) Note that the intersection of the sets, \(A \cap B,\) is nonempty
-          since the element \(0\) is in both \(A\) and \(B.\) However, there is an element in \(A,\) the element \(1,\)
-          that is not in the set \(B.\) Thus \(A\) is not contained in \(B.\) We already have a false statement in the
-          definition of equal sets, so we have proven that \(A\) is not equal to \(B.\)</p>
+<p>In the previous examples, it was proven that the given sets are not equal by showing that one of the statements in the definition is a false statement.  The next example will show how to prove that two sets are equal using the defintion.</p>
 
-        <p>In the previous examples, it was proven that the given sets are not equal by showing that one of the
-          statements in the definition is a false statement. The next example will show how to prove that two sets are
-          equal using the defintion.</p>
+<p><em>Example 3:</em> 
+Let \(Z_2\) be the collection of all remainders when an integer is divided by 2.  For example, the remainder when \(7\) is divided by \(2\) is 1 since \(5 = 2*3 + 1.\) For reference later, the number \(3\) is refered to as the quotient.  Since \(1\) satisfies the defintion of the set for \(Z_2,\) \(1\) is in the set.  Let \(R = \{0,1\}\).  Prove that \(Z_2\) and \(R\) are equivalent sets.</p>
 
-        <p><em>Example 3:</em>
-          Let \(Z_2\) be the collection of all remainders when an integer is divided by 2. For example, the remainder
-          when \(7\) is divided by \(2\) is 1 since \(5 = 2*3 + 1.\) For reference later, the number \(3\) is refered to
-          as the quotient. Since \(1\) satisfies the defintion of the set for \(Z_2,\) \(1\) is in the set. Let \(R =
-          \{0,1\}\). Prove that \(Z_2\) and \(R\) are equivalent sets.</p>
+<p>Proof: (<em>statement \(Z_2\) is contained in \(R\)</em>)  If \(x\) is in the set \(Z_2,\) then there is an integer, say \(z \in Z\) so that \(x\) is the remainder when \(z\) is divided by \(2.\)  Because it is true that \(x\) is a remainder when \(z\) is divided by \(2\) means that it is true that there is an integer \(q \in Z,\) that acts as the quotient in the expression: \(z = 2*q + x\).</p>
 
-        <p>Proof: (<em>statement \(Z_2\) is contained in \(R\)</em>) If \(x\) is in the set \(Z_2,\) then there is an
-          integer, say \(z \in Z\) so that \(x\) is the remainder when \(z\) is divided by \(2.\) Because it is true
-          that \(x\) is a remainder when \(z\) is divided by \(2\) means that it is true that there is an integer \(q
-          \in Z,\) that acts as the quotient in the expression: \(z = 2*q + x\).</p>
+<p>The previous statement’s truth implies that \(x &lt;= 2.\)  If this were not the case, then we could half a number with more than one outcome, which is not true in our usual perspective of the world. It also follows from \(x\) being a remainder, that \(0 &lt;= x.\) So now we know that \(x \in {0,1} = R.\)</p>
 
-        <p>The previous statement’s truth implies that \(x &lt;= 2.\) If this were not the case, then we could half a
-          number with more than one outcome, which is not true in our usual perspective of the world. It also follows
-          from \(x\) being a remainder, that \(0 &lt;= x.\) So now we know that \(x \in {0,1} = R.\)</p>
+<p>(statement \(R\) is contained in \(Z_2\))  If \(x\) is in the set \(R,\) then \(x = 0\) or \(x = 1.\)  In the case that \(x = 0,\) since \(2 = 2 * 1 + 0,\) \(0\) is the remainder when \(2\) is divided by \(2.\)  So, \(0\) is in \(Z_2\) by the definition of \(Z_2.\)  In the same way, \(3 = 2*1 + 1\) so that \(1\) is the unique remainder when \(3\) is divided by \(2.\)  Since it is true that every element of \(R\) is in \(Z_2\) the truth of the statement that \(R\) is contained in \(Z_2\) is implied.</p>
 
-        <p>(statement \(R\) is contained in \(Z_2\)) If \(x\) is in the set \(R,\) then \(x = 0\) or \(x = 1.\) In the
-          case that \(x = 0,\) since \(2 = 2 * 1 + 0,\) \(0\) is the remainder when \(2\) is divided by \(2.\) So, \(0\)
-          is in \(Z_2\) by the definition of \(Z_2.\) In the same way, \(3 = 2*1 + 1\) so that \(1\) is the unique
-          remainder when \(3\) is divided by \(2.\) Since it is true that every element of \(R\) is in \(Z_2\) the truth
-          of the statement that \(R\) is contained in \(Z_2\) is implied.</p>
+<p>It has been shown that all statements in the definiton of equality are true for sets \(Z_2\) and \(R.\) The definition of equivalent sets, \(Z_2 = R,\) is thus a true statement.</p>
 
-        <p>It has been shown that all statements in the definiton of equality are true for sets \(Z_2\) and \(R.\) The
-          definition of equivalent sets, \(Z_2 = R,\) is thus a true statement.</p>
+<p>A very common mistake is for students to assume that if two sets have the same number of elements, same cardinality, then the sets are equal.   There are many counter-examples that disprove that statement.  That is, examples that show the statement “If A and B are sets with the size of \(A\) equal to the size of \(B,\) then the sets \(A\) and \(B\) are equal. One such example is Example 2, where \(\vert A \vert = 2 = \vert B \vert\) but \(A \neq B\).</p>
 
-        <p>A very common mistake is for students to assume that if two sets have the same number of elements, same
-          cardinality, then the sets are equal. There are many counter-examples that disprove that statement. That is,
-          examples that show the statement “If A and B are sets with the size of \(A\) equal to the size of \(B,\) then
-          the sets \(A\) and \(B\) are equal. One such example is Example 2, where \(\vert A \vert = 2 = \vert B \vert\)
-          but \(A \neq B\).</p>
+<p>We can say that:</p>
 
-        <p>We can say that:</p>
+<p>If two sets are equal, then the sets must be the same size.</p>
 
-        <p>If two sets are equal, then the sets must be the same size.</p>
+<p>We can reword this true statement with the use of negations to an equivalent statement:</p>
 
-        <p>We can reword this true statement with the use of negations to an equivalent statement:</p>
+<p>If two sets do not have the same size, then the sets are not equal.</p>
 
-        <p>If two sets do not have the same size, then the sets are not equal.</p>
+<p><em>Example 4:</em>
+The set of all id numbers collected for students has size \(1,324.\)
+The set of all student records is \(1,320.\)</p>
 
-        <p><em>Example 4:</em>
-          The set of all id numbers collected for students has size \(1,324.\)
-          The set of all student records is \(1,320.\)</p>
-
-        <p>Here we are less concerned with the sets being the same, especially since the elements are not the same types
-          of objects. But, one would hope that there is a third collection of actual students. Only one of these sets
-          can be “essentially equivalent” to the set of students. If there is a mapping from each student to one and
-          only student record, then the two sets are essentially equal. So, the size of these two sets is the same
-          meaning that the number of students is \(1,320.\) However, it is also hoped that each student has one and only
-          one student id number. This cannot be the case since there are \(1,324\) elements in the set of id numbers
-          which is greater than the number of students. <br />
-          <br />
-          <!-- <a href="../../../../">Back to course home</a></p> -->
-
-
-      </div>
-    </div>
-    <meta id="js-data" data-title="Set Equality" data-base="/seng5005/assets/json/corrispondingQuestionTopic.json">
-
-  </article>
-  <footer>
-    <hr class="slender">
-    <div class="credits">
-      This work is supported by the <a href="https://www.nsf.gov/" target="_blank">NSF</a> IUSE/PFE:RED award No. <a
-        href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=1730568" target="_blank">1730568</a>. Site created with
-      <a href="//jekyllrb.com" target="_blank">Jekyll</a> using the <a href="//github.com/clayh53/tufte-jekyll"
-        target="_blank">Tufte theme</a>. &copy; 2020 by ECU.
-    </div>
-  </footer>
+<p>Here we are less concerned with the sets being the same, especially since the elements are not the same types of objects.  But, one would hope that there is a third collection of actual students. Only one of these sets can be “essentially equivalent” to the set of students.  If there is a mapping from each student to one and only student record, then the two sets are essentially equal.  So, the size of these two sets is the same meaning that the number of students is \(1,320.\) However, it is also hoped that each student has one and only one student id number. This cannot be the case since there are \(1,324\) elements in the set of id numbers which is greater than the number of students. <br />
+<br />
+<a href="../../../../">Back to course home</a></p>
 
 
 
-</body>
 
+    </article>
+    <footer>
+<hr class="slender">
+<div class="credits">
+This work is supported by the <a href="https://www.nsf.gov/" target="_blank">NSF</a> IUSE/PFE:RED award No. <a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=1730568" target="_blank">1730568</a>. Site created with <a href="//jekyllrb.com" target="_blank">Jekyll</a> using the <a href="//github.com/clayh53/tufte-jekyll" target="_blank">Tufte theme</a>. &copy; 2020 by ECU.
+</div>
+</footer>
+
+
+
+    
+<script src="/accordion.js"></script>
+  </body>
 </html>

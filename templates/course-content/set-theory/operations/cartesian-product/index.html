@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
-
-<head>
+  
+  <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,88 +9,42 @@
   <title>Cartesian Product</title>
   <meta name="description" content="Content relevant for computer science and mathematics majors.">
 
-  <!-- Google Fonts loaded here depending on setting in _data/options.yml true loads font, blank does not-->
-  <link href='//fonts.googleapis.com/css?family=Lato:400,400italic' rel='stylesheet' type='text/css'>
-  <!-- Load up MathJax script if needed ... specify in /_data/options.yml file-->
-  <script type="text/javascript"
-    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS_CHTML"></script>
-  <!-- <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-75587219-1', 'auto');
-  ga('send', 'pageview');
-  </script> -->
-
-  <link rel="canonical" href="http://localhost:4000/seng5005/course-content/set-theory/operations/cartesian-product/">
-  <link rel="alternate" type="application/rss+xml" title="Discrete structures"
-    href="http://localhost:4000/seng5005/feed.xml" />
-
-  <!-- bootstrap cdn -->
-
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
-    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-    crossorigin="anonymous"></script>
-
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
-    integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-    crossorigin="anonymous"></script>
+  <!-- Google Fonts loaded here depending on setting in _data/options.yml true loads font, blank does not--><link href='//fonts.googleapis.com/css?family=Lato:400,400italic' rel='stylesheet' type='text/css'><!-- Load up MathJax script if needed ... specify in /_data/options.yml file--><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS_CHTML"></script><link rel="canonical" href="http://localhost:4000/course-content/set-theory/operations/cartesian-product/">
+  <link rel="alternate" type="application/rss+xml" title="Discrete structures" href="http://localhost:4000/feed.xml" />
 
   <!-- jquery for accordion -->
   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-  <script>
-    $(function () {
-      $("#accordion").accordion();
-    });
-  </script>
 
-  <link rel="stylesheet" href="../../../../static/stylesheets/tufte.css" />
-  <link rel="stylesheet" href="../../../../static/stylesheets/style.css" />
+  <!-- ionicons for accordion -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
 
-  <!-- custom javascript-->
-  <script src="../../../../assets/js/question.js"></script>
+  <!-- local stylesheets -->
+  <link rel="stylesheet" href="../../../../css/tufte.css" />
+  <link rel="stylesheet" href="../../../../css/style.css" />
 
 </head>
-
-<body>
-  <!--- Header and nav template site-wide -->
-
-
-  <nav class="navbar navbar-expand-md navbar-dark sticky-top">
-    <div class="container-fluid">
-      <!-- // welcome message -->
+  <body>
+    <!--- Header and nav template site-wide -->
 
 
-      <!-- // collapse toggle button -->
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <!-- // navbar items -->
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item active"><a class="nav-link active" href="{{ url_for('pre_quiz')}}">Dashboard</a>
-          </li>
-          <li class="nav-item"><a class="nav-link" href="{{ url_for('logout')}}">Logout</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+<header>
+    <nav class="group">
+    <a href="../../../../">Home</a>
+    <a href="http://ispel.cs.ecu.edu/" target="_blank">ISPeL</a>
+    <a href="../../../../syllabus/" target="_blank">Fall 2020</a>
+    <a href="https://github.com/vngudivada/ISPeL-content-discrete-structures.git" target="_blank">GitHub</a>
+    </nav>
+</header>
 
 
-  <article class="group">
-    <!-- <script type="text/x-mathjax-config">
+
+    <article class="group">
+      <h1>Cartesian product</h1>
+<p class="subtitle"></p>
+
+<!-- <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
     TeX: {
       Macros: {
@@ -116,103 +70,65 @@
   });
 </script> -->
 
-    <div class="container">
-      <div class="row">
-        <div class="col">
-          <h1>Cartesian product</h1>
-          <p class="subtitle"></p>
-        </div>
 
-      </div>
-      <div class="row">
+<p>While sets are unordered collections of elements, we have constructed a few examples of sets like the Guassian Integers, \(Z[i],\) the rational numbers, \(Q,\) and the Complex Numbers, \(C,\) informally using the notion of a \(2-tuple\) or ordered pair.</p>
 
-        <p>While sets are unordered collections of elements, we have constructed a few examples of sets like the
-          Guassian Integers, \(Z[i],\) the rational numbers, \(Q,\) and the Complex Numbers, \(C,\) informally using the
-          notion of a \(2-tuple\) or ordered pair.</p>
+<p>A \(2-tuple\) or ordered pair of elements \(a\) and \(b\) is a structure that can be defined by a parenthetic listing of comma separated elements in the desired order.  A very common usage of an ordered pair is in the representation of a real function on the plane.</p>
 
-        <p>A \(2-tuple\) or ordered pair of elements \(a\) and \(b\) is a structure that can be defined by a parenthetic
-          listing of comma separated elements in the desired order. A very common usage of an ordered pair is in the
-          representation of a real function on the plane.</p>
+<p><strong>Example 1:</strong>
+The graph of the function \(f(x) = x^{2}\) from the source (domain) set \(X = \{-2, -1, 0, 1, 2\}\) to the destination (image) set \(\{4, 1, 0\}\) would be the collection of \(2-tuples\) \(\{(-2,4), (1, 1), (0, 0), (1, 1), (2, 4)\}\) plotted in a two-dimensional plane.</p>
 
-        <p><strong>Example 1:</strong>
-          The graph of the function \(f(x) = x^{2}\) from the source (domain) set \(X = \{-2, -1, 0, 1, 2\}\) to the
-          destination (image) set \(\{4, 1, 0\}\) would be the collection of \(2-tuples\) \(\{(-2,4), (1, 1), (0, 0),
-          (1, 1), (2, 4)\}\) plotted in a two-dimensional plane.</p>
+<p>The order in which the objects appear in the pair is important.
+In other words, \((a,b) \neq (b,a).\) From Example 1, if we instead graphed the point \((4, -2),\) many conditions for the function \(f(x)\) definition would be false.  Firstly, the element \(4\) is not in the source set of the function \(f.\) Secondly, the statement \(f(4) = 4^2 = -2\) is false.  Lastly, the element \(-2\) is not in the destination set.</p>
 
-        <p>The order in which the objects appear in the pair is important.
-          In other words, \((a,b) \neq (b,a).\) From Example 1, if we instead graphed the point \((4, -2),\) many
-          conditions for the function \(f(x)\) definition would be false. Firstly, the element \(4\) is not in the
-          source set of the function \(f.\) Secondly, the statement \(f(4) = 4^2 = -2\) is false. Lastly, the element
-          \(-2\) is not in the destination set.</p>
+<p>Ordered pairs are also called 2-tuples.  The Cartesian product of two sets \(A\) and \(B\), denoted \(A \times B\), is the set of all ordered pairs \((a,b)\) where \(a \in A\) and \(b \in B\). Using our set notation, \(A \times B = \{(a,b) \text{ such that } a \in A, b \in B\}.\)</p>
 
-        <p>Ordered pairs are also called 2-tuples. The Cartesian product of two sets \(A\) and \(B\), denoted \(A \times
-          B\), is the set of all ordered pairs \((a,b)\) where \(a \in A\) and \(b \in B\). Using our set notation, \(A
-          \times B = \{(a,b) \text{ such that } a \in A, b \in B\}.\)</p>
+<p><strong>Example 2:</strong>
+Let \(A = \{1,2,3\}\) and \(B = \{a,b,c\}\),
+then \(A \times B = \{(1,a) , (1,b) , (1,c) , (2,a) , (2,b) , (2,c) , (3,a) , (3,b) , (3,c) \}\).</p>
 
-        <p><strong>Example 2:</strong>
-          Let \(A = \{1,2,3\}\) and \(B = \{a,b,c\}\),
-          then \(A \times B = \{(1,a) , (1,b) , (1,c) , (2,a) , (2,b) , (2,c) , (3,a) , (3,b) , (3,c) \}\).</p>
+<p>The new set is derived from the original sets by following these steps:</p>
 
-        <p>The new set is derived from the original sets by following these steps:</p>
-
-        <figure class="highlight">
-          <pre><code class="language-python" data-lang="python">    <span class="n">Create</span> <span class="n">an</span> <span class="n">empty</span> <span class="nb">set</span> <span class="n">A</span> <span class="n">x</span> <span class="n">B</span><span class="p">;</span>
+<figure class="highlight"><pre><code class="language-python" data-lang="python">    <span class="n">Create</span> <span class="n">an</span> <span class="n">empty</span> <span class="nb">set</span> <span class="n">A</span> <span class="n">x</span> <span class="n">B</span><span class="p">;</span>
     <span class="n">For</span> <span class="n">every</span> <span class="n">element</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">the</span> <span class="nb">set</span> <span class="n">A</span><span class="p">:</span>
          <span class="n">For</span> <span class="n">every</span> <span class="n">element</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">the</span> <span class="nb">set</span> <span class="n">B</span><span class="p">:</span>
-             <span class="n">add</span> <span class="n">the</span> <span class="n">ordered</span> <span class="n">pair</span> <span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)</span> <span class="n">to</span> <span class="n">the</span> <span class="nb">set</span> <span class="n">A</span> <span class="n">x</span> <span class="n">B</span></code></pre>
-        </figure>
+             <span class="n">add</span> <span class="n">the</span> <span class="n">ordered</span> <span class="n">pair</span> <span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)</span> <span class="n">to</span> <span class="n">the</span> <span class="nb">set</span> <span class="n">A</span> <span class="n">x</span> <span class="n">B</span></code></pre></figure>
 
-        <p>The Cartesian product operator is a binary operator on sets like set union, set intersection and set
-          difference in that all four of these operations take two sets \(A\) and \(B\) as input. Set union, set
-          intersection and set difference all return a set whose elements are either elements the set \(A\) or the set
-          \(B.\) However, for the Cartesian product, the destination set contains elements that are ordered pairs.</p>
+<p>The Cartesian product operator is a binary operator on sets like set union, set intersection and set difference in that all four of these operations take two sets \(A\) and \(B\) as input.  Set union, set intersection and set difference all return a set whose elements are either elements the set \(A\) or the set \(B.\) However, for the Cartesian product, the destination set contains elements that are ordered pairs.</p>
 
-        <p>Consequently, for the Cartesian product operation, there does not exist an element that preserves a set. In
-          other words, for every set \(A\) there is no set \(B\) so that \(A \times B = A.\)</p>
+<p>Consequently, for the Cartesian product operation, there does not exist an element that preserves a set.  In other words, for every set \(A\) there is no set \(B\) so that \(A \times B = A.\)</p>
 
-        <p>The Cartesian product operator is not commutative. For all sets \(A\) and \(B,\) \(A \times B \neq B \times
-          A\) as order is important in ordered pairs.</p>
+<p>The Cartesian product operator is not commutative. For all sets \(A\) and \(B,\) \(A \times B  \neq B \times A\) as order is important in ordered pairs.</p>
 
-        <p>Also, the Cartesian product is not associative:</p>
+<p>Also, the Cartesian product is not associative:</p>
 
-        \[(A \times B) \times C \neq A \times (B \times C)\]
+\[(A \times B) \times C \neq A \times (B \times C)\]
 
-        <p>Going back to the creation of the Cartesian Product of sets \(A\) and \(B,\) we note that for each element
-          \(a\) in \(A\) there are at least \(\vert B\vert ,\) the size of the set \(B\), ordered pairs in \(A \times
-          B.\) In other words for a given \(a \in A,\) the set \(S_{a} = \{(a, b)\) where \(b\) is in \(B\}\) is
-          contained in \(A \times B.\) There are \(\vert A\vert\) sets \(S_{a},\) and no two sets \(S_a\) and \(S_{a'}\)
-          share any elements (they are disjoint sets) for unequal elements \(a\) and \(a'\) in \(A.\)</p>
+<p>Going back to the creation of the Cartesian Product of sets \(A\) and \(B,\) we note that for each element \(a\) in \(A\) there are at least \(\vert B\vert ,\) the size of the set \(B\), ordered pairs in \(A \times B.\)  In other words for a given \(a \in A,\) the set \(S_{a} = \{(a, b)\) where \(b\) is in \(B\}\) is contained in  \(A \times B.\) There are \(\vert A\vert\) sets \(S_{a},\) and no two sets \(S_a\) and \(S_{a'}\) share any elements (they are disjoint sets) for unequal elements \(a\) and \(a'\) in \(A.\)</p>
 
-        <p>By continuing the above sequence of statements, we could construct a proof of the following: Let \(A\) and
-          \(B\) be sets, then the size of the set \(A \times B,\) denoted \(\vert A \times B\vert\) and referred to as
-          the cardinality of the set \(A \times B\), is \(\vert A\vert \cdot \vert B\vert\).</p>
+<p>By continuing the above sequence of statements, we could construct a proof of the following: Let \(A\) and \(B\) be sets, then the size of the set \(A \times B,\) denoted \(\vert A \times B\vert\) and referred to as the cardinality of the set \(A \times B\), is  \(\vert A\vert  \cdot \vert B\vert\).</p>
 
-        <p><strong>Example 3:</strong>
-          In Example 2, \(\vert A\vert\) and \(\vert B\vert = 3.\) The set \(\vert A \times B\vert = 2 \cdot 3 = 6.\)
-        </p>
+<p><strong>Example 3:</strong>
+In Example 2, \(\vert A\vert\) and \(\vert B\vert  = 3.\) The set \(\vert A \times B\vert  = 2 \cdot 3 = 6.\)</p>
 
-        <p>If one of the set terms in the Cartesian product operation is infinite, then the Cartesian product set is
-          infinite. If both sets are countable, then the Cartesian product is countable.</p>
+<p>If one of the set terms in the Cartesian product operation is infinite, then the Cartesian product set is infinite. If both sets are countable, then the Cartesian product is countable.</p>
 
-        <p><br />
-
-      </div>
-    </div>
-    <meta id="js-data" data-title="Cartesian Product" data-base="/seng5005/assets/json/corrispondingQuestionTopic.json">
-
-  </article>
-  <footer>
-    <hr class="slender">
-    <div class="credits">
-      This work is supported by the <a href="https://www.nsf.gov/" target="_blank">NSF</a> IUSE/PFE:RED award No. <a
-        href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=1730568" target="_blank">1730568</a>. Site created with
-      <a href="//jekyllrb.com" target="_blank">Jekyll</a> using the <a href="//github.com/clayh53/tufte-jekyll"
-        target="_blank">Tufte theme</a>. &copy; 2020 by ECU.
-    </div>
-  </footer>
+<p><br />
+<a href="../../../../">Back to course home</a></p>
 
 
 
-</body>
+    </article>
+    <footer>
+<hr class="slender">
+<div class="credits">
+This work is supported by the <a href="https://www.nsf.gov/" target="_blank">NSF</a> IUSE/PFE:RED award No. <a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=1730568" target="_blank">1730568</a>. Site created with <a href="//jekyllrb.com" target="_blank">Jekyll</a> using the <a href="//github.com/clayh53/tufte-jekyll" target="_blank">Tufte theme</a>. &copy; 2020 by ECU.
+</div>
+</footer>
 
+
+
+    
+<script src="/accordion.js"></script>
+  </body>
 </html>

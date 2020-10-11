@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
-
-<head>
+  
+  <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,88 +9,42 @@
   <title>Cardinality of a Set</title>
   <meta name="description" content="Content relevant for computer science and mathematics majors.">
 
-  <!-- Google Fonts loaded here depending on setting in _data/options.yml true loads font, blank does not-->
-  <link href='//fonts.googleapis.com/css?family=Lato:400,400italic' rel='stylesheet' type='text/css'>
-  <!-- Load up MathJax script if needed ... specify in /_data/options.yml file-->
-  <script type="text/javascript"
-    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS_CHTML"></script>
-  <!-- <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-75587219-1', 'auto');
-  ga('send', 'pageview');
-  </script> -->
-
-  <link rel="canonical" href="http://localhost:4000/seng5005/course-content/set-theory/properties/cardinality/">
-  <link rel="alternate" type="application/rss+xml" title="Discrete structures"
-    href="http://localhost:4000/seng5005/feed.xml" />
-
-  <!-- bootstrap cdn -->
-
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
-    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-    crossorigin="anonymous"></script>
-
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
-    integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-    crossorigin="anonymous"></script>
+  <!-- Google Fonts loaded here depending on setting in _data/options.yml true loads font, blank does not--><link href='//fonts.googleapis.com/css?family=Lato:400,400italic' rel='stylesheet' type='text/css'><!-- Load up MathJax script if needed ... specify in /_data/options.yml file--><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS_CHTML"></script><link rel="canonical" href="http://localhost:4000/course-content/set-theory/properties/cardinality/">
+  <link rel="alternate" type="application/rss+xml" title="Discrete structures" href="http://localhost:4000/feed.xml" />
 
   <!-- jquery for accordion -->
   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-  <script>
-    $(function () {
-      $("#accordion").accordion();
-    });
-  </script>
 
-  <link rel="stylesheet" href="../../../../static/stylesheets/tufte.css" />
-  <link rel="stylesheet" href="../../../../static/stylesheets/style.css" />
+  <!-- ionicons for accordion -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
 
-  <!-- custom javascript-->
-  <script src="../../../../assets/js/question.js"></script>
+  <!-- local stylesheets -->
+  <link rel="stylesheet" href="../../../../css/tufte.css" />
+  <link rel="stylesheet" href="../../../../css/style.css" />
 
 </head>
-
-<body>
-  <!--- Header and nav template site-wide -->
-
-  <nav class="navbar navbar-expand-md navbar-dark sticky-top">
-    <div class="container-fluid">
-      <!-- // welcome message -->
+  <body>
+    <!--- Header and nav template site-wide -->
 
 
-      <!-- // collapse toggle button -->
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <!-- // navbar items -->
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item active"><a class="nav-link active" href="{{ url_for('pre_quiz')}}">Dashboard</a>
-          </li>
-          <li class="nav-item"><a class="nav-link" href="{{ url_for('logout')}}">Logout</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+<header>
+    <nav class="group">
+    <a href="../../../../">Home</a>
+    <a href="http://ispel.cs.ecu.edu/" target="_blank">ISPeL</a>
+    <a href="../../../../syllabus/" target="_blank">Fall 2020</a>
+    <a href="https://github.com/vngudivada/ISPeL-content-discrete-structures.git" target="_blank">GitHub</a>
+    </nav>
+</header>
 
 
 
-  <article class="group">
-    <!-- <script type="text/x-mathjax-config">
+    <article class="group">
+      <h1>Cardinality of a set</h1>
+<p class="subtitle"></p>
+
+<!-- <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
     TeX: {
       Macros: {
@@ -116,130 +70,69 @@
   });
 </script> -->
 
-    <div class="container">
-      <div class="row">
-        <div class="col">
-          <h1>Cardinality of a set</h1>
-          <p class="subtitle"></p>
-        </div>
 
-      </div>
-      <div class="row">
+<p>The cardinality of a set \(S\), denoted by \(\vert S\vert\), is the size of the set.  If a set is finie, then the cardinality of the set is the number of elements in the set.  If the set has an infinite number of elements, its cardinality is \(\infty\).</p>
 
-        <p>The cardinality of a set \(S\), denoted by \(\vert S\vert\), is the size of the set. If a set is finie, then
-          the cardinality of the set is the number of elements in the set. If the set has an infinite number of
-          elements, its cardinality is \(\infty\).</p>
+<p><strong>Example 1:</strong>
+Let \(A = {1, 2, 3, 4}.\) Then \(A\) is a finite set with four elements, and \(\vert A \vert = 4\).</p>
 
-        <p><strong>Example 1:</strong>
-          Let \(A = {1, 2, 3, 4}.\) Then \(A\) is a finite set with four elements, and \(\vert A \vert = 4\).</p>
+<p>The concept of cardinality includes the base case where the set is empty, \(S = \emptyset\) and when the set contains an infinite number of elements.</p>
 
-        <p>The concept of cardinality includes the base case where the set is empty, \(S = \emptyset\) and when the set
-          contains an infinite number of elements.</p>
+<p><strong>Example 2:</strong>
+The \(\emptyset = \{ \}\) meaning that it is a finite set with no elements.  Thus, \(\vert \emptyset \vert = 0\).</p>
 
-        <p><strong>Example 2:</strong>
-          The \(\emptyset = \{ \}\) meaning that it is a finite set with no elements. Thus, \(\vert \emptyset \vert =
-          0\).</p>
+<p>For many of the special sets, the cardinality of the set is infinity.  Even though some sets “seem” smaller than others, the sizes of the sets are equal.  Consider the example below where one set is contained in the other, a proper subset of the other.  The larger set contains what would seem twice as many elements as the smaller subset, but both sets are countably infinite.</p>
 
-        <p>For many of the special sets, the cardinality of the set is infinity. Even though some sets “seem” smaller
-          than others, the sizes of the sets are equal. Consider the example below where one set is contained in the
-          other, a proper subset of the other. The larger set contains what would seem twice as many elements as the
-          smaller subset, but both sets are countably infinite.</p>
+<p><strong>Exmaple 3:</strong>
+The set of positive integers, \(Z^+ = \{1, 2, 3, 4, \ldots \},\) has an infinite number of elements in it’s set so that  \(\vert Z^+ \vert = \infty.\)
+While \(E  = {\ldots, -4, -2, 0, 2, 4, \ldots }\) is the set of all even integers and  \(\vert E \vert = \infty.\)  A statement that can be proven to be true,  is: “There exists a rule that maps the set of positive integers to the set of even integers.”</p>
 
-        <p><strong>Exmaple 3:</strong>
-          The set of positive integers, \(Z^+ = \{1, 2, 3, 4, \ldots \},\) has an infinite number of elements in it’s
-          set so that \(\vert Z^+ \vert = \infty.\)
-          While \(E = {\ldots, -4, -2, 0, 2, 4, \ldots }\) is the set of all even integers and \(\vert E \vert =
-          \infty.\) A statement that can be proven to be true, is: “There exists a rule that maps the set of positive
-          integers to the set of even integers.”</p>
+<p>The cardinality of a set is a property of the set.  A property is a defining characteristic of the set, just as a person’s height standing barefoot is a descriptive feature of a person.  As seen in Example 3, two sets can have the same cardinality but not contain the same elements just as two different people can be the same height.</p>
 
-        <p>The cardinality of a set is a property of the set. A property is a defining characteristic of the set, just
-          as a person’s height standing barefoot is a descriptive feature of a person. As seen in Example 3, two sets
-          can have the same cardinality but not contain the same elements just as two different people can be the same
-          height.</p>
+<p>It is helpful to note that if there is some question about whether two sets are equal, looking at the cardinality of the two sets can help to address the problem. If we wanted to test to see if two web pages were the same, we could start by looking at the word counts for both pages.  If the word counts are not the same, then the pages are not exactly the same, equivalent.</p>
 
-        <p>It is helpful to note that if there is some question about whether two sets are equal, looking at the
-          cardinality of the two sets can help to address the problem. If we wanted to test to see if two web pages were
-          the same, we could start by looking at the word counts for both pages. If the word counts are not the same,
-          then the pages are not exactly the same, equivalent.</p>
+<p><strong>Exmaple 4:</strong>
+We are given two sets, \(A\) and \(B\) and know that set \(A\) has cardinality 5 and \(\vert B \vert = 6\). If we assume the set \(A\) is the same as the set \(B\), then every element that is in \(A\) is also in \(B\) and every element that is in \(B\) is also in \(A.\) For this to be true, the cardinality of \(A\) is the same as the cardinality of \(B.\) This contradicts what we are given to be true about the sets \(A\) and \(B,\) that \(\vert A \vert = \vert B\vert .\)  Meaning, the sets \(A\) and \(B\) are not equal.</p>
 
-        <p><strong>Exmaple 4:</strong>
-          We are given two sets, \(A\) and \(B\) and know that set \(A\) has cardinality 5 and \(\vert B \vert = 6\). If
-          we assume the set \(A\) is the same as the set \(B\), then every element that is in \(A\) is also in \(B\) and
-          every element that is in \(B\) is also in \(A.\) For this to be true, the cardinality of \(A\) is the same as
-          the cardinality of \(B.\) This contradicts what we are given to be true about the sets \(A\) and \(B,\) that
-          \(\vert A \vert = \vert B\vert .\) Meaning, the sets \(A\) and \(B\) are not equal.</p>
+<p><em>Note:</em> What we learned in Example 4 can be stated generally and will be used again and again. If there are two sets \(X\) and \(Y\),
+we say that the sets \(X\) and \(Y\) have the same cardinality and write \(\vert X \vert  = \vert Y\vert\) when the number of elements in \(X\) is exactly equal to the number of elements in \(Y.\) In this case, there exists a map \(f\) from the elements of  \(X\) to the elements of \(Y\) (i.e., a <strong>bijective function</strong>) so that under this mapping every element of \(X\) and every element in \(Y\) are “matched.”</p>
 
-        <p><em>Note:</em> What we learned in Example 4 can be stated generally and will be used again and again. If
-          there are two sets \(X\) and \(Y\),
-          we say that the sets \(X\) and \(Y\) have the same cardinality and write \(\vert X \vert = \vert Y\vert\) when
-          the number of elements in \(X\) is exactly equal to the number of elements in \(Y.\) In this case, there
-          exists a map \(f\) from the elements of \(X\) to the elements of \(Y\) (i.e., a <strong>bijective
-            function</strong>) so that under this mapping every element of \(X\) and every element in \(Y\) are
-          “matched.”</p>
+<p><strong>Exmaple 5:</strong>
+Let \(A = \{1,2,3\}\) and \(U\) = {cat, dog, walrus, elephant}.  We intentionally used the capitol letter \(U\) for our second set so that it would evoke the idea of a Universal set.  It is clear that \(A\) and \(U\) are not equivalent sets,  However, there are smaller subsets of \(U\) that have the same cardinality of \(A.\) One example is the subset \(S\) of \(U\) defined by the rule  = the set of all elements x of \(U\) that begin with either the letter ‘c’, the letter ‘w’ or the letter ‘e.’  Then</p>
 
-        <p><strong>Exmaple 5:</strong>
-          Let \(A = \{1,2,3\}\) and \(U\) = {cat, dog, walrus, elephant}. We intentionally used the capitol letter \(U\)
-          for our second set so that it would evoke the idea of a Universal set. It is clear that \(A\) and \(U\) are
-          not equivalent sets, However, there are smaller subsets of \(U\) that have the same cardinality of \(A.\) One
-          example is the subset \(S\) of \(U\) defined by the rule = the set of all elements x of \(U\) that begin with
-          either the letter ‘c’, the letter ‘w’ or the letter ‘e.’ Then</p>
+<p>\(S\) = {cat, walrus, elephant}</p>
 
-        <p>\(S\) = {cat, walrus, elephant}</p>
+<p>and using our notation for subset (containment) \(S \subset U.\)  In our note, we mentioned that if two sets have the same cardinality, then there is a  mapping from one set to the other (i.e., a bijection).  One way to define such a map is as follows:</p>
 
-        <p>and using our notation for subset (containment) \(S \subset U.\) In our note, we mentioned that if two sets
-          have the same cardinality, then there is a mapping from one set to the other (i.e., a bijection). One way to
-          define such a map is as follows:</p>
+<p>For \(x\) in \(A\), map \(x\) to the element \(y\) in \(S\) so that \(y\) has \(x\) number of syllables.</p>
 
-        <p>For \(x\) in \(A\), map \(x\) to the element \(y\) in \(S\) so that \(y\) has \(x\) number of syllables.</p>
+<p>That is, (1 \(\rightarrow\) cat, 2 \(\rightarrow\) walrus, 3 \(\rightarrow\) elephant).</p>
 
-        <p>That is, (1 \(\rightarrow\) cat, 2 \(\rightarrow\) walrus, 3 \(\rightarrow\) elephant).</p>
+<p>Other functions, mappings, are possible, but what is important to understand here is that one set represents a “domain” set of objects and the other set is the “target” set. The mapping of interest must clearly define a connection from each of the objects in the domain set one element in the target set and every target set element is matched to one domain element. If the cardinalities of the domain and target sets are finite and not the same, this type of mapping is not possible.</p>
 
-        <p>Other functions, mappings, are possible, but what is important to understand here is that one set represents
-          a “domain” set of objects and the other set is the “target” set. The mapping of interest must clearly define a
-          connection from each of the objects in the domain set one element in the target set and every target set
-          element is matched to one domain element. If the cardinalities of the domain and target sets are finite and
-          not the same, this type of mapping is not possible.</p>
+<p>When \(\vert X \vert &lt; \vert Y\vert\) for a sets \(X\) and \(Y,\) then the set \(X\)’s cardinality is less than the set \(Y\)’s cardinality. This occurs when number of elements in \(X\) is less than or equal to the number of elements in \(Y\). In this case, there exists a one-to-one (injective) function \(f\) from \(X\) to \(Y\), but not a well-defined mapping from \(X\) onto all of the set \(Y.\)</p>
 
-        <p>When \(\vert X \vert &lt; \vert Y\vert\) for a sets \(X\) and \(Y,\) then the set \(X\)’s cardinality is less
-          than the set \(Y\)’s cardinality. This occurs when number of elements in \(X\) is less than or equal to the
-          number of elements in \(Y\). In this case, there exists a one-to-one (injective) function \(f\) from \(X\) to
-          \(Y\), but not a well-defined mapping from \(X\) onto all of the set \(Y.\)</p>
+<p>The often used imagery here is that the set \(X\) contains pigeons and the set \(Y\) is a collection of “pigeon holes.” The mapping takes a pigeon and assigns the bird to a pigeon-hole in the set \(Y\). There is one bird per pigeon-hole. Since we are assuming that there are more pigeon-holes than pigeons, there are some unihabited pigen-holes.  The mappings from \(X\) to \(Y\) will be 1-1 (<em>injective</em>) but not onto (<em>surjective</em>).</p>
 
-        <p>The often used imagery here is that the set \(X\) contains pigeons and the set \(Y\) is a collection of
-          “pigeon holes.” The mapping takes a pigeon and assigns the bird to a pigeon-hole in the set \(Y\). There is
-          one bird per pigeon-hole. Since we are assuming that there are more pigeon-holes than pigeons, there are some
-          unihabited pigen-holes. The mappings from \(X\) to \(Y\) will be 1-1 (<em>injective</em>) but not onto
-          (<em>surjective</em>).</p>
+<p>If the set \(X\) has more elements than the set \(Y,\) then \(\vert X \vert &gt; \vert Y\vert\). That is the set \(X\text{'s}\) cardinality is greater than set \(Y\)’s cardinality. Back to the pigeons and pigeon-holes. If we create a well-defined rule assigning to each pigeon exactly one pigeon-hole there will not be enough pigeon-holes for every bird to have its own cubbie. Since there will be some sharing of pigeon-holes in order to house all of the birds, any map that we define from \(X\) to \(Y\) is said to be onto (<em>surjective</em>) but not 1-1 (<em>injective</em>).</p>
 
-        <p>If the set \(X\) has more elements than the set \(Y,\) then \(\vert X \vert &gt; \vert Y\vert\). That is the
-          set \(X\text{'s}\) cardinality is greater than set \(Y\)’s cardinality. Back to the pigeons and pigeon-holes.
-          If we create a well-defined rule assigning to each pigeon exactly one pigeon-hole there will not be enough
-          pigeon-holes for every bird to have its own cubbie. Since there will be some sharing of pigeon-holes in order
-          to house all of the birds, any map that we define from \(X\) to \(Y\) is said to be onto (<em>surjective</em>)
-          but not 1-1 (<em>injective</em>).</p>
-
-        <p><br />
-          <!-- <a href="../../../../">Back to course home</a></p> -->
-
-
-      </div>
-    </div>
-    <meta id="js-data" data-title="Cardinality of a Set"
-      data-base="/seng5005/assets/json/corrispondingQuestionTopic.json">
-
-  </article>
-  <footer>
-    <hr class="slender">
-    <div class="credits">
-      This work is supported by the <a href="https://www.nsf.gov/" target="_blank">NSF</a> IUSE/PFE:RED award No. <a
-        href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=1730568" target="_blank">1730568</a>. Site created with
-      <a href="//jekyllrb.com" target="_blank">Jekyll</a> using the <a href="//github.com/clayh53/tufte-jekyll"
-        target="_blank">Tufte theme</a>. &copy; 2020 by ECU.
-    </div>
-  </footer>
+<p><br />
+<a href="../../../../">Back to course home</a></p>
 
 
 
-</body>
 
+    </article>
+    <footer>
+<hr class="slender">
+<div class="credits">
+This work is supported by the <a href="https://www.nsf.gov/" target="_blank">NSF</a> IUSE/PFE:RED award No. <a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=1730568" target="_blank">1730568</a>. Site created with <a href="//jekyllrb.com" target="_blank">Jekyll</a> using the <a href="//github.com/clayh53/tufte-jekyll" target="_blank">Tufte theme</a>. &copy; 2020 by ECU.
+</div>
+</footer>
+
+
+
+    
+<script src="/accordion.js"></script>
+  </body>
 </html>

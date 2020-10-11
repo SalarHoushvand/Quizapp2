@@ -6,10 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Inverse Functions</title>
+  <title>Function properties (homomorphism)</title>
   <meta name="description" content="Content relevant for computer science and mathematics majors.">
 
-  <!-- Google Fonts loaded here depending on setting in _data/options.yml true loads font, blank does not--><link href='//fonts.googleapis.com/css?family=Lato:400,400italic' rel='stylesheet' type='text/css'><!-- Load up MathJax script if needed ... specify in /_data/options.yml file--><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS_CHTML"></script><link rel="canonical" href="http://localhost:4000/course-content/functions/properties/inverse/">
+  <!-- Google Fonts loaded here depending on setting in _data/options.yml true loads font, blank does not--><link href='//fonts.googleapis.com/css?family=Lato:400,400italic' rel='stylesheet' type='text/css'><!-- Load up MathJax script if needed ... specify in /_data/options.yml file--><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS_CHTML"></script><link rel="canonical" href="http://localhost:4000/course-content/functions/properties/homomorphism/">
   <link rel="alternate" type="application/rss+xml" title="Discrete structures" href="http://localhost:4000/feed.xml" />
 
   <!-- jquery for accordion -->
@@ -41,7 +41,7 @@
 
 
     <article class="group">
-      <h1>Inverse functions</h1>
+      <h1>Function properties (homomorphism)</h1>
 <p class="subtitle"></p>
 
 <!-- <script type="text/x-mathjax-config">
@@ -71,89 +71,57 @@
 </script> -->
 
 
-<p>Content under development \(\ldots\)
-For a function, \((D_f, R_f, f)\) \(Im_f\) the <strong>inverse</strong> of \(f\) exists, \((Im_f, D_r, f^{-1})\) if \(f\) is injective, meaning that for every \(x\) in \(D_f\) the map \(f\) takes \(x\) to only one image element \(f(x)\) in \(Im_f \subseteq R_f.\) The rule for \(f^{-1}\) is defined using the rule for \(f.\) For a \(y \in Im_f,\) \(f^{-1}(y) = x\) where \(f(x) = y.\)</p>
+<p>For a rule \(r\) with Domain set \(D\) and range set \(R\) where both \(D\) and \(R\) have operations \(op_D\) and \(op_R\) defined on them, the rule is said to be a <strong>homomorphism</strong> if the rule is such that for any \(x\) and \(y\) in \(D,\) r maps \(x\) \(op_D\) \(y\) to the element \(r(x)\) \(op_R\) \(r(y)\) in \(R.\)</p>
 
-<p><strong>Example 1:</strong> Let a text be constructed from a language of 3 characters.  This alphabet is \(\{A, B, C\}.\) If the distribution of the characters in the text is given by:</p>
+<p><strong>Example 1</strong>
+For the rule \(r\) with Domain \(\mathbb{Z} = \{ \ldots, -3, -2, -1, 0, 1, 2, 3, \ldots \}\) and Range set \(\mathbb{Z} =  \{ \ldots, -3, -2, -1, 0, 1, 2, 3, \ldots \}\) where the operations defined on the integers, \(\mathbb{Z}\) are standard integer multiplication and addition.</p>
 
-<table>
-  <tbody>
-    <tr>
-      <td>char</td>
-      <td>frequency</td>
-    </tr>
-    <tr>
-      <td>A</td>
-      <td>50</td>
-    </tr>
-    <tr>
-      <td>B</td>
-      <td>100</td>
-    </tr>
-    <tr>
-      <td>C</td>
-      <td>75</td>
-    </tr>
-    <tr>
-      <td>D</td>
-      <td>300</td>
-    </tr>
-  </tbody>
-</table>
+<p>Define \(r(x)\) with \(r(x) = x^2.\) Then it can be shown that \(r(x + y) = (x + y)^2 \neq r(x) + r(y)= x^2 + y^2\) for all choices of integers \(x\) and \(y.\) In particular let \(x = 2\) and \(y = 3,\) then \(r(2 + 3) = 25\) but \(r(2) + r(3) = 4 + 9 = 13.\) Thus, \(r\) is not a homomorphism.</p>
 
-<p>then define a function \(f\) from \(D_f = \{A, B, C, D\}\) to \(R_f = \{0, 1, 00, 01, 10,11,000,001,010,011,100,101,110,111\}\) with the following mapping:</p>
+<p><strong>Example 2</strong>
+For the rule \(r\) with Domain \(\mathbb{Z} = \{ \ldots, -3, -2, -1, 0, 1, 2, 3, \ldots \}\) and Range set \(\mathbb{Z}_2 = \{[0], [1]\}\) where the equivalence class \([0]\) is the set of all integers that are even and the equivalence class \([1]\) is the set of all odd integers.  The operations defined on the integers, \(\mathbb{Z}\) are the standard integer multiplication and addition.  For the Range set \(\mathbb{Z}_2,\) the integers mod 2, the operatons use the fact that even<em>even = even, even</em>odd = even, odd*odd = odd, even+odd = odd, even + odd = odd and odd + odd = even:</p>
 
 <table>
   <tbody>
     <tr>
-      <td>x</td>
-      <td>f(x)</td>
+      <td>+</td>
+      <td>[0]</td>
+      <td>[1]</td>
     </tr>
     <tr>
-      <td>A</td>
-      <td>1010</td>
+      <td>[0]</td>
+      <td>[0]</td>
+      <td>[1]</td>
     </tr>
     <tr>
-      <td>B</td>
-      <td>100</td>
-    </tr>
-    <tr>
-      <td>C</td>
-      <td>1011</td>
-    </tr>
-    <tr>
-      <td>D</td>
-      <td>11</td>
+      <td>[1]</td>
+      <td>[1]</td>
+      <td>[0]</td>
     </tr>
   </tbody>
 </table>
-
-<p>Then the inverse has Domain set \(D_{f^{-1}} = Im_f = \{11, 100, 1011, 1010\},\) Range set = {A, B, C, D}\(and the rule\)f^{-1}$$ given by the table:</p>
 
 <table>
   <tbody>
     <tr>
-      <td>x</td>
-      <td>\(f^{-1}(x)\)</td>
+      <td>*</td>
+      <td>[0]</td>
+      <td>[1]</td>
     </tr>
     <tr>
-      <td>1010</td>
-      <td>A</td>
+      <td>[0]</td>
+      <td>[0]</td>
+      <td>[0]</td>
     </tr>
     <tr>
-      <td>100</td>
-      <td>B</td>
-    </tr>
-    <tr>
-      <td>1011</td>
-      <td>C</td>
-    </tr>
-    <tr>
-      <td>11</td>
-      <td>D</td>
+      <td>[1]</td>
+      <td>[0]</td>
+      <td>[1]</td>
     </tr>
   </tbody>
 </table>
+
+<p>Define \(r(x)\) with \(r(x) = x^2.\) Then it can be shown that \(r(x + y) = r(x) + r(y)\) so that \(r\) is a homomorphism.</p>
 
 <p><br />
 <a href="../../../../">Back to course home</a></p>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+  
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Introduction to Sets</title>
+  <meta name="description" content="Content relevant for computer science and mathematics majors.">
+
+  <!-- Google Fonts loaded here depending on setting in _data/options.yml true loads font, blank does not--><link href='//fonts.googleapis.com/css?family=Lato:400,400italic' rel='stylesheet' type='text/css'><!-- Load up MathJax script if needed ... specify in /_data/options.yml file--><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS_CHTML"></script><link rel="canonical" href="http://localhost:4000/course-content/set-theory/">
+  <link rel="alternate" type="application/rss+xml" title="Discrete structures" href="http://localhost:4000/feed.xml" />
+
+  <!-- jquery for accordion -->
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+  <!-- ionicons for accordion -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+
+  <!-- local stylesheets -->
+  <link rel="stylesheet" href="../../css/tufte.css" />
+  <link rel="stylesheet" href="../../css/style.css" />
+
+</head>
+  <body>
+    <!--- Header and nav template site-wide -->
+
+
+<header>
+    <nav class="group">
+    <a href="../../">Home</a>
+    <a href="http://ispel.cs.ecu.edu/" target="_blank">ISPeL</a>
+    <a href="../../syllabus/" target="_blank">Fall 2020</a>
+    <a href="https://github.com/vngudivada/ISPeL-content-discrete-structures.git" target="_blank">GitHub</a>
+    </nav>
+</header>
+
+
+
+    <article class="group">
+      <h1>Introduction to sets</h1>
+<p class="subtitle"></p>
+
+<!-- <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: {
+      Macros: {
+        e: "\\epsilon",
+        xti: "x^{(i)}",
+        yti: "y^{(i)}",
+        bfy: "{\\bf y}",
+        bfx: "{\\bf x}",
+        bfg: "{\\bf g}",
+        bfbeta: "{\\bf \\beta}",
+        tp: "\\tilde p",
+        pt: "p_\\theta",
+        E: "{\\mathbb{E}}",
+        Ind: "{\\mathbb{I}}",
+        KL: "{\\mathbb{KL}}",
+        Re: "{\\mathbb{R}}",
+        Dc: "{\\mathcal{D}}",
+        Tc: "{\\mathcal{T}}",
+        Xc: "{\\mathcal{X}}",
+        note: ["\\textcolor{blue}{[NOTE: #1]}",1]
+      }
+    }
+  });
+</script> -->
+
+
+<p>A <strong>set</strong> is a basic structure for storing collections of <em>unordered</em> elements. A set is a structure with “low overhead” for keeping track of distinct elements that do not need to be accessed in a particular order.</p>
+
+<p>Here are some important things to keep in mind about sets:</p>
+
+<ol>
+  <li>The elements in a set are unordered.</li>
+  <li>The elements in a set are unique, no duplicates.</li>
+  <li>The presumption is that there is a relation defined on the elements that determines when two elements are the same.</li>
+</ol>
+
+<p>An example of a set that you may relate to is a collections of songs set to form a non-repeating, random playlist.  Other common sets are: the set of all Real numbers, the set of all right triangles, the set of Marsupials, and the set of all reserved keywords in Python.  In applications, a set can be used to collect information from business transactions or data comprising a patient’s health record.</p>
+
+<p><strong>Set theory</strong> entails the study of sets, the interaction of elements within a set, the operations that can be performed on sets and the truths that are implied from the assumptions made about a set or collection of sets.</p>
+
+<p>There are a couple of ways to create a set.  If the set is small or the elements have a pattern between them that can be explicitly written, the set can be defined with an comma-separated list wrapped in curly brackets.</p>
+
+<p><strong>Example 1:</strong>
+We create a set named \(A\) by listing the elements in the set, \(A = \{1, 2, 3, 4\}\). The set \(A\) contains four elements: 1, 2, 3, and 4.  To emphasize that ordering in a set does not matter, the set \(A\) can also be written equivalently as  \(A = \{2, 3, 4, 1\} = \{2, 4, 1, 3\}.\)</p>
+
+<p>A second method to create a set is to specify a rule that must be satisfied by the element, that is the statement must be true for the element, in order for the element to be in the set.</p>
+
+<p>In Example 2, we define a set within the context of a web browser.  Web content is inspected (crawled) and indexed by service providers to help users find information.  A part of that process is knowing what words are on a webpage.</p>
+
+<p><strong>Example 2:</strong>
+Define the rule “\(r(x)\) = If \(x\) is a word on the current page, then \(x\) is in the set \(S\)”. Here the set \(S\) is a collection of words that we can then use to index the page with. Even though the words on the page have a contextual ordering, \(S\) will be an unordered collection.  Also, on our current page, the word “set” appears many times, but “set” will only be included in S once.</p>
+
+<p>There are many sets in mathematics that are so common they have reserved names. The following two examples discuss sets that are used frequently.</p>
+
+<p><strong>Example 3:</strong>
+The set \({Z}^+\) is the set of all positive integers.
+Note that there is no end to the list of positive integers. The set \({Z}^+\) has an infinite number of elements, but we can still define \({Z}^+\) with set notation using an ellipse, a set of three lower dots, at the end to suggest the pattern. \({Z}^+ = \{ 1, 2, 3, \ldots \}\)</p>
+
+<p><strong>Example 4:</strong>
+The set \({Z}\) is the set of all integers. An ellipse is used at the beginning and the end of the list to indicate that the list is infinite in both directions and continues the pattern. \({Z} = \{ \ldots , -3, -2, -1, 0, 1, 2, 3, \ldots \}\).</p>
+
+<p>The sets \({Z}\) and \({Z}^+\) are both infinite sets since the listing of elements continues without stopping. However, we could number these elements so the size of these sets is said to be “countably infinite.” We will cover the idea of a set’s size later. The important point for now is that you can list out elements in an infinite set if there is a clear pattern for the next element.  Our final example illustrates another important countably infinite set of numbers.  What would you call the following set?</p>
+
+<p><strong>Example 5:</strong>
+A number \(x\) is in the set \(E\) if and only if \(x = 2y\) for some element \(y\) in \(Z\).</p>
+
+\[E = \{ \ldots , -4, -2, 0, 2, 4, \ldots \}\]
+
+<p>A note about the language used in Example 5.  The phrase “if and only if” is used to help break down the statement used to define the set \(E\) in a way that will come in handy when proving an element is in the set \(E\) and when examining the structure of any element we know to be in the set \(E.\) Later, we learn to break “if and only if” statements into two statements.</p>
+
+<p><br />
+<a href="../../">Back to course home</a></p>
+
+
+
+    </article>
+    <footer>
+<hr class="slender">
+<div class="credits">
+This work is supported by the <a href="https://www.nsf.gov/" target="_blank">NSF</a> IUSE/PFE:RED award No. <a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=1730568" target="_blank">1730568</a>. Site created with <a href="//jekyllrb.com" target="_blank">Jekyll</a> using the <a href="//github.com/clayh53/tufte-jekyll" target="_blank">Tufte theme</a>. &copy; 2020 by ECU.
+</div>
+</footer>
+
+
+
+    
+<script src="/accordion.js"></script>
+  </body>
+</html>

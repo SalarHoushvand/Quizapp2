@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
-
-<head>
+  
+  <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,89 +9,42 @@
   <title>Set Intersection</title>
   <meta name="description" content="Content relevant for computer science and mathematics majors.">
 
-  <!-- Google Fonts loaded here depending on setting in _data/options.yml true loads font, blank does not-->
-  <link href='//fonts.googleapis.com/css?family=Lato:400,400italic' rel='stylesheet' type='text/css'>
-  <!-- Load up MathJax script if needed ... specify in /_data/options.yml file-->
-  <script type="text/javascript"
-    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS_CHTML"></script>
-  <!-- <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-75587219-1', 'auto');
-  ga('send', 'pageview');
-  </script> -->
-
-  <link rel="canonical" href="http://localhost:4000/seng5005/course-content/set-theory/operations/set-intersection/">
-  <link rel="alternate" type="application/rss+xml" title="Discrete structures"
-    href="http://localhost:4000/seng5005/feed.xml" />
-
-  <!-- bootstrap cdn -->
-
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
-    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-    crossorigin="anonymous"></script>
-
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
-    integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-    crossorigin="anonymous"></script>
+  <!-- Google Fonts loaded here depending on setting in _data/options.yml true loads font, blank does not--><link href='//fonts.googleapis.com/css?family=Lato:400,400italic' rel='stylesheet' type='text/css'><!-- Load up MathJax script if needed ... specify in /_data/options.yml file--><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS_CHTML"></script><link rel="canonical" href="http://localhost:4000/course-content/set-theory/operations/set-intersection/">
+  <link rel="alternate" type="application/rss+xml" title="Discrete structures" href="http://localhost:4000/feed.xml" />
 
   <!-- jquery for accordion -->
   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-  <script>
-    $(function () {
-      $("#accordion").accordion();
-    });
-  </script>
 
-  <link rel="stylesheet" href="../../../../static/stylesheets/tufte.css" />
-  <link rel="stylesheet" href="../../../../static/stylesheets/style.css" />
+  <!-- ionicons for accordion -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
 
-  <!-- custom javascript-->
-  <script src="../../../../assets/js/question.js"></script>
+  <!-- local stylesheets -->
+  <link rel="stylesheet" href="../../../../css/tufte.css" />
+  <link rel="stylesheet" href="../../../../css/style.css" />
 
 </head>
-
-<body>
-  <!--- Header and nav template site-wide -->
-
-
-  <nav class="navbar navbar-expand-md navbar-dark sticky-top">
-    <div class="container-fluid">
-      <!-- // welcome message -->
+  <body>
+    <!--- Header and nav template site-wide -->
 
 
-      <!-- // collapse toggle button -->
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <!-- // navbar items -->
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item active"><a class="nav-link active" href="{{ url_for('pre_quiz')}}">Dashboard</a>
-          </li>
-          <li class="nav-item"><a class="nav-link" href="{{ url_for('logout')}}">Logout</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+<header>
+    <nav class="group">
+    <a href="../../../../">Home</a>
+    <a href="http://ispel.cs.ecu.edu/" target="_blank">ISPeL</a>
+    <a href="../../../../syllabus/" target="_blank">Fall 2020</a>
+    <a href="https://github.com/vngudivada/ISPeL-content-discrete-structures.git" target="_blank">GitHub</a>
+    </nav>
+</header>
 
 
 
-  <article class="group">
-    <!-- <script type="text/x-mathjax-config">
+    <article class="group">
+      <h1>Set intersection</h1>
+<p class="subtitle"></p>
+
+<!-- <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
     TeX: {
       Macros: {
@@ -117,146 +70,103 @@
   });
 </script> -->
 
-    <div class="container">
-      <div class="row">
-        <div class="col">
-          <h1>Set intersection</h1>
-          <p class="subtitle"></p>
-        </div>
 
-      </div>
-      <div class="row">
+<p>For two sets \(A\) and \(B,\) we define the set intersection of \(A\) and \(B\) to be a new set denoted \(A \cap B\) where the elements of \(A \cap B\) are all the elements \(x\) where \(x\) is in \(A \text{ AND } x\) is in \(B.\)  In other words, the intersection of the two sets \(A\) and \(B\) is a set which contains elements that are in both the sets.</p>
 
-        <p>For two sets \(A\) and \(B,\) we define the set intersection of \(A\) and \(B\) to be a new set denoted \(A
-          \cap B\) where the elements of \(A \cap B\) are all the elements \(x\) where \(x\) is in \(A \text{ AND } x\)
-          is in \(B.\) In other words, the intersection of the two sets \(A\) and \(B\) is a set which contains elements
-          that are in both the sets.</p>
+<p>Using symbolic notation, the intersection of two sets \(A\) and \(B\) is written:</p>
 
-        <p>Using symbolic notation, the intersection of two sets \(A\) and \(B\) is written:</p>
+\[A\cap B = \{x \text{ such that} x \in A \text{ and } x \in B \}.\]
 
-        \[A\cap B = \{x \text{ such that} x \in A \text{ and } x \in B \}.\]
+<p>An equivalent biconditional statement can be made to define the intersection of two sets which is useful representation especially in proofs.<br /></p>
 
-        <p>An equivalent biconditional statement can be made to define the intersection of two sets which is useful
-          representation especially in proofs.<br /></p>
+\[x \in A \cap B \Leftrightarrow x \in A \text{ and } x \in B\]
 
-        \[x \in A \cap B \Leftrightarrow x \in A \text{ and } x \in B\]
+<p>The translation of this statement is: “\(x\) is in the intersection of the sets \(A\) and \(B\) if and only if \(x\) is in \(A\) and \(x\) is in \(B\).” It is helpful to break the statement into two implications.</p>
 
-        <p>The translation of this statement is: “\(x\) is in the intersection of the sets \(A\) and \(B\) if and only
-          if \(x\) is in \(A\) and \(x\) is in \(B\).” It is helpful to break the statement into two implications.</p>
+<p>“If \(x\) is in the intersection of \(A\) and \(B\) then \(x\) is in \(A\) and \(x\) is in \(B\).” AND “If \(x\) is in \(A\) and \(x\) is in \(B\) then \(x\) is in the intersection of \(A\) and \(B\).”</p>
 
-        <p>“If \(x\) is in the intersection of \(A\) and \(B\) then \(x\) is in \(A\) and \(x\) is in \(B\).” AND “If
-          \(x\) is in \(A\) and \(x\) is in \(B\) then \(x\) is in the intersection of \(A\) and \(B\).”</p>
+<p><strong>Example 1:</strong></p>
 
-        <p><strong>Example 1:</strong></p>
+<p>Let \(A = {2, 4, 6, 8, 10},\)   \(B = {1, 2, 3}\),   \(C = {5, 7}\)   and \(D = \emptyset.\) Then some of the possible intersections among these sets are:</p>
 
-        <p>Let \(A = {2, 4, 6, 8, 10},\)   \(B = {1, 2, 3}\),   \(C = {5, 7}\)   and \(D = \emptyset.\) Then some of the
-          possible intersections among these sets are:</p>
+<p>\(A \cap A = \{2, 4, 6, 8, 10\}\)             \(A \cap B = \{2 \}\)        \(A \cap C = \emptyset\)       \(A \cap D = \emptyset\)</p>
 
-        <p>\(A \cap A = \{2, 4, 6, 8, 10\}\)           \(A \cap B = \{2 \}\)       \(A \cap C = \emptyset\)       \(A
-          \cap D = \emptyset\)</p>
+<p>\(B \cap A = \{2 \}\)           \(B \cap B = \{1, 2, 3 \}\)        \(B \cap C = \emptyset\)       \(B \cap D = \emptyset\)</p>
 
-        <p>\(B \cap A = \{2 \}\)         \(B \cap B = \{1, 2, 3 \}\)       \(B \cap C = \emptyset\)       \(B \cap D =
-          \emptyset\)</p>
+<p>The definition of set intersection allows for the result of a set intersection to be the empty set.  This occurs when the two sets do not share any elements in common. Two sets are said to be mutually disjoint if the intersection of the sets is the Empty set.</p>
 
-        <p>The definition of set intersection allows for the result of a set intersection to be the empty set. This
-          occurs when the two sets do not share any elements in common. Two sets are said to be mutually disjoint if the
-          intersection of the sets is the Empty set.</p>
+<p>Given that \(A\) and \(B\) are sets. The sets \(A\) and \(B\) are disjoint if and only if \(A \cap B = \emptyset.\)</p>
 
-        <p>Given that \(A\) and \(B\) are sets. The sets \(A\) and \(B\) are disjoint if and only if \(A \cap B =
-          \emptyset.\)</p>
+<p><strong>Example 2:</strong></p>
 
-        <p><strong>Example 2:</strong></p>
+<p>Subtle nuances of representation and context should always be considered.  For example, let \(B = \{0,1\}\) be the set of binary digits using a single bit, and \(D = \{0,1\}\) be the set of decimal digits (type integer) and \(S = \{0, 1\}\) be the set of the two characters 0 and 1 as “strings.”  Visually, these three sets look the same.  An important question to ask is “Are the elements in \(B\) the same elements in \(D\) the same as those in \(S\) in the current context?”  If an element’s type dictates a different treatment of the element, then elements must be compared based on defining properties in context.</p>
 
-        <p>Subtle nuances of representation and context should always be considered. For example, let \(B = \{0,1\}\) be
-          the set of binary digits using a single bit, and \(D = \{0,1\}\) be the set of decimal digits (type integer)
-          and \(S = \{0, 1\}\) be the set of the two characters 0 and 1 as “strings.” Visually, these three sets look
-          the same. An important question to ask is “Are the elements in \(B\) the same elements in \(D\) the same as
-          those in \(S\) in the current context?” If an element’s type dictates a different treatment of the element,
-          then elements must be compared based on defining properties in context.</p>
+<p>A visual representation for a set intersection can be helpful when studying the derived set. A Venn diagram is one way to depict the intersection of sets. In the following image, the sets \(A\) and \(B\) are drawn as circles and the intersection of \(A\) and \(B\), \(A \cap B,\) is indicated by the shaded area.</p>
 
-        <p>A visual representation for a set intersection can be helpful when studying the derived set. A Venn diagram
-          is one way to depict the intersection of sets. In the following image, the sets \(A\) and \(B\) are drawn as
-          circles and the intersection of \(A\) and \(B\), \(A \cap B,\) is indicated by the shaded area.</p>
+<p><label for="set-int" class="margin-toggle">⊕</label>
+<input type="checkbox" id="set-int" class="margin-toggle" />
+<span class="marginnote"><img class="fullwidth" src="../../../../course-content/graphics/set-theory/set-intersection.svg" alt="The intersection of the sets $$A$$ and $$B$$, $$A \cup B,$$ is the set containing all elements that the sets $$A$$ and $$B$$ have in common. " /><br />
+    The intersection of the sets \(A\) and \(B\), \(A \cup B,\) is the set containing all elements that the sets \(A\) and \(B\) have in common. 
+</span></p>
 
-        <p><label for="set-int" class="margin-toggle">⊕</label>
-          <input type="checkbox" id="set-int" class="margin-toggle" />
-          <span class="marginnote"><img class="fullwidth"
-              src="../../../../static/images/graphics/set-theory/set-intersection.svg"
-              alt="The intersection of the sets $$A$$ and $$B$$, $$A \cup B,$$ is the set containing all elements that the sets $$A$$ and $$B$$ have in common. " /><br />
-            The intersection of the sets \(A\) and \(B\), \(A \cup B,\) is the set containing all elements that the sets
-            \(A\) and \(B\) have in common.
-          </span></p>
+<p><strong>Example 3:</strong>
+Let \(B={0,1}, O={1,2,3,...7} \text{ and } D={0,1,2...9}\) then <br />
+\(B\cap O\cap D = ((B\cap O) \cap D) = \{0,1\}\)  The intersection of sets in the expression is independent of the order that we apply the intersection.</p>
 
-        <p><strong>Example 3:</strong>
-          Let \(B={0,1}, O={1,2,3,...7} \text{ and } D={0,1,2...9}\) then <br />
-          \(B\cap O\cap D = ((B\cap O) \cap D) = \{0,1\}\) The intersection of sets in the expression is independent of
-          the order that we apply the intersection.</p>
+<p>The Venn Diagram for the Three Sets \(A, B\) and \(C\) is showm below. The shaded area represents the intersection.</p>
 
-        <p>The Venn Diagram for the Three Sets \(A, B\) and \(C\) is showm below. The shaded area represents the
-          intersection.</p>
+<p><label for="set-int3" class="margin-toggle">⊕</label>
+<input type="checkbox" id="set-int3" class="margin-toggle" />
+<span class="marginnote"><img class="fullwidth" src="../../../../course-content/graphics/set-theory/set-intersect3.svg" alt="The intersection of three sets $$A,$$ $$B,$$ and $$C.$$  The extension of the operation intersection applies to a countably infinite number of sets. " /><br />
+    The intersection of three sets \(A,\) \(B,\) and \(C.\)  The extension of the operation intersection applies to a countably infinite number of sets. 
+</span></p>
 
-        <p><label for="set-int3" class="margin-toggle">⊕</label>
-          <input type="checkbox" id="set-int3" class="margin-toggle" />
-          <span class="marginnote"><img class="fullwidth"
-              src="../../../../course-content/graphics/set-theory/set-intersect3.svg"
-              alt="The intersection of three sets $$A,$$ $$B,$$ and $$C.$$  The extension of the operation intersection applies to a countably infinite number of sets. " /><br />
-            The intersection of three sets \(A,\) \(B,\) and \(C.\) The extension of the operation intersection applies
-            to a countably infinite number of sets.
-          </span></p>
+<p>There are some key properties about set intersection that should be noted:<br />
+For sets \(A,\) \(B\) and \(C,\) and the complement set of \(A\), \(A^{c},\)</p>
 
-        <p>There are some key properties about set intersection that should be noted:<br />
-          For sets \(A,\) \(B\) and \(C,\) and the complement set of \(A\), \(A^{c},\)</p>
+<p>set intersection is: 
+       1.  <strong>commutative</strong>: \(A \cap B\) is the same set as \(A \cap B\)</p>
 
-        <p>set intersection is:
-               1. <strong>commutative</strong>: \(A \cap B\) is the same set as \(A \cap B\)</p>
+<p>       2. <strong>associative</strong>: \((A \cap B) \cap C\) is the same set as \(A \cap (B \cap C)\)</p>
 
-        <p>     2. <strong>associative</strong>: \((A \cap B) \cap C\) is the same set as \(A \cap (B \cap C)\)</p>
+<p>set intersection has an identity:</p>
 
-        <p>set intersection has an identity:</p>
+<p>       3. \(A \cap \emptyset = A\)</p>
 
-        <p>     3. \(A \cap \emptyset = A\)</p>
+<p>set intersection has negatives:</p>
 
-        <p>set intersection has negatives:</p>
+<p>       4. \(A \cap A^{c} = \emptyset\)</p>
 
-        <p>     4. \(A \cap A^{c} = \emptyset\)</p>
+<p>If there is a Univesal set, U, then <br />
+       4. \(A \cap U = U.\)</p>
 
-        <p>If there is a Univesal set, U, then <br />
-               4. \(A \cap U = U.\)</p>
+<p>The intersection operation of sets can be extented to an infinite number of sets as illustrated in the following example:</p>
 
-        <p>The intersection operation of sets can be extented to an infinite number of sets as illustrated in the
-          following example:</p>
+<p><strong>Example 4:</strong>
+Let \(S =\) be the countably infinte set of sets \(S_n,\) where \(n \in Z^+.\)  That is \(S\) is a set of elements and each element is a set that we index with a positive integer.  The elements \(S_1, S_2, S_3, \ldots\) are also the sets.</p>
 
-        <p><strong>Example 4:</strong>
-          Let \(S =\) be the countably infinte set of sets \(S_n,\) where \(n \in Z^+.\) That is \(S\) is a set of
-          elements and each element is a set that we index with a positive integer. The elements \(S_1, S_2, S_3,
-          \ldots\) are also the sets.</p>
+<p>The intersection of all elements in \(S\) is expressed as follows:</p>
 
-        <p>The intersection of all elements in \(S\) is expressed as follows:</p>
+<p>\(\bigcup_{n}S_{n}\) where \(n = 1,2,3,\ldots\) The intersection is a set where an element is in the intersection if and only if it is a member of every set.</p>
 
-        <p>\(\bigcup_{n}S_{n}\) where \(n = 1,2,3,\ldots\) The intersection is a set where an element is in the
-          intersection if and only if it is a member of every set.</p>
+<p>That is \(x \in \bigcap_{n} S_{n}\), if and only if \(x \in S_{n}\), for all \(n\).</p>
 
-        <p>That is \(x \in \bigcap_{n} S_{n}\), if and only if \(x \in S_{n}\), for all \(n\).</p>
+<p><br />
+<a href="../../../../">Back to course home</a></p>
 
 
 
-      </div>
-    </div>
-    <meta id="js-data" data-title="Set Intersection" data-base="/seng5005/assets/json/corrispondingQuestionTopic.json">
-
-  </article>
-  <footer>
-    <hr class="slender">
-    <div class="credits">
-      This work is supported by the <a href="https://www.nsf.gov/" target="_blank">NSF</a> IUSE/PFE:RED award No. <a
-        href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=1730568" target="_blank">1730568</a>. Site created with
-      <a href="//jekyllrb.com" target="_blank">Jekyll</a> using the <a href="//github.com/clayh53/tufte-jekyll"
-        target="_blank">Tufte theme</a>. &copy; 2020 by ECU.
-    </div>
-  </footer>
+    </article>
+    <footer>
+<hr class="slender">
+<div class="credits">
+This work is supported by the <a href="https://www.nsf.gov/" target="_blank">NSF</a> IUSE/PFE:RED award No. <a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=1730568" target="_blank">1730568</a>. Site created with <a href="//jekyllrb.com" target="_blank">Jekyll</a> using the <a href="//github.com/clayh53/tufte-jekyll" target="_blank">Tufte theme</a>. &copy; 2020 by ECU.
+</div>
+</footer>
 
 
 
-</body>
-
+    
+<script src="/accordion.js"></script>
+  </body>
 </html>
